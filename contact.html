@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Contact SURREAL for software development, web development, mobile applications, UI/UX design, civil engineering and construction solutions."
+    >
+
+    <meta
+        name="keywords"
+        content="SURREAL, contact, software development, web development, mobile app development, UI UX, civil engineering, construction, Nepal"
+    >
+
+    <meta
+        name="author"
+        content="SURREAL"
+    >
+
+    <meta
+        name="theme-color"
+        content="#f4791d"
+    >
+
+    <title>Contact — SURREAL</title>
+
+
+    <!-- =====================================================
+         FAVICON
+    ====================================================== -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="circlelogo.png"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="circlelogo.png"
+    >
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         MAIN WEBSITE CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+
+    <!-- =====================================================
+         CONTACT PAGE CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="contact.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         CURSOR PARTICLES
+    ====================================================== -->
+
+    <canvas
+        class="cursor-particles"
+        id="cursorParticles"
+    ></canvas>
+
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="index.html"
+                class="logo"
+                aria-label="SURREAL Home"
+            >
+
+                <img
+                    src="logo1.png"
+                    alt="SURREAL"
+                    class="nav-logo"
+                >
+
+            </a>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="main-nav"
+                id="mainNav"
+            >
+
+                <a
+                    href="index.html"
+                    class="nav-link"
+                >
+                    HOME
+                </a>
+
+                <a
+                    href="about.html"
+                    class="nav-link"
+                >
+                    ABOUT
+                </a>
+
+                <a
+                    href="services.html"
+                    class="nav-link"
+                >
+                    SERVICES
+                </a>
+
+                <a
+                    href="projects.html"
+                    class="nav-link"
+                >
+                    PROJECTS
+                </a>
+
+                <a
+                    href="contact.html"
+                    class="nav-link active"
+                >
+                    CONTACT
+                </a>
+
+            </nav>
+
+
+
+            <!-- HEADER ACTIONS -->
+
+            <div class="header-actions">
+
+
+                <!-- SEARCH -->
+
+                <div
+                    class="search-box"
+                    id="searchBox"
+                >
+
+                    <input
+                        type="search"
+                        id="siteSearch"
+                        placeholder="Search..."
+                        aria-label="Search website"
+                    >
+
+                    <button
+                        type="button"
+                        class="icon-btn"
+                        id="searchToggle"
+                        aria-label="Search"
+                    >
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- CONTACT -->
+
+                <a
+                    href="#contactForm"
+                    class="btn btn-orange header-contact"
+                >
+
+                    LET'S TALK
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+
+
+                <!-- MOBILE MENU -->
+
+                <button
+                    type="button"
+                    class="hamburger"
+                    id="hamburger"
+                    aria-label="Open navigation"
+                    aria-expanded="false"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             CONTACT HERO
+        ================================================== -->
+
+        <section class="contact-page-hero">
+
+            <div class="container contact-hero-inner">
+
+
+                <!-- HERO CONTENT -->
+
+                <div class="contact-hero-copy reveal-item">
+
+                    <div class="eyebrow">
+                        GET IN TOUCH
+                    </div>
+
+
+                    <h1 class="contact-page-title">
+
+                        Let's build
+
+                        <em class="text-orange">
+                            something
+                        </em>
+
+                        meaningful.
+
+                    </h1>
+
+
+                    <p class="contact-hero-text">
+
+                        Have an idea, project or requirement?
+                        Tell us what you need and the SURREAL
+                        team will get back to you.
+
+                    </p>
+
+
+                    <div class="contact-hero-buttons">
+
+                        <a
+                            href="#contactForm"
+                            class="btn btn-orange"
+                        >
+
+                            START A CONVERSATION
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+
+                        <a
+                            href="#contactMethods"
+                            class="btn btn-outline"
+                        >
+
+                            CONTACT DETAILS
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- HERO VISUAL -->
+
+                <div class="contact-hero-visual reveal-item">
+
+                    <div class="contact-orbit orbit-one"></div>
+
+                    <div class="contact-orbit orbit-two"></div>
+
+                    <div class="contact-orbit orbit-three"></div>
+
+
+                    <div class="contact-visual-card">
+
+                        <div class="contact-visual-icon">
+
+                            <i class="fa-solid fa-paper-plane"></i>
+
+                        </div>
+
+
+                        <span>
+                            SURREAL
+                        </span>
+
+
+                        <strong>
+
+                            Ideas into<br>
+                            reality.
+
+                        </strong>
+
+                    </div>
+
+
+                    <a
+                        href="mailto:surreal@gmail.com"
+                        class="contact-floating-card floating-email"
+                    >
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <div>
+
+                            <small>
+                                EMAIL
+                            </small>
+
+                            <strong>
+                                surreal@gmail.com
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <div
+                        class="contact-floating-card floating-location"
+                    >
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <div>
+
+                            <small>
+                                LOCATION
+                            </small>
+
+                            <strong>
+                                Tinkune, Kathmandu
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTACT METHODS
+        ================================================== -->
+
+        <section
+            class="contact-information"
+            id="contactMethods"
+        >
+
+            <div class="container">
+
+
+                <div class="contact-section-heading reveal-item">
+
+                    <div class="eyebrow">
+                        CONTACT INFORMATION
+                    </div>
+
+
+                    <h2 class="section-title">
+
+                        Choose your
+
+                        <em>
+                            way
+                        </em>
+
+                        to connect.
+
+                    </h2>
+
+
+                    <p class="section-intro">
+
+                        Reach out to SURREAL through the
+                        communication channel that works best
+                        for you.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="contact-method-grid">
+
+
+                    <!-- EMAIL -->
+
+                    <a
+                        href="mailto:surreal@gmail.com"
+                        class="contact-method-card reveal-item"
+                    >
+
+                        <div class="contact-method-icon orange">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                        </div>
+
+
+                        <div class="contact-method-content">
+
+                            <span>
+                                EMAIL
+                            </span>
+
+                            <h3>
+                                Send us an email
+                            </h3>
+
+                            <p>
+                                Send us your requirements,
+                                questions or project details.
+                            </p>
+
+                        </div>
+
+
+                        <i
+                            class="fa-solid fa-arrow-up-right-from-square method-arrow"
+                        ></i>
+
+                    </a>
+
+
+
+                    <!-- PHONE -->
+
+                    <a
+                        href="tel:+9779815376527"
+                        class="contact-method-card reveal-item"
+                    >
+
+                        <div class="contact-method-icon purple">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                        </div>
+
+
+                        <div class="contact-method-content">
+
+                            <span>
+                                PHONE
+                            </span>
+
+                            <h3>
+                                Talk with our team
+                            </h3>
+
+                            <p>
+                                Call us directly to discuss
+                                your requirements.
+                            </p>
+
+                        </div>
+
+
+                        <i
+                            class="fa-solid fa-arrow-up-right-from-square method-arrow"
+                        ></i>
+
+                    </a>
+
+
+
+                    <!-- LOCATION -->
+
+                    <a
+                        href="#location"
+                        class="contact-method-card reveal-item"
+                    >
+
+                        <div class="contact-method-icon green">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                        </div>
+
+
+                        <div class="contact-method-content">
+
+                            <span>
+                                LOCATION
+                            </span>
+
+                            <h3>
+                                Visit our office
+                            </h3>
+
+                            <p>
+                                Tinkune, Kathmandu, Nepal.
+                            </p>
+
+                        </div>
+
+
+                        <i
+                            class="fa-solid fa-arrow-up-right-from-square method-arrow"
+                        ></i>
+
+                    </a>
+
+
+
+                    <!-- START PROJECT -->
+
+                    <a
+                        href="#contactForm"
+                        class="contact-method-card reveal-item"
+                    >
+
+                        <div class="contact-method-icon orange">
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </div>
+
+
+                        <div class="contact-method-content">
+
+                            <span>
+                                PROJECT
+                            </span>
+
+                            <h3>
+                                Start a conversation
+                            </h3>
+
+                            <p>
+                                Tell us about your idea and
+                                requirements.
+                            </p>
+
+                        </div>
+
+
+                        <i
+                            class="fa-solid fa-arrow-up-right-from-square method-arrow"
+                        ></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTACT FORM
+        ================================================== -->
+
+        <section
+            class="contact-form-section"
+            id="contactForm"
+        >
+
+            <div class="container contact-form-wrapper">
+
+
+                <!-- FORM INTRO -->
+
+                <div class="contact-form-intro reveal-item">
+
+                    <div class="eyebrow">
+                        START A CONVERSATION
+                    </div>
+
+
+                    <h2 class="section-title">
+
+                        Tell us about
+                        your <em>idea.</em>
+
+                    </h2>
+
+
+                    <p class="section-intro">
+
+                        Fill in the form below and send us your
+                        message. We will review your request and
+                        get back to you.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     CONTACT FORM
+                ================================================== -->
+
+                <form
+                    class="professional-contact-form reveal-item"
+                    id="professionalContactForm"
+                >
+
+
+                    <!-- NAME -->
+
+                    <div class="professional-input">
+
+                        <label for="name">
+                            Full Name *
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-user"></i>
+
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Your full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="professional-input">
+
+                        <label for="email">
+                            Email Address *
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PHONE -->
+
+                    <div class="professional-input">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <i class="fa-solid fa-phone"></i>
+
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="+977 XXXXX XXXXX"
+                                autocomplete="tel"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- MESSAGE -->
+
+                    <div class="professional-input">
+
+                        <label for="message">
+                            Message *
+                        </label>
+
+
+                        <div class="input-wrapper textarea-wrapper">
+
+                            <i class="fa-solid fa-message"></i>
+
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="7"
+                                placeholder="Tell us about your idea or requirement..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        class="btn btn-orange full-btn"
+                        id="contactSubmitBtn"
+                    >
+
+                        <span id="submitText">
+                            SEND MESSAGE
+                        </span>
+
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+
+                    <!-- SECURITY -->
+
+                    <p class="form-security">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        Your information is kept private and secure.
+
+                    </p>
+
+
+
+                    <!-- STATUS -->
+
+                    <p
+                        id="formStatus"
+                        class="form-status"
+                        aria-live="polite"
+                    ></p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LOCATION
+        ================================================== -->
+
+        <section
+            class="contact-map-section"
+            id="location"
+        >
+
+            <div class="container">
+
+
+                <div class="map-heading reveal-item">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            FIND US
+                        </div>
+
+
+                        <h2 class="section-title">
+
+                            Let's meet in
+
+                            <em>
+                                Kathmandu.
+                            </em>
+
+                        </h2>
+
+                    </div>
+
+
+                    <p class="projects-intro">
+
+                        SURREAL is based in Kathmandu, Nepal.
+                        Contact us before visiting our office.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="map-container reveal-item">
+
+                    <iframe
+                        src="https://www.google.com/maps?q=Tinkune,Kathmandu,Nepal&output=embed"
+                        width="100%"
+                        height="520"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="SURREAL location map"
+                    ></iframe>
+
+
+                    <div class="map-info-card">
+
+                        <div class="map-info-icon">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                OUR LOCATION
+                            </span>
+
+
+                            <strong>
+                                Tinkune, Kathmandu, Nepal
+                            </strong>
+
+
+                            <small>
+                                Contact us before visiting
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FINAL CTA
+        ================================================== -->
+
+        <section class="contact-final-cta">
+
+            <div class="container">
+
+                <div class="final-cta-inner reveal-item">
+
+
+                    <div>
+
+                        <div class="eyebrow">
+                            HAVE AN IDEA?
+                        </div>
+
+
+                        <h2>
+
+                            Let's make it
+
+                            <em>
+                                real.
+                            </em>
+
+                        </h2>
+
+                    </div>
+
+
+                    <a
+                        href="#contactForm"
+                        class="btn btn-dark"
+                    >
+
+                        START A CONVERSATION
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+
+            <!-- BRAND -->
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="footer-logo"
+                >
+
+                    <img
+                        src="logo1.png"
+                        alt="SURREAL"
+                        class="footer-logo-image"
+                    >
+
+                </a>
+
+
+                <p>
+
+                    SURREAL brings together technology,
+                    creativity, engineering and innovation
+                    to build meaningful solutions for
+                    modern businesses.
+
+                </p>
+
+
+                <div class="footer-social">
+
+                    <a
+                        href="#"
+                        aria-label="Facebook"
+                    >
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="LinkedIn"
+                    >
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a
+                        href="#"
+                        aria-label="TikTok"
+                    >
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- COMPANY -->
+
+            <div class="footer-col">
+
+                <h4>
+                    COMPANY
+                </h4>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="services.html">
+                    Services
+                </a>
+
+                <a href="projects.html">
+                    Projects
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+
+            <!-- SERVICES -->
+
+            <div class="footer-col">
+
+                <h4>
+                    SERVICES
+                </h4>
+
+                <a href="civil-engineering.html">
+                    Civil Engineering
+                </a>
+
+                <a href="it-digital.html">
+                    Software Development
+                </a>
+
+                <a href="it-digital.html">
+                    Web Development
+                </a>
+
+                <a href="it-digital.html">
+                    Mobile Apps
+                </a>
+
+                <a href="it-digital.html">
+                    UI / UX Design
+                </a>
+
+            </div>
+
+
+
+            <!-- NEWSLETTER -->
+
+            <div class="footer-news">
+
+                <h4>
+                    STAY CONNECTED
+                </h4>
+
+
+                <p>
+                    Follow SURREAL for updates,
+                    projects and new work.
+                </p>
+
+
+                <form
+                    class="newsletter-form"
+                    id="newsletterForm"
+                >
+
+                    <input
+                        type="email"
+                        name="newsletter_email"
+                        placeholder="Your email"
+                        aria-label="Your email"
+                        required
+                    >
+
+
+                    <button
+                        type="submit"
+                        aria-label="Subscribe"
+                    >
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+            <div class="container footer-bottom-inner">
+
+                <p>
+                    © 2026 SURREAL. All rights reserved.
+                </p>
+
+
+                <div class="footer-legal">
+
+                    <a href="privacy.html">
+                        Privacy Policy
+                    </a>
+
+                    <a href="terms.html">
+                        Terms
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         EMAILJS
+         
+         IMPORTANT:
+         This must match the EmailJS version used by index.html.
+    ====================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+
+
+
+    <!-- =====================================================
+         MAIN WEBSITE JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+
+
+    <!-- =====================================================
+         CONTACT PAGE JAVASCRIPT
+    ====================================================== -->
+
+    <script src="contact.js"></script>
+
+
+</body>
+
+</html>
