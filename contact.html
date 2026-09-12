@@ -27,15 +27,13 @@
 
     <meta
         name="theme-color"
-        content="#f4791d"
+        content="#0b1f3a"
     >
 
     <title>Contact — SURREAL</title>
 
 
-    <!-- =====================================================
-         FAVICON
-    ====================================================== -->
+    <!-- FAVICON -->
 
     <link
         rel="icon"
@@ -49,9 +47,7 @@
     >
 
 
-    <!-- =====================================================
-         GOOGLE FONTS
-    ====================================================== -->
+    <!-- GOOGLE FONTS -->
 
     <link
         rel="preconnect"
@@ -65,14 +61,12 @@
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet"
     >
 
 
-    <!-- =====================================================
-         FONT AWESOME
-    ====================================================== -->
+    <!-- FONT AWESOME -->
 
     <link
         rel="stylesheet"
@@ -80,9 +74,7 @@
     >
 
 
-    <!-- =====================================================
-         MAIN WEBSITE CSS
-    ====================================================== -->
+    <!-- MAIN WEBSITE CSS -->
 
     <link
         rel="stylesheet"
@@ -90,9 +82,7 @@
     >
 
 
-    <!-- =====================================================
-         CONTACT PAGE CSS
-    ====================================================== -->
+    <!-- CONTACT CSS -->
 
     <link
         rel="stylesheet"
@@ -125,8 +115,6 @@
         <div class="container header-inner">
 
 
-            <!-- LOGO -->
-
             <a
                 href="index.html"
                 class="logo"
@@ -142,8 +130,6 @@
             </a>
 
 
-
-            <!-- NAVIGATION -->
 
             <nav
                 class="main-nav"
@@ -172,7 +158,7 @@
                 </a>
 
                 <a
-                    href="projects.html"
+                    href="index.html#projects"
                     class="nav-link"
                 >
                     PROJECTS
@@ -189,12 +175,8 @@
 
 
 
-            <!-- HEADER ACTIONS -->
-
             <div class="header-actions">
 
-
-                <!-- SEARCH -->
 
                 <div
                     class="search-box"
@@ -223,11 +205,9 @@
 
 
 
-                <!-- CONTACT -->
-
                 <a
                     href="#contactForm"
-                    class="btn btn-orange header-contact"
+                    class="btn btn-orange magnetic header-contact"
                 >
 
                     LET'S TALK
@@ -237,8 +217,6 @@
                 </a>
 
 
-
-                <!-- MOBILE MENU -->
 
                 <button
                     type="button"
@@ -275,6 +253,22 @@
 
         <section class="contact-page-hero">
 
+            <!-- DECORATIVE BACKGROUND -->
+
+            <div class="contact-hero-background">
+
+                <div class="contact-grid"></div>
+
+                <div class="contact-glow contact-glow-one"></div>
+                <div class="contact-glow contact-glow-two"></div>
+                <div class="contact-glow contact-glow-three"></div>
+
+                <div class="contact-background-ring ring-bg-one"></div>
+                <div class="contact-background-ring ring-bg-two"></div>
+
+            </div>
+
+
             <div class="container contact-hero-inner">
 
 
@@ -291,7 +285,7 @@
 
                         Let's build
 
-                        <em class="text-orange">
+                        <em>
                             something
                         </em>
 
@@ -313,7 +307,7 @@
 
                         <a
                             href="#contactForm"
-                            class="btn btn-orange"
+                            class="btn btn-orange magnetic"
                         >
 
                             START A CONVERSATION
@@ -325,12 +319,41 @@
 
                         <a
                             href="#contactMethods"
-                            class="btn btn-outline"
+                            class="btn btn-outline magnetic"
                         >
 
                             CONTACT DETAILS
 
                         </a>
+
+                    </div>
+
+
+                    <div class="contact-hero-meta">
+
+                        <div>
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            <span>
+                                Civil + Digital
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            <span>
+                                Nepal based
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            <span>
+                                Project focused
+                            </span>
+                        </div>
 
                     </div>
 
@@ -340,16 +363,37 @@
 
                 <!-- HERO VISUAL -->
 
-                <div class="contact-hero-visual reveal-item">
+                <div
+                    class="contact-hero-visual reveal-item"
+                    id="contactHeroVisual"
+                >
 
-                    <div class="contact-orbit orbit-one"></div>
+                    <div class="contact-orbit orbit-one">
 
-                    <div class="contact-orbit orbit-two"></div>
+                        <span class="orbit-node orbit-node-one"></span>
 
-                    <div class="contact-orbit orbit-three"></div>
+                    </div>
+
+                    <div class="contact-orbit orbit-two">
+
+                        <span class="orbit-node orbit-node-two"></span>
+
+                    </div>
+
+                    <div class="contact-orbit orbit-three">
+
+                        <span class="orbit-node orbit-node-three"></span>
+
+                    </div>
 
 
-                    <div class="contact-visual-card">
+                    <div
+                        class="contact-visual-card"
+                        id="contactVisualCard"
+                    >
+
+                        <div class="contact-card-shine"></div>
+
 
                         <div class="contact-visual-icon">
 
@@ -370,7 +414,13 @@
 
                         </strong>
 
+
+                        <small>
+                            IT × CIVIL ENGINEERING
+                        </small>
+
                     </div>
+
 
 
                     <a
@@ -393,6 +443,7 @@
                         </div>
 
                     </a>
+
 
 
                     <div
@@ -431,6 +482,10 @@
             class="contact-information"
             id="contactMethods"
         >
+
+            <div class="section-background-orb methods-orb-one"></div>
+            <div class="section-background-orb methods-orb-two"></div>
+
 
             <div class="container">
 
@@ -474,8 +529,11 @@
 
                     <a
                         href="mailto:surreal@gmail.com"
-                        class="contact-method-card reveal-item"
+                        class="contact-method-card method-orange reveal-item"
                     >
+
+                        <div class="card-pointer-glow"></div>
+
 
                         <div class="contact-method-icon orange">
 
@@ -514,8 +572,11 @@
 
                     <a
                         href="tel:+9779815376527"
-                        class="contact-method-card reveal-item"
+                        class="contact-method-card method-purple reveal-item"
                     >
+
+                        <div class="card-pointer-glow"></div>
+
 
                         <div class="contact-method-icon purple">
 
@@ -554,8 +615,11 @@
 
                     <a
                         href="#location"
-                        class="contact-method-card reveal-item"
+                        class="contact-method-card method-green reveal-item"
                     >
+
+                        <div class="card-pointer-glow"></div>
+
 
                         <div class="contact-method-icon green">
 
@@ -593,10 +657,13 @@
 
                     <a
                         href="#contactForm"
-                        class="contact-method-card reveal-item"
+                        class="contact-method-card method-blue reveal-item"
                     >
 
-                        <div class="contact-method-icon orange">
+                        <div class="card-pointer-glow"></div>
+
+
+                        <div class="contact-method-icon blue">
 
                             <i class="fa-solid fa-arrow-right"></i>
 
@@ -644,6 +711,10 @@
             id="contactForm"
         >
 
+            <div class="contact-form-glow form-glow-one"></div>
+            <div class="contact-form-glow form-glow-two"></div>
+
+
             <div class="container contact-form-wrapper">
 
 
@@ -659,112 +730,210 @@
                     <h2 class="section-title">
 
                         Tell us about
-                        your <em>idea.</em>
+                        your
+
+                        <em>
+                            idea.
+                        </em>
 
                     </h2>
 
 
                     <p class="section-intro">
 
-                        Fill in the form below and send us your
-                        message. We will review your request and
-                        get back to you.
+                        Fill in the form and send us your
+                        message. We will review your request
+                        and get back to you.
 
                     </p>
+
+
+                    <div class="project-types">
+
+                        <div>
+                            <i class="fa-solid fa-building"></i>
+                            Civil Engineering
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-code"></i>
+                            Software
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-mobile-screen"></i>
+                            Mobile Applications
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-shield-halved"></i>
+                            Digital Security
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-response-note">
+
+                        <span class="response-dot"></span>
+
+                        <div>
+
+                            <strong>
+                                Ready to discuss your project
+                            </strong>
+
+                            <small>
+                                Share as much detail as you can.
+                            </small>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
 
 
-                <!-- =================================================
-                     CONTACT FORM
-                ================================================== -->
+                <!-- CONTACT FORM -->
 
                 <form
                     class="professional-contact-form reveal-item"
                     id="professionalContactForm"
                 >
 
-
-                    <!-- NAME -->
-
-                    <div class="professional-input">
-
-                        <label for="name">
-                            Full Name *
-                        </label>
+                    <div class="form-top-accent"></div>
 
 
-                        <div class="input-wrapper">
+                    <div class="form-heading">
 
-                            <i class="fa-solid fa-user"></i>
+                        <span>
+                            PROJECT INQUIRY
+                        </span>
+
+                        <h3>
+                            How can we help?
+                        </h3>
+
+                    </div>
 
 
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Your full name"
-                                autocomplete="name"
-                                required
-                            >
+                    <div class="professional-form-row">
+
+
+                        <!-- NAME -->
+
+                        <div class="professional-input">
+
+                            <label for="name">
+                                Full Name *
+                            </label>
+
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-user"></i>
+
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Your full name"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- EMAIL -->
+
+                        <div class="professional-input">
+
+                            <label for="email">
+                                Email Address *
+                            </label>
+
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-envelope"></i>
+
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
 
                         </div>
 
                     </div>
 
 
-
-                    <!-- EMAIL -->
-
-                    <div class="professional-input">
-
-                        <label for="email">
-                            Email Address *
-                        </label>
+                    <div class="professional-form-row">
 
 
-                        <div class="input-wrapper">
+                        <!-- PHONE -->
 
-                            <i class="fa-solid fa-envelope"></i>
+                        <div class="professional-input">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
 
 
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="you@example.com"
-                                autocomplete="email"
-                                required
-                            >
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-phone"></i>
+
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="+977 XXXXX XXXXX"
+                                    autocomplete="tel"
+                                >
+
+                            </div>
 
                         </div>
 
-                    </div>
 
 
+                        <!-- COMPANY -->
 
-                    <!-- PHONE -->
+                        <div class="professional-input">
 
-                    <div class="professional-input">
-
-                        <label for="phone">
-                            Phone Number
-                        </label>
-
-
-                        <div class="input-wrapper">
-
-                            <i class="fa-solid fa-phone"></i>
+                            <label for="company">
+                                Company / Organization
+                            </label>
 
 
-                            <input
-                                type="tel"
-                                id="phone"
-                                name="phone"
-                                placeholder="+977 XXXXX XXXXX"
-                                autocomplete="tel"
-                            >
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-building"></i>
+
+
+                                <input
+                                    type="text"
+                                    id="company"
+                                    name="company"
+                                    placeholder="Optional"
+                                    autocomplete="organization"
+                                >
+
+                            </div>
 
                         </div>
 
@@ -804,7 +973,7 @@
 
                     <button
                         type="submit"
-                        class="btn btn-orange full-btn"
+                        class="btn btn-orange full-btn magnetic"
                         id="contactSubmitBtn"
                     >
 
@@ -819,8 +988,6 @@
 
 
 
-                    <!-- SECURITY -->
-
                     <p class="form-security">
 
                         <i class="fa-solid fa-shield-halved"></i>
@@ -830,8 +997,6 @@
                     </p>
 
 
-
-                    <!-- STATUS -->
 
                     <p
                         id="formStatus"
@@ -894,6 +1059,7 @@
 
                 <div class="map-container reveal-item">
 
+
                     <iframe
                         src="https://www.google.com/maps?q=Tinkune,Kathmandu,Nepal&output=embed"
                         width="100%"
@@ -904,6 +1070,9 @@
                         referrerpolicy="no-referrer-when-downgrade"
                         title="SURREAL location map"
                     ></iframe>
+
+
+                    <div class="map-overlay-gradient"></div>
 
 
                     <div class="map-info-card">
@@ -953,8 +1122,11 @@
 
                 <div class="final-cta-inner reveal-item">
 
+                    <div class="cta-orb cta-orb-one"></div>
+                    <div class="cta-orb cta-orb-two"></div>
 
-                    <div>
+
+                    <div class="final-cta-copy">
 
                         <div class="eyebrow">
                             HAVE AN IDEA?
@@ -976,7 +1148,7 @@
 
                     <a
                         href="#contactForm"
-                        class="btn btn-dark"
+                        class="btn btn-light magnetic"
                     >
 
                         START A CONVERSATION
@@ -996,7 +1168,7 @@
 
 
     <!-- =====================================================
-         FOOTER
+         FOOTER — INDEX STRUCTURE
     ====================================================== -->
 
     <footer class="site-footer">
@@ -1004,18 +1176,16 @@
         <div class="container footer-inner">
 
 
-            <!-- BRAND -->
-
             <div class="footer-brand">
 
                 <a
                     href="index.html"
-                    class="footer-logo"
+                    class="logo footer-logo"
                 >
 
                     <img
                         src="logo1.png"
-                        alt="SURREAL"
+                        alt="SURREAL IT & Civil Engineering"
                         class="footer-logo-image"
                     >
 
@@ -1023,12 +1193,8 @@
 
 
                 <p>
-
-                    SURREAL brings together technology,
-                    creativity, engineering and innovation
-                    to build meaningful solutions for
-                    modern businesses.
-
+                    Engineering physical spaces and
+                    digital experiences for a changing world.
                 </p>
 
 
@@ -1055,25 +1221,16 @@
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
 
-                    <a
-                        href="#"
-                        aria-label="TikTok"
-                    >
-                        <i class="fa-brands fa-tiktok"></i>
-                    </a>
-
                 </div>
 
             </div>
 
 
 
-            <!-- COMPANY -->
-
             <div class="footer-col">
 
                 <h4>
-                    COMPANY
+                    EXPLORE
                 </h4>
 
                 <a href="index.html">
@@ -1084,11 +1241,11 @@
                     About
                 </a>
 
-                <a href="services.html">
+                <a href="index.html#services">
                     Services
                 </a>
 
-                <a href="projects.html">
+                <a href="index.html#projects">
                     Projects
                 </a>
 
@@ -1100,39 +1257,35 @@
 
 
 
-            <!-- SERVICES -->
-
             <div class="footer-col">
 
                 <h4>
                     SERVICES
                 </h4>
 
-                <a href="civil-engineering.html">
+                <a href="index.html#civil-projects">
                     Civil Engineering
                 </a>
 
-                <a href="it-digital.html">
+                <a href="index.html#it-projects">
                     Software Development
                 </a>
 
-                <a href="it-digital.html">
+                <a href="index.html#it-projects">
                     Web Development
                 </a>
 
-                <a href="it-digital.html">
+                <a href="index.html#it-projects">
                     Mobile Apps
                 </a>
 
-                <a href="it-digital.html">
+                <a href="index.html#it-projects">
                     UI / UX Design
                 </a>
 
             </div>
 
 
-
-            <!-- NEWSLETTER -->
 
             <div class="footer-news">
 
@@ -1142,8 +1295,8 @@
 
 
                 <p>
-                    Follow SURREAL for updates,
-                    projects and new work.
+                    Subscribe for company updates,
+                    new projects and useful insights.
                 </p>
 
 
@@ -1178,8 +1331,6 @@
 
 
 
-        <!-- FOOTER BOTTOM -->
-
         <div class="footer-bottom">
 
             <div class="container footer-bottom-inner">
@@ -1192,7 +1343,7 @@
                 <div class="footer-legal">
 
                     <a href="privacy.html">
-                        Privacy Policy
+                        Privacy
                     </a>
 
                     <a href="terms.html">
@@ -1209,34 +1360,22 @@
 
 
 
-    <!-- =====================================================
-         EMAILJS
-         
-         IMPORTANT:
-         This must match the EmailJS version used by index.html.
-    ====================================================== -->
+    <!-- EMAILJS -->
 
     <script
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
 
 
-
-    <!-- =====================================================
-         MAIN WEBSITE JAVASCRIPT
-    ====================================================== -->
+    <!-- MAIN WEBSITE JS -->
 
     <script src="script.js"></script>
 
 
-
-    <!-- =====================================================
-         CONTACT PAGE JAVASCRIPT
-    ====================================================== -->
+    <!-- CONTACT PAGE JS -->
 
     <script src="contact.js"></script>
 
 
 </body>
-
 </html>

@@ -12,23 +12,15 @@
 
     <meta
         name="description"
-        content="SURREAL — IT & Civil Engineering solutions for modern businesses, infrastructure and digital transformation."
+        content="SURREAL Engineering — Civil Engineering, IT, Digital Solutions, Infrastructure and Technology."
     >
 
     <meta
-        name="keywords"
-        content="SURREAL, civil engineering, IT solutions, website development, mobile applications, Nepal, digital solutions"
-    >
-
-    <meta
-        name="author"
-        content="SURREAL"
+        name="theme-color"
+        content="#0b1f3a"
     >
 
     <title>SURREAL — IT & Civil Engineering</title>
-
-
-    <!-- FAVICON -->
 
     <link
         rel="icon"
@@ -37,14 +29,9 @@
     >
 
     <link
-        rel="apple-touch-icon"
-        href="circlelogo.png"
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
     >
-
-
-    <!-- GOOGLE FONTS -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link
         rel="preconnect"
@@ -53,20 +40,14 @@
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Poppins:wght@400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Poppins:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
     >
-
-
-    <!-- FONT AWESOME -->
 
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
-
-
-    <!-- CSS -->
 
     <link
         rel="stylesheet"
@@ -78,20 +59,9 @@
 
 <body>
 
-
-    <!-- CURSOR PARTICLES -->
-
     <canvas
         id="cursorParticles"
         class="cursor-particles"
-    ></canvas>
-
-
-    <!-- HERO NETWORK -->
-
-    <canvas
-        class="hero-network"
-        id="heroNetwork"
     ></canvas>
 
 
@@ -103,79 +73,48 @@
 
         <div class="container header-inner">
 
-
-            <!-- LOGO -->
-
             <a
-                href="index.html"
+                href="#home"
                 class="logo"
-                aria-label="SURREAL Home"
+                aria-label="SURREAL home"
             >
-
                 <img
                     src="logo1.png"
-                    alt="SURREAL IT & Civil Engineering"
+                    alt="SURREAL Engineering"
                     class="nav-logo"
                 >
-
             </a>
 
-
-            <!-- NAVIGATION -->
 
             <nav
                 class="main-nav"
                 id="mainNav"
             >
 
-                <a
-                    href="index.html"
-                    class="nav-link active"
-                >
+                <a href="#home" class="nav-link active">
                     HOME
                 </a>
 
-
-                <a
-                    href="about.html"
-                    class="nav-link"
-                >
+                <a href="about.html" class="nav-link">
                     ABOUT
                 </a>
 
-
-                <a
-               
-                    class="nav-link"
-                >
+                <a href="services.html" class="nav-link">
                     SERVICES
                 </a>
 
-
-                <a
-                  
-                    class="nav-link"
-                >
+                <a href="#projects" class="nav-link">
                     PROJECTS
                 </a>
 
-
-                <a
-                    href="contact.html"
-                    class="nav-link"
-                >
+                <a href="contact.html" class="nav-link">
                     CONTACT
                 </a>
 
             </nav>
 
 
-            <!-- HEADER ACTIONS -->
-
             <div class="header-actions">
-
-
-                <!-- SEARCH -->
 
                 <div
                     class="search-box"
@@ -191,46 +130,35 @@
 
                     <button
                         type="button"
-                        class="icon-btn search-toggle"
+                        class="icon-btn"
                         id="searchToggle"
                         aria-label="Search"
                     >
-
                         <i class="fa-solid fa-magnifying-glass"></i>
-
                     </button>
 
                 </div>
 
 
-                <!-- CONTACT -->
-
                 <a
-                    href="contact.html"
-                    class="btn btn-orange header-contact magnetic"
+                    href="#contact"
+                    class="btn btn-orange magnetic header-contact"
                 >
-
                     LET'S TALK
-
                     <i class="fa-solid fa-arrow-right"></i>
-
                 </a>
 
-
-                <!-- MOBILE MENU -->
 
                 <button
                     type="button"
                     class="hamburger"
                     id="hamburger"
-                    aria-label="Open navigation"
+                    aria-label="Toggle navigation"
                     aria-expanded="false"
                 >
-
                     <span></span>
                     <span></span>
                     <span></span>
-
                 </button>
 
             </div>
@@ -240,166 +168,263 @@
     </header>
 
 
-    <!-- =====================================================
-         MAIN
-    ====================================================== -->
-
     <main>
 
-
-        <!-- HERO -->
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
 
         <section
-            class="hero scroll-section"
             id="home"
+            class="home-hero scroll-section"
         >
 
-            <div class="container hero-inner">
+            <canvas
+                id="heroNetwork"
+                class="hero-network"
+            ></canvas>
+
+            <div class="hero-grid-overlay"></div>
+
+            <div class="hero-glow hero-glow-one"></div>
+            <div class="hero-glow hero-glow-two"></div>
+            <div class="hero-glow hero-glow-three"></div>
 
 
-                <div class="hero-copy reveal-item">
+            <div class="container premium-hero-inner">
 
-                    <p class="hero-script">
-                        We build
-                    </p>
+                <div class="premium-hero-copy reveal-item">
+
+                    <div class="hero-kicker">
+                        <span></span>
+                        ENGINEERING × TECHNOLOGY
+                    </div>
 
 
-                    <h1 class="hero-title">
+                    <h1 class="premium-hero-title">
 
-                        Ideas
+                        Ideas into
 
-                        <span class="text-orange">
-                            into
-                        </span>
-
-                        <br>
-
-                        Reality
+                        <strong>
+                            Reality.
+                        </strong>
 
                     </h1>
 
 
-                    <div class="amp-row">
+                    <p class="premium-hero-description">
 
-                        <span class="amp">
-                            &
-                        </span>
+                        SURREAL combines civil engineering,
+                        technology and creative thinking to design
+                        practical solutions for spaces, businesses
+                        and the digital world.
+
+                    </p>
 
 
-                        <p class="hero-sub">
+                    <div class="hero-benefits">
 
-                            SURREAL combines technology,
-                            engineering and creative thinking
-                            to build practical solutions for
-                            the modern world.
+                        <div class="hero-benefit">
+                            <i class="fa-solid fa-circle-check"></i>
+                            Clear project direction
+                        </div>
 
-                        </p>
+                        <div class="hero-benefit">
+                            <i class="fa-solid fa-users-gear"></i>
+                            Specialist teams
+                        </div>
+
+                        <div class="hero-benefit">
+                            <i class="fa-solid fa-layer-group"></i>
+                            Civil + Digital expertise
+                        </div>
 
                     </div>
 
 
-                    <div class="hero-btns">
+                    <div class="hero-actions">
 
                         <a
-                           
-                            class="btn btn-orange magnetic"
+                            href="#services"
+                            class="btn hero-primary-btn magnetic"
                         >
-
                             EXPLORE SERVICES
-
                             <i class="fa-solid fa-arrow-right"></i>
-
                         </a>
-
 
                         <a
-                            href="contact.html"
-                            class="btn btn-outline magnetic"
+                            href="#projects"
+                            class="btn hero-secondary-btn magnetic"
                         >
-
-                            START A PROJECT
-
+                            VIEW PROJECTS
                         </a>
+
+                    </div>
+
+
+                    <div class="hero-stats">
+
+                        <div class="hero-stat">
+
+                            <strong>
+                                <span class="counter" data-target="25">
+                                    0
+                                </span>+
+                            </strong>
+
+                            <small>
+                                PROJECTS & SOLUTIONS
+                            </small>
+
+                        </div>
+
+
+                        <div class="hero-stat">
+
+                            <strong>
+                                <span class="counter" data-target="15">
+                                    0
+                                </span>+
+                            </strong>
+
+                            <small>
+                                DIGITAL SOLUTIONS
+                            </small>
+
+                        </div>
+
+
+                        <div class="hero-stat">
+
+                            <strong>
+                                <span class="counter" data-target="10">
+                                    0
+                                </span>+
+                            </strong>
+
+                            <small>
+                                YEARS EXPERIENCE
+                            </small>
+
+                        </div>
 
                     </div>
 
                 </div>
 
 
-                <!-- HERO ART -->
-
-                <div class="hero-art reveal-item">
-
-                    <div class="blob blob-orange"></div>
-
-                    <div class="blob blob-purple"></div>
-
-                    <div class="blob blob-green"></div>
-
-
-                    <!-- BUILDING -->
-
-                    <div class="hero-building">
-
-                        <img
-                            src="pic2.webp"
-                            alt="Modern building architecture"
-                            loading="eager"
-                        >
-
-                    </div>
-
-
-                    <!-- LAPTOP -->
-
-                    <div class="hero-laptop">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=85"
-                            alt="Modern software development workspace"
-                            loading="eager"
-                        >
-
-                    </div>
-
-
-                    <!-- CIVIL -->
+                <div class="premium-hero-services reveal-item">
 
                     <a
-                        href="civil-engineering.html"
-                        class="hero-label label-civil"
+                        href="#civil-projects"
+                        class="hero-service-card"
                     >
 
-                        <span>
+                        <span class="hero-card-index">
+                            01
+                        </span>
 
-                            CIVIL<br>
-                            ENGINEERING
+                        <div class="hero-service-icon">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
 
+                        <h3>
+                            Civil Engineering
+                        </h3>
+
+                        <p>
+                            Buildings, structures and infrastructure.
+                        </p>
+
+                        <span class="hero-card-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
                         </span>
 
                     </a>
 
 
-                    <!-- IT -->
-
                     <a
-                        href="it-digital.html"
-                        class="hero-label label-it"
+                        href="#services"
+                        class="hero-service-card hero-service-featured"
                     >
 
-                        <span>
+                        <span class="hero-card-index">
+                            02
+                        </span>
 
-                            IT &<br>
-                            DIGITAL
+                        <div class="hero-service-icon">
+                            <i class="fa-solid fa-compass-drafting"></i>
+                        </div>
 
+                        <h3>
+                            Design & Planning
+                        </h3>
+
+                        <p>
+                            Ideas translated into buildable solutions.
+                        </p>
+
+                        <span class="hero-card-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
                         </span>
 
                     </a>
 
 
-                    <div class="dot dot-1"></div>
+                    <a
+                        href="#it-projects"
+                        class="hero-service-card"
+                    >
 
-                    <div class="dot dot-2"></div>
+                        <span class="hero-card-index">
+                            03
+                        </span>
+
+                        <div class="hero-service-icon">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+
+                        <h3>
+                            IT & Digital
+                        </h3>
+
+                        <p>
+                            Websites, applications and digital systems.
+                        </p>
+
+                        <span class="hero-card-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="#contact"
+                        class="hero-service-card"
+                    >
+
+                        <span class="hero-card-index">
+                            04
+                        </span>
+
+                        <div class="hero-service-icon">
+                            <i class="fa-solid fa-people-group"></i>
+                        </div>
+
+                        <h3>
+                            Dedicated Teams
+                        </h3>
+
+                        <p>
+                            Specialists aligned around your project.
+                        </p>
+
+                        <span class="hero-card-arrow">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+
+                    </a>
 
                 </div>
 
@@ -413,62 +438,54 @@
         ====================================================== -->
 
         <section
-            class="about scroll-section"
             id="about"
+            class="about section scroll-section"
         >
 
-            <div class="container about-inner">
+            <div class="about-orb about-orb-one"></div>
+            <div class="about-orb about-orb-two"></div>
 
+            <div class="container about-grid">
 
                 <div class="about-copy reveal-item">
 
                     <p class="eyebrow">
-                        ABOUT SURREAL
+                        ABOUT SURREAL ENGINEERING
                     </p>
-
 
                     <h2 class="section-title">
 
-                        Engineering
+                        Different disciplines.
 
                         <em>
-                            imagination
+                            One vision.
                         </em>
-
-                        into impact.
 
                     </h2>
 
+                    <p class="section-text">
 
-                    <p class="about-text">
-
-                        SURREAL brings together civil engineering
-                        and information technology to create
-                        solutions that are practical, modern and
-                        built for long-term value.
+                        SURREAL Engineering combines technical
+                        engineering, digital development and practical
+                        problem solving within one collaborative team.
 
                     </p>
 
+                    <p class="section-text">
 
-                    <p class="about-text">
-
-                        From physical infrastructure to digital
-                        platforms, we focus on solving real
-                        problems through thoughtful design,
-                        technology and engineering.
+                        Whether the challenge is a physical structure,
+                        a business platform or a secure digital system,
+                        we focus on thoughtful execution and useful
+                        long-term outcomes.
 
                     </p>
-
 
                     <a
-                       
+                        href="about.html"
                         class="btn btn-dark magnetic"
                     >
-
                         DISCOVER SURREAL
-
                         <i class="fa-solid fa-arrow-right"></i>
-
                     </a>
 
                 </div>
@@ -476,44 +493,33 @@
 
                 <div class="about-gallery reveal-item">
 
-                    <div class="gallery-card">
+                    <div class="about-image about-image-large">
 
                         <img
-                            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=85"
-                            alt="Construction project"
+                            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=88"
+                            alt="Modern commercial architecture"
                             loading="lazy"
                         >
 
                     </div>
 
 
-                    <div class="gallery-card">
+                    <div class="about-image">
 
                         <img
-                            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=85"
-                            alt="Software development"
+                            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=88"
+                            alt="Software development workspace"
                             loading="lazy"
                         >
 
                     </div>
 
 
-                    <div class="gallery-card">
+                    <div class="about-image">
 
                         <img
-                            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=85"
-                            alt="Architectural planning"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-
-                    <div class="gallery-card">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=900&q=85"
-                            alt="Digital design"
+                            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=88"
+                            alt="Construction and engineering"
                             loading="lazy"
                         >
 
@@ -521,144 +527,90 @@
 
                 </div>
 
+            </div>
 
-                <!-- STATS -->
-
-                <div class="about-stats reveal-item">
-
-
-                    <div class="stat-item">
-
-                        <div class="stat-top">
-
-                            <div class="stat-icon stat-icon-orange">
-
-                                <i class="fa-solid fa-building"></i>
-
-                            </div>
-
-                            <span class="stat-index">
-                                01
-                            </span>
-
-                        </div>
+        </section>
 
 
-                        <div class="stat-number">
+        <!-- =====================================================
+             COLOR CAPABILITY STRIP
+        ====================================================== -->
 
-                            <span
-                                class="counter"
-                                data-target="25"
-                            >
-                                0+
-                            </span>
+        <section class="capability-strip">
 
-                        </div>
+            <div class="container capability-grid">
 
+                <div class="capability-item capability-orange">
 
-                        <div class="stat-label">
-                            Projects & Solutions
-                        </div>
+                    <span>
+                        <i class="fa-solid fa-building"></i>
+                    </span>
 
+                    <div>
+                        <strong>
+                            Engineering
+                        </strong>
 
-                        <div class="stat-line"></div>
-
-
-                        <p>
-                            Engineering and technology
-                            solutions delivered with purpose.
-                        </p>
-
+                        <small>
+                            Built environments
+                        </small>
                     </div>
 
-
-                    <div class="stat-item">
-
-                        <div class="stat-top">
-
-                            <div class="stat-icon stat-icon-purple">
-
-                                <i class="fa-solid fa-code"></i>
-
-                            </div>
-
-                            <span class="stat-index">
-                                02
-                            </span>
-
-                        </div>
+                </div>
 
 
-                        <div class="stat-number">
+                <div class="capability-item capability-purple">
 
-                            <span
-                                class="counter"
-                                data-target="15"
-                            >
-                                0+
-                            </span>
+                    <span>
+                        <i class="fa-solid fa-code"></i>
+                    </span>
 
-                        </div>
+                    <div>
+                        <strong>
+                            Technology
+                        </strong>
 
-
-                        <div class="stat-label">
-                            Digital Solutions
-                        </div>
-
-
-                        <div class="stat-line"></div>
-
-
-                        <p>
-                            Websites, applications and
-                            digital systems built for growth.
-                        </p>
-
+                        <small>
+                            Modern platforms
+                        </small>
                     </div>
 
-
-                    <div class="stat-item">
-
-                        <div class="stat-top">
-
-                            <div class="stat-icon stat-icon-green">
-
-                                <i class="fa-solid fa-users"></i>
-
-                            </div>
-
-                            <span class="stat-index">
-                                03
-                            </span>
-
-                        </div>
+                </div>
 
 
-                        <div class="stat-number">
+                <div class="capability-item capability-green">
 
-                            <span
-                                class="counter"
-                                data-target="10"
-                            >
-                                0+
-                            </span>
+                    <span>
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </span>
 
-                        </div>
+                    <div>
+                        <strong>
+                            Security
+                        </strong>
+
+                        <small>
+                            Protected systems
+                        </small>
+                    </div>
+
+                </div>
 
 
-                        <div class="stat-label">
-                            Years Combined Experience
-                        </div>
+                <div class="capability-item capability-blue">
 
+                    <span>
+                        <i class="fa-solid fa-chart-line"></i>
+                    </span>
 
-                        <div class="stat-line"></div>
+                    <div>
+                        <strong>
+                            Growth
+                        </strong>
 
-
-                        <p>
-                            Experience across engineering,
-                            technology and creative work.
-                        </p>
-
+                        <small>
+                            Scalable solutions
+                        </small>
                     </div>
 
                 </div>
@@ -673,106 +625,99 @@
         ====================================================== -->
 
         <section
-            class="services scroll-section"
             id="services"
+            class="services section scroll-section"
         >
 
             <div class="container">
 
+                <div class="section-heading reveal-item">
 
-                <div class="services-head reveal-item">
+                    <div>
 
-                    <p class="eyebrow">
-                        OUR SERVICES
-                    </p>
+                        <p class="eyebrow">
+                            OUR SERVICES
+                        </p>
+
+                        <h2 class="section-title">
+
+                            Two disciplines.
+
+                            <em>
+                                One integrated approach.
+                            </em>
+
+                        </h2>
+
+                    </div>
 
 
-                    <h2 class="section-title">
+                    <p class="section-heading-text">
 
-                        Built for the
-
-                        <em>
-                            real world.
-                        </em>
-
-                    </h2>
-
-
-                    <p class="section-intro">
-
-                        Two disciplines. One integrated approach.
-                        We provide engineering and technology
-                        services designed around your goals.
+                        Professional engineering and digital services
+                        shaped around real-world requirements rather
+                        than generic packages.
 
                     </p>
 
                 </div>
 
 
-                <div class="services-grid">
+                <div class="service-grid">
 
+                    <article class="service-card service-card-civil reveal-item interactive-tilt">
 
-                    <!-- CIVIL -->
+                        <div class="service-card-copy">
 
-                    <article
-                        class="service-card card-civil reveal-item"
-                        data-service="civil"
-                    >
+                            <div class="service-card-top">
 
-                        <div class="service-text">
+                                <span class="service-icon">
+                                    <i class="fa-solid fa-building"></i>
+                                </span>
 
-                            <div class="service-icon icon-orange">
-
-                                <i class="fa-solid fa-building"></i>
+                                <span class="service-index">
+                                    01
+                                </span>
 
                             </div>
-
-
-                            <span class="service-num">
-                                01
-                            </span>
-
 
                             <h3>
                                 Civil Engineering
                             </h3>
 
-
                             <p>
-                                Practical engineering services
-                                for construction, infrastructure
-                                and built environments.
+
+                                Engineering support for residential,
+                                commercial and infrastructure projects
+                                from early planning through execution.
+
                             </p>
 
-
-                            <ul class="check-list">
-
-                                <li>Building Design</li>
-                                <li>Structural Planning</li>
-                                <li>Quantity & Estimation</li>
+                            <ul>
+                                <li>Architectural Planning</li>
+                                <li>Structural Design</li>
+                                <li>Quantity Estimation</li>
                                 <li>Construction Support</li>
-
+                                <li>Infrastructure Planning</li>
+                                <li>Project Coordination</li>
                             </ul>
 
-
                             <a
-                                class="text-link orange"
+                                href="https://jplconstruct.com/"
+                                class="service-link"
                             >
-
-                                EXPLORE CIVIL SERVICES
-
+                                EXPLORE CIVIL PROJECTS
                                 <i class="fa-solid fa-arrow-right"></i>
-
                             </a>
 
                         </div>
 
 
-                        <div class="service-media civil-media">
+                        <div class="service-image">
 
                             <img
-                                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=85"
-                                alt="Civil engineering and construction"
+                                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1500&q=88"
+                                alt="Civil engineering construction"
                                 loading="lazy"
                             >
 
@@ -781,259 +726,106 @@
                     </article>
 
 
-                    <!-- CIVIL SHOWCASE -->
+                    <article class="service-card service-card-it reveal-item interactive-tilt">
 
-                    <section class="civil-showcase">
+                        <div class="service-card-copy">
 
-                        <div class="showcase-heading reveal-item">
+                            <div class="service-card-top">
 
-                            <div>
+                                <span class="service-icon">
+                                    <i class="fa-solid fa-laptop-code"></i>
+                                </span>
 
-                                <p class="eyebrow">
-                                    CIVIL ENGINEERING
-                                </p>
-
-
-                                <h2 class="section-title">
-
-                                    From
-
-                                    <em>
-                                        plans
-                                    </em>
-
-                                    to reality.
-
-                                </h2>
+                                <span class="service-index">
+                                    02
+                                </span>
 
                             </div>
-
-
-                            <p class="showcase-intro">
-
-                                A glimpse into the spaces, structures
-                                and engineering possibilities we work with.
-
-                            </p>
-
-                        </div>
-
-
-                        <div class="civil-gallery">
-
-
-                            <button
-                                type="button"
-                                class="civil-gallery-item gallery-large reveal-item"
-                                data-image="pic1.webp"
-                                data-title="Structural Design"
-                                data-category="CIVIL ENGINEERING"
-                                aria-label="View Structural Design"
-                            >
-
-                                <img
-                                    src="pic1.webp"
-                                    alt="Civil engineering structural design"
-                                    loading="lazy"
-                                >
-
-                                <span class="gallery-overlay">
-
-                                    <span>
-                                        STRUCTURAL DESIGN
-                                    </span>
-
-                                    <i class="fa-solid fa-expand"></i>
-
-                                </span>
-
-                            </button>
-
-
-                            <button
-                                type="button"
-                                class="civil-gallery-item reveal-item"
-                                data-image="pic2.webp"
-                                data-title="Construction & Infrastructure"
-                                data-category="CIVIL ENGINEERING"
-                                aria-label="View Construction and Infrastructure"
-                            >
-
-                                <img
-                                    src="pic2.webp"
-                                    alt="Construction and infrastructure"
-                                    loading="lazy"
-                                >
-
-                                <span class="gallery-overlay">
-
-                                    <span>
-                                        CONSTRUCTION
-                                    </span>
-
-                                    <i class="fa-solid fa-expand"></i>
-
-                                </span>
-
-                            </button>
-
-
-                            <button
-                                type="button"
-                                class="civil-gallery-item reveal-item"
-                                data-image="pic3.webp"
-                                data-title="Architectural Planning"
-                                data-category="CIVIL ENGINEERING"
-                                aria-label="View Architectural Planning"
-                            >
-
-                                <img
-                                    src="pic3.webp"
-                                    alt="Architectural planning"
-                                    loading="lazy"
-                                >
-
-                                <span class="gallery-overlay">
-
-                                    <span>
-                                        ARCHITECTURAL PLANNING
-                                    </span>
-
-                                    <i class="fa-solid fa-expand"></i>
-
-                                </span>
-
-                            </button>
-
-
-                            <button
-                                type="button"
-                                class="civil-gallery-item reveal-item"
-                                data-image="pic4.webp"
-                                data-title="Project Development"
-                                data-category="CIVIL ENGINEERING"
-                                aria-label="View Project Development"
-                            >
-
-                                <img
-                                    src="pic4.webp"
-                                    alt="Civil engineering project development"
-                                    loading="lazy"
-                                >
-
-                                <span class="gallery-overlay">
-
-                                    <span>
-                                        PROJECT DEVELOPMENT
-                                    </span>
-
-                                    <i class="fa-solid fa-expand"></i>
-
-                                </span>
-
-                            </button>
-
-                        </div>
-
-
-                        <div class="showcase-action">
-
-                            <a
-                                href="https://jplconstruct.com/"
-                                class="btn btn-dark magnetic"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-
-                                VIEW CIVIL ENGINEERING
-
-                                <i class="fa-solid fa-arrow-right"></i>
-
-                            </a>
-
-                        </div>
-
-                    </section>
-
-
-                    <!-- IT -->
-
-                    <article
-                        class="service-card card-it reveal-item"
-                        data-service="it"
-                    >
-
-                        <div class="service-text">
-
-                            <div class="service-icon icon-purple">
-
-                                <i class="fa-solid fa-laptop-code"></i>
-
-                            </div>
-
-
-                            <span class="service-num purple">
-                                02
-                            </span>
-
 
                             <h3>
                                 IT & Digital
                             </h3>
 
-
                             <p>
-                                Digital products and technology
-                                solutions that help organizations
-                                work smarter.
+
+                                Digital systems built to improve business
+                                operations, communication, security and
+                                user experience.
+
                             </p>
 
-
-                            <ul class="check-list purple-check">
-
+                            <ul>
                                 <li>Website Development</li>
                                 <li>Mobile Applications</li>
-                                <li>UI/UX Design</li>
                                 <li>Business Automation</li>
-
+                                <li>CRM Platforms</li>
+                                <li>Cyber Security</li>
+                                <li>Data Security</li>
                             </ul>
 
-
                             <a
-                                class="text-link purple"
+                                href="#it-projects"
+                                class="service-link"
                             >
-
-                                EXPLORE DIGITAL SERVICES
-
+                                EXPLORE IT PROJECTS
                                 <i class="fa-solid fa-arrow-right"></i>
-
                             </a>
 
                         </div>
 
 
-                        <div class="service-media it-media">
+                        <div class="service-digital">
 
-                            <div class="digital-visual">
+                            <div class="digital-dashboard">
 
-                                <div class="code-window">
+                                <div class="dashboard-top">
 
-                                    <div class="window-top">
-
+                                    <div class="dashboard-lights">
                                         <span></span>
                                         <span></span>
                                         <span></span>
+                                    </div>
 
+                                    <small>
+                                        surreal://workspace
+                                    </small>
+
+                                </div>
+
+
+                                <div class="dashboard-body">
+
+                                    <div class="dashboard-sidebar">
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
                                     </div>
 
 
-                                    <div class="code-lines">
+                                    <div class="dashboard-main">
 
-                                        <i></i>
-                                        <i></i>
-                                        <i></i>
-                                        <i></i>
-                                        <i></i>
+                                        <div class="dashboard-title"></div>
+
+                                        <div class="dashboard-small-cards">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+
+
+                                        <div class="dashboard-chart">
+
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+
+                                        </div>
 
                                     </div>
 
@@ -1045,177 +837,6 @@
 
                     </article>
 
-
-                    <!-- IT SHOWCASE -->
-
-                    <section class="civil-showcase it-showcase">
-
-                        <div class="showcase-heading reveal-item">
-
-                            <div>
-
-                                <p class="eyebrow">
-                                    IT & DIGITAL
-                                </p>
-
-
-                                <h2 class="section-title">
-
-                                    Technology into
-
-                                    <em>
-                                        experience.
-                                    </em>
-
-                                </h2>
-
-                            </div>
-
-
-                            <p class="showcase-intro">
-
-                                Explore the digital experiences,
-                                applications and secure technology
-                                solutions we create.
-
-                            </p>
-
-                        </div>
-
-
-                        <div class="civil-gallery">
-
-
-                            <button
-                                type="button"
-                                class="civil-gallery-item gallery-large reveal-item"
-                                data-image="webp1.png"
-                                data-title="Modern Website Development"
-                                data-category="WEBSITE DEVELOPMENT"
-                                aria-label="View Modern Website Development"
-                            >
-
-                                <img
-                                    src="webp1.png"
-                                    alt="Modern website development"
-                                    loading="lazy"
-                                >
-
-                                <span class="gallery-overlay">
-
-                                    <span>
-                                        WEBSITE DEVELOPMENT
-                                    </span>
-
-                                    <i class="fa-solid fa-expand"></i>
-
-                                </span>
-
-                            </button>
-
-
-                            <button
-                                type="button"
-                                class="civil-gallery-item reveal-item"
-                                data-image="webp2.png"
-                                data-title="Business Website"
-                                data-category="BUSINESS WEBSITE"
-                                aria-label="View Business Website"
-                            >
-
-                                <img
-                                    src="webp2.png"
-                                    alt="Business Website"
-                                    loading="lazy"
-                                >
-
-                                <span class="gallery-overlay">
-
-                                    <span>
-                                        BUSINESS WEBSITE
-                                    </span>
-
-                                    <i class="fa-solid fa-expand"></i>
-
-                                </span>
-
-                            </button>
-
-
-                            <button
-                                type="button"
-                                class="civil-gallery-item reveal-item"
-                                data-image="webp3.png"
-                                data-title="Digital Platform"
-                                data-category="DIGITAL PLATFORM"
-                                aria-label="View Digital Platform"
-                            >
-
-                                <img
-                                    src="webp3.png"
-                                    alt="Digital platform"
-                                    loading="lazy"
-                                >
-
-                                <span class="gallery-overlay">
-
-                                    <span>
-                                        DIGITAL PLATFORM
-                                    </span>
-
-                                    <i class="fa-solid fa-expand"></i>
-
-                                </span>
-
-                            </button>
-
-
-                            <button
-                                type="button"
-                                class="civil-gallery-item reveal-item"
-                                data-image="webp4.png"
-                                data-title="Mobile Application"
-                                data-category="MOBILE APPLICATION"
-                                aria-label="View Mobile Application"
-                            >
-
-                                <img
-                                    src="webp4.png"
-                                    alt="Mobile application"
-                                    loading="lazy"
-                                >
-
-                                <span class="gallery-overlay">
-
-                                    <span>
-                                        MOBILE APPLICATION
-                                    </span>
-
-                                    <i class="fa-solid fa-expand"></i>
-
-                                </span>
-
-                            </button>
-
-                        </div>
-
-
-                        <div class="showcase-action">
-
-                            <a
-                                class="btn btn-dark magnetic"
-                            >
-
-                                VIEW IT & DIGITAL
-
-                                <i class="fa-solid fa-arrow-right"></i>
-
-                            </a>
-
-                        </div>
-
-                    </section>
-
                 </div>
 
             </div>
@@ -1224,136 +845,290 @@
 
 
         <!-- =====================================================
-             SERVICE DETAILS
+             HOW WE HELP — INTERACTIVE
         ====================================================== -->
 
         <section
-            class="service-details scroll-section"
-            id="service-details"
+            id="how-we-help"
+            class="help section scroll-section"
         >
+
+            <div class="help-decoration help-decoration-one"></div>
+            <div class="help-decoration help-decoration-two"></div>
 
             <div class="container">
 
-                <div class="details-heading reveal-item">
+                <div class="center-heading reveal-item">
 
-                    <p class="eyebrow eyebrow-center">
+                    <p class="eyebrow">
                         HOW WE HELP
                     </p>
 
+                    <h2 class="section-title">
 
-                    <h2 class="section-title center">
-
-                        One partner.
+                        More than delivery.
 
                         <em>
-                            Multiple capabilities.
+                            We solve around the problem.
                         </em>
 
                     </h2>
 
+                    <p>
+
+                        Move your cursor across each capability.
+                        Every stage represents a different type of
+                        thinking we bring into a project.
+
+                    </p>
+
                 </div>
 
 
-                <div class="details-grid">
+                <div class="help-experience">
 
+                    <!-- 01 -->
 
-                    <div class="detail-card reveal-item">
+                    <article
+                        class="help-card help-card-orange reveal-item interactive-card"
+                    >
 
-                        <div class="detail-number">
-                            01
+                        <div class="help-card-glow"></div>
+
+                        <div class="help-card-head">
+
+                            <span class="help-number">
+                                01
+                            </span>
+
+                            <span class="help-arrow">
+                                <i class="fa-solid fa-arrow-up-right"></i>
+                            </span>
+
                         </div>
 
-                        <i class="fa-solid fa-drafting-compass"></i>
+
+                        <div class="help-icon-wrap">
+
+                            <span class="help-icon-ring"></span>
+
+                            <i class="fa-solid fa-lightbulb"></i>
+
+                        </div>
+
 
                         <h3>
-                            Plan
+                            Understand
                         </h3>
 
                         <p>
-                            We understand your requirements,
-                            identify challenges and develop a
-                            practical project direction.
+
+                            We explore the real requirement before
+                            jumping into drawings, code or construction.
+
                         </p>
 
-                    </div>
 
+                        <div class="help-reveal">
 
-                    <div class="detail-card reveal-item">
+                            <span>
+                                Requirements
+                            </span>
 
-                        <div class="detail-number">
-                            02
+                            <span>
+                                Context
+                            </span>
+
+                            <span>
+                                Priorities
+                            </span>
+
                         </div>
 
-                        <i class="fa-solid fa-layer-group"></i>
+                    </article>
+
+
+                    <!-- 02 -->
+
+                    <article
+                        class="help-card help-card-purple reveal-item interactive-card"
+                    >
+
+                        <div class="help-card-glow"></div>
+
+                        <div class="help-card-head">
+
+                            <span class="help-number">
+                                02
+                            </span>
+
+                            <span class="help-arrow">
+                                <i class="fa-solid fa-arrow-up-right"></i>
+                            </span>
+
+                        </div>
+
+
+                        <div class="help-icon-wrap">
+
+                            <span class="help-icon-ring"></span>
+
+                            <i class="fa-solid fa-compass-drafting"></i>
+
+                        </div>
+
 
                         <h3>
                             Design
                         </h3>
 
                         <p>
-                            Engineering and digital concepts are
-                            transformed into clear, functional and
-                            usable designs.
+
+                            Concepts are transformed into clear
+                            technical systems, interfaces and plans.
+
                         </p>
 
-                    </div>
 
+                        <div class="help-reveal">
 
-                    <div class="detail-card reveal-item">
+                            <span>
+                                UX
+                            </span>
 
-                        <div class="detail-number">
-                            03
+                            <span>
+                                Architecture
+                            </span>
+
+                            <span>
+                                Engineering
+                            </span>
+
                         </div>
 
-                        <i class="fa-solid fa-gears"></i>
+                    </article>
+
+
+                    <!-- 03 -->
+
+                    <article
+                        class="help-card help-card-green reveal-item interactive-card"
+                    >
+
+                        <div class="help-card-glow"></div>
+
+                        <div class="help-card-head">
+
+                            <span class="help-number">
+                                03
+                            </span>
+
+                            <span class="help-arrow">
+                                <i class="fa-solid fa-arrow-up-right"></i>
+                            </span>
+
+                        </div>
+
+
+                        <div class="help-icon-wrap">
+
+                            <span class="help-icon-ring"></span>
+
+                            <i class="fa-solid fa-gears"></i>
+
+                        </div>
+
 
                         <h3>
-                            Build
+                            Execute
                         </h3>
 
                         <p>
-                            We turn approved ideas into physical
-                            infrastructure, websites, applications
-                            and digital systems.
+
+                            Specialists coordinate development,
+                            construction and implementation.
+
                         </p>
 
-                    </div>
 
+                        <div class="help-reveal">
 
-                    <div class="detail-card reveal-item">
+                            <span>
+                                Build
+                            </span>
 
-                        <div class="detail-number">
-                            04
+                            <span>
+                                Coordinate
+                            </span>
+
+                            <span>
+                                Validate
+                            </span>
+
                         </div>
 
-                        <i class="fa-solid fa-chart-line"></i>
+                    </article>
+
+
+                    <!-- 04 -->
+
+                    <article
+                        class="help-card help-card-blue reveal-item interactive-card"
+                    >
+
+                        <div class="help-card-glow"></div>
+
+                        <div class="help-card-head">
+
+                            <span class="help-number">
+                                04
+                            </span>
+
+                            <span class="help-arrow">
+                                <i class="fa-solid fa-arrow-up-right"></i>
+                            </span>
+
+                        </div>
+
+
+                        <div class="help-icon-wrap">
+
+                            <span class="help-icon-ring"></span>
+
+                            <i class="fa-solid fa-chart-line"></i>
+
+                        </div>
+
 
                         <h3>
                             Improve
                         </h3>
 
                         <p>
-                            We continue refining solutions so they
-                            remain useful, efficient and scalable.
+
+                            We refine the delivered solution for
+                            better performance, usability and growth.
+
                         </p>
 
-                    </div>
 
-                </div>
+                        <div class="help-reveal">
 
+                            <span>
+                                Optimize
+                            </span>
 
-                <div class="showcase-action">
+                            <span>
+                                Support
+                            </span>
 
-                    <a
-                        href="services.html"
-                        class="btn btn-orange magnetic"
-                    >
+                            <span>
+                                Scale
+                            </span>
 
-                        VIEW ALL SERVICES
+                        </div>
 
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
+                    </article>
 
                 </div>
 
@@ -1363,32 +1138,32 @@
 
 
         <!-- =====================================================
-             PROJECTS
+             PROCESS — INTERACTIVE TIMELINE
         ====================================================== -->
 
         <section
-            class="projects scroll-section"
-            id="projects"
+            id="our-process"
+            class="process-section section scroll-section"
         >
+
+            <div class="process-background-grid"></div>
 
             <div class="container">
 
-
-                <div class="projects-heading reveal-item">
+                <div class="process-intro reveal-item">
 
                     <div>
 
                         <p class="eyebrow">
-                            SELECTED WORK
+                            OUR PROCESS
                         </p>
-
 
                         <h2 class="section-title">
 
-                            Ideas we've
+                            A clear path from
 
                             <em>
-                                built.
+                                idea to impact.
                             </em>
 
                         </h2>
@@ -1396,56 +1171,75 @@
                     </div>
 
 
-                    <p class="projects-intro">
+                    <p>
 
-                        A combination of engineering,
-                        technology and creative problem solving.
+                        Hover each stage on desktop or tap on mobile.
+                        The active stage expands to show how the
+                        project progresses.
 
                     </p>
 
                 </div>
 
 
-                <div class="projects-grid">
+                <div class="process-experience">
 
+                    <div class="process-line">
+
+                        <span
+                            class="process-line-progress"
+                            id="processLineProgress"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- STEP 1 -->
 
                     <article
-                        class="project-card project-large reveal-item"
+                        class="process-step process-step-orange active reveal-item"
+                        data-step="0"
+                        tabindex="0"
                     >
 
-                        <div class="project-image">
+                        <button
+                            type="button"
+                            class="process-step-trigger"
+                        >
 
-                            <img
-                                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1400&q=85"
-                                alt="Architecture project"
-                                loading="lazy"
-                            >
+                            <span class="process-step-circle">
+                                01
+                            </span>
 
+                            <span class="process-step-label">
+                                DISCOVER
+                            </span>
 
-                            <div class="project-overlay">
-
-                                <span>
-                                    CIVIL ENGINEERING
-                                </span>
-
-
-                                <h3>
-                                    Built Environment
-                                </h3>
+                        </button>
 
 
-                                <a
-                                    href="https://jplconstruct.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
+                        <div class="process-step-body">
 
-                                    VIEW PROJECT
+                            <span class="process-step-icon">
+                                <i class="fa-regular fa-comments"></i>
+                            </span>
 
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            <h3>
+                                Requirements & Discovery
+                            </h3>
 
-                                </a>
+                            <p>
 
+                                We understand objectives, site or
+                                system requirements, users, constraints
+                                and expected results.
+
+                            </p>
+
+                            <div class="process-tags">
+                                <span>Research</span>
+                                <span>Scope</span>
+                                <span>Consultation</span>
                             </div>
 
                         </div>
@@ -1453,41 +1247,52 @@
                     </article>
 
 
+                    <!-- STEP 2 -->
+
                     <article
-                        class="project-card reveal-item"
+                        class="process-step process-step-purple reveal-item"
+                        data-step="1"
+                        tabindex="0"
                     >
 
-                        <div class="project-image">
+                        <button
+                            type="button"
+                            class="process-step-trigger"
+                        >
 
-                            <img
-                                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1000&q=85"
-                                alt="Web development project"
-                                loading="lazy"
-                            >
+                            <span class="process-step-circle">
+                                02
+                            </span>
 
+                            <span class="process-step-label">
+                                DEFINE
+                            </span>
 
-                            <div class="project-overlay">
-
-                                <span>
-                                    IT & DIGITAL
-                                </span>
-
-
-                                <h3>
-                                    Digital Platform
-                                </h3>
+                        </button>
 
 
-                                <a
-                                    href="projects.html"
-                                >
+                        <div class="process-step-body">
 
-                                    VIEW PROJECT
+                            <span class="process-step-icon">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </span>
 
-                                    <i class="fa-solid fa-arrow-right"></i>
+                            <h3>
+                                Strategy & Design
+                            </h3>
 
-                                </a>
+                            <p>
 
+                                Engineering systems, architecture,
+                                user experience or software structure
+                                are translated into an executable plan.
+
+                            </p>
+
+                            <div class="process-tags">
+                                <span>Planning</span>
+                                <span>Design</span>
+                                <span>Architecture</span>
                             </div>
 
                         </div>
@@ -1495,41 +1300,105 @@
                     </article>
 
 
+                    <!-- STEP 3 -->
+
                     <article
-                        class="project-card reveal-item"
+                        class="process-step process-step-green reveal-item"
+                        data-step="2"
+                        tabindex="0"
                     >
 
-                        <div class="project-image">
+                        <button
+                            type="button"
+                            class="process-step-trigger"
+                        >
 
-                            <img
-                                src="https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&w=1000&q=85"
-                                alt="Engineering planning project"
-                                loading="lazy"
-                            >
+                            <span class="process-step-circle">
+                                03
+                            </span>
 
+                            <span class="process-step-label">
+                                BUILD
+                            </span>
 
-                            <div class="project-overlay">
-
-                                <span>
-                                    PLANNING
-                                </span>
-
-
-                                <h3>
-                                    Project Development
-                                </h3>
+                        </button>
 
 
-                                <a
-                                    href="projects.html"
-                                >
+                        <div class="process-step-body">
 
-                                    VIEW PROJECT
+                            <span class="process-step-icon">
+                                <i class="fa-solid fa-code-branch"></i>
+                            </span>
 
-                                    <i class="fa-solid fa-arrow-right"></i>
+                            <h3>
+                                Execution & Coordination
+                            </h3>
 
-                                </a>
+                            <p>
 
+                                The selected specialists execute the
+                                project while quality, communication
+                                and technical decisions remain aligned.
+
+                            </p>
+
+                            <div class="process-tags">
+                                <span>Develop</span>
+                                <span>Construct</span>
+                                <span>Coordinate</span>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- STEP 4 -->
+
+                    <article
+                        class="process-step process-step-blue reveal-item"
+                        data-step="3"
+                        tabindex="0"
+                    >
+
+                        <button
+                            type="button"
+                            class="process-step-trigger"
+                        >
+
+                            <span class="process-step-circle">
+                                04
+                            </span>
+
+                            <span class="process-step-label">
+                                DELIVER
+                            </span>
+
+                        </button>
+
+
+                        <div class="process-step-body">
+
+                            <span class="process-step-icon">
+                                <i class="fa-solid fa-rocket"></i>
+                            </span>
+
+                            <h3>
+                                Delivery & Evolution
+                            </h3>
+
+                            <p>
+
+                                We review, hand over and support the
+                                solution so it can continue improving
+                                after initial delivery.
+
+                            </p>
+
+                            <div class="process-tags">
+                                <span>QA</span>
+                                <span>Launch</span>
+                                <span>Support</span>
                             </div>
 
                         </div>
@@ -1539,17 +1408,33 @@
                 </div>
 
 
-                <div class="showcase-action">
+                <div class="process-assurance reveal-item">
+
+                    <div>
+
+                        <span>
+                            <i class="fa-solid fa-eye"></i>
+                        </span>
+
+                        <div>
+                            <strong>
+                                Transparent at every stage.
+                            </strong>
+
+                            <p>
+                                Clear scope, clear decisions and visible progress.
+                            </p>
+                        </div>
+
+                    </div>
+
 
                     <a
-                        href="projects.html"
+                        href="#contact"
                         class="btn btn-orange magnetic"
                     >
-
-                        VIEW ALL PROJECTS
-
+                        DISCUSS YOUR PROJECT
                         <i class="fa-solid fa-arrow-right"></i>
-
                     </a>
 
                 </div>
@@ -1560,209 +1445,1109 @@
 
 
         <!-- =====================================================
-             CONTACT PREVIEW
+             PROJECTS INTRO
         ====================================================== -->
 
         <section
-            class="contact scroll-section"
-            id="contact"
+            id="projects"
+            class="projects-intro section scroll-section"
         >
 
-            <div class="container contact-inner">
+            <div class="container">
+
+                <div class="projects-master-heading reveal-item">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            PROJECT SHOWCASE
+                        </p>
+
+                        <h2 class="section-title">
+
+                            Work across two
+
+                            <em>
+                                different worlds.
+                            </em>
+
+                        </h2>
+
+                    </div>
 
 
-                <div class="contact-copy reveal-item">
+                    <p>
 
-                    <p class="eyebrow">
-                        LET'S WORK TOGETHER
+                        The examples below demonstrate the types of
+                        Civil Engineering and IT projects SURREAL can
+                        present or develop. Replace concept images and
+                        descriptions with completed client work as your
+                        portfolio grows.
+
                     </p>
 
+                </div>
 
-                    <h2 class="section-title">
+            </div>
 
-                        Have an idea?
-
-                        <em>
-                            Let's build it.
-                        </em>
-
-                    </h2>
+        </section>
 
 
-                    <p class="about-text">
+        <!-- =====================================================
+             CIVIL PROJECTS
+        ====================================================== -->
 
-                        Tell us what you are working on.
-                        Whether it is a construction project,
-                        website, application or digital system,
-                        we'd love to hear about it.
+        <section
+            id="civil-projects"
+            class="discipline-projects civil-projects-section"
+        >
 
-                    </p>
+            <div class="container">
 
+                <div class="discipline-heading reveal-item">
 
-                    <div class="contact-info">
+                    <div class="discipline-heading-left">
 
-                        <div>
-
-                            <i class="fa-solid fa-envelope"></i>
-
-                            <span>
-                                surreal@gmail.com
-                            </span>
-
-                        </div>
-
+                        <span class="discipline-icon civil-discipline-icon">
+                            <i class="fa-solid fa-building"></i>
+                        </span>
 
                         <div>
 
-                            <i class="fa-solid fa-phone"></i>
-
-                            <span>
-                                +977 981-5376527
+                            <span class="discipline-overline">
+                                01 / CIVIL ENGINEERING
                             </span>
 
-                        </div>
-
-
-                        <div>
-
-                            <i class="fa-solid fa-location-dot"></i>
-
-                            <span>
-                                Tinkune, Kathmandu, Nepal
-                            </span>
+                            <h2>
+                                Built Environment
+                                <em>& Infrastructure</em>
+                            </h2>
 
                         </div>
 
                     </div>
 
 
-                    <div class="contact-social">
+                    <p>
 
-                        <a href="#" aria-label="Google">
-                            <i class="fa-brands fa-google"></i>
-                        </a>
+                        Residential, commercial, structural,
+                        architectural and infrastructure concepts.
 
-                        <a href="#" aria-label="WhatsApp">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </a>
+                    </p>
 
-                        <a href="#" aria-label="Facebook">
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
+                </div>
 
-                        <a href="#" aria-label="Instagram">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
 
-                        <a href="#" aria-label="LinkedIn">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
+                <div class="discipline-project-grid">
+
+                    <!-- CIVIL 01 -->
+
+                    <article
+                        class="showcase-card showcase-large reveal-item"
+                        data-project-index="0"
+                        tabindex="0"
+                    >
+
+                        <div class="showcase-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=90"
+                                alt="Commercial development project"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="showcase-shade"></div>
+
+                        <div class="showcase-top">
+
+                            <span>
+                                COMMERCIAL
+                            </span>
+
+                            <small>
+                                C01
+                            </small>
+
+                        </div>
+
+
+                        <div class="showcase-content">
+
+                            <h3>
+                                Urban Business Complex
+                            </h3>
+
+                            <p>
+                                Structural + Architectural Planning
+                            </p>
+
+                            <button class="showcase-view" type="button">
+
+                                VIEW PROJECT
+
+                                <span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CIVIL 02 -->
+
+                    <article
+                        class="showcase-card reveal-item"
+                        data-project-index="1"
+                        tabindex="0"
+                    >
+
+                        <div class="showcase-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1400&q=90"
+                                alt="Construction development"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="showcase-shade"></div>
+
+                        <div class="showcase-top">
+
+                            <span>
+                                CONSTRUCTION
+                            </span>
+
+                            <small>
+                                C02
+                            </small>
+
+                        </div>
+
+
+                        <div class="showcase-content">
+
+                            <h3>
+                                Integrated Construction Development
+                            </h3>
+
+                            <p>
+                                Planning + Estimation + Supervision
+                            </p>
+
+                            <button class="showcase-view" type="button">
+
+                                VIEW PROJECT
+
+                                <span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CIVIL 03 LOCAL NEPAL -->
+
+                    <article
+                        class="showcase-card showcase-local reveal-item"
+                        data-project-index="2"
+                        tabindex="0"
+                    >
+
+                        <div class="showcase-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1500&q=90"
+                                alt="Modern residential house"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="showcase-shade"></div>
+
+                        <div class="showcase-top">
+
+                            <span class="local-badge">
+                                <i class="fa-solid fa-location-dot"></i>
+                                NEPAL CONCEPT
+                            </span>
+
+                            <small>
+                                C03
+                            </small>
+
+                        </div>
+
+
+                        <div class="showcase-content">
+
+                            <h3>
+                                Kathmandu Family Residence
+                            </h3>
+
+                            <p>
+                                Local Residential House Concept
+                            </p>
+
+                            <button class="showcase-view" type="button">
+
+                                VIEW PROJECT
+
+                                <span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CIVIL 04 -->
+
+                    <article
+                        class="showcase-card reveal-item"
+                        data-project-index="3"
+                        tabindex="0"
+                    >
+
+                        <div class="showcase-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1500&q=90"
+                                alt="Infrastructure development"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="showcase-shade"></div>
+
+                        <div class="showcase-top">
+
+                            <span>
+                                INFRASTRUCTURE
+                            </span>
+
+                            <small>
+                                C04
+                            </small>
+
+                        </div>
+
+
+                        <div class="showcase-content">
+
+                            <h3>
+                                Municipal Infrastructure Upgrade
+                            </h3>
+
+                            <p>
+                                Site Planning + Civil Works
+                            </p>
+
+                            <button class="showcase-view" type="button">
+
+                                VIEW PROJECT
+
+                                <span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- CIVIL 05 -->
+
+                    <article
+                        class="showcase-card showcase-wide reveal-item"
+                        data-project-index="4"
+                        tabindex="0"
+                    >
+
+                        <div class="showcase-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1700&q=90"
+                                alt="Corporate interior planning"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="showcase-shade"></div>
+
+                        <div class="showcase-top">
+
+                            <span>
+                                ARCHITECTURE & INTERIOR
+                            </span>
+
+                            <small>
+                                C05
+                            </small>
+
+                        </div>
+
+
+                        <div class="showcase-content">
+
+                            <h3>
+                                Contemporary Corporate Workspace
+                            </h3>
+
+                            <p>
+                                Architecture + Interior Planning
+                            </p>
+
+                            <button class="showcase-view" type="button">
+
+                                VIEW PROJECT
+
+                                <span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             IT PROJECTS
+        ====================================================== -->
+
+        <section
+            id="it-projects"
+            class="discipline-projects it-projects-section"
+        >
+
+            <div class="it-project-orb"></div>
+
+            <div class="container">
+
+                <div class="discipline-heading reveal-item">
+
+                    <div class="discipline-heading-left">
+
+                        <span class="discipline-icon it-discipline-icon">
+                            <i class="fa-solid fa-code"></i>
+                        </span>
+
+                        <div>
+
+                            <span class="discipline-overline">
+                                02 / IT & DIGITAL
+                            </span>
+
+                            <h2>
+                                Digital Products
+                                <em>& Platforms</em>
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <p>
+
+                        Websites, web applications, business
+                        platforms, mobile products and secure systems.
+
+                    </p>
+
+                </div>
+
+
+                <div class="discipline-project-grid">
+
+                    <!-- IT 01 -->
+
+                    <article
+                        class="showcase-card showcase-large reveal-item"
+                        data-project-index="5"
+                        tabindex="0"
+                    >
+
+                        <div class="showcase-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1800&q=90"
+                                alt="Business web dashboard"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="showcase-shade"></div>
+
+                        <div class="showcase-top">
+
+                            <span>
+                                WEB APPLICATION
+                            </span>
+
+                            <small>
+                                IT01
+                            </small>
+
+                        </div>
+
+
+                        <div class="showcase-content">
+
+                            <h3>
+                                Enterprise Management Platform
+                            </h3>
+
+                            <p>
+                                CRM + Analytics + Operations
+                            </p>
+
+                            <button class="showcase-view" type="button">
+
+                                VIEW PROJECT
+
+                                <span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- IT 02 LOCAL NEPAL WEBSITE -->
+
+                    <article
+                        class="showcase-card showcase-local reveal-item"
+                        data-project-index="6"
+                        tabindex="0"
+                    >
+
+                        <div class="showcase-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1500&q=90"
+                                alt="Nepal local business website"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="showcase-shade"></div>
+
+                        <div class="showcase-top">
+
+                            <span class="local-badge">
+                                <i class="fa-solid fa-location-dot"></i>
+                                NEPAL CONCEPT
+                            </span>
+
+                            <small>
+                                IT02
+                            </small>
+
+                        </div>
+
+
+                        <div class="showcase-content">
+
+                            <h3>
+                                Nepal Property Marketplace
+                            </h3>
+
+                            <p>
+                                Local Property Website + Listings
+                            </p>
+
+                            <button class="showcase-view" type="button">
+
+                                VIEW PROJECT
+
+                                <span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- IT 03 WEBSITE -->
+
+                    <article
+                        class="showcase-card reveal-item"
+                        data-project-index="7"
+                        tabindex="0"
+                    >
+
+                        <div class="showcase-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1500&q=90"
+                                alt="Corporate website development"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="showcase-shade"></div>
+
+                        <div class="showcase-top">
+
+                            <span>
+                                CORPORATE WEBSITE
+                            </span>
+
+                            <small>
+                                IT03
+                            </small>
+
+                        </div>
+
+
+                        <div class="showcase-content">
+
+                            <h3>
+                                Modern Corporate Web Experience
+                            </h3>
+
+                            <p>
+                                Website + CMS + Lead Generation
+                            </p>
+
+                            <button class="showcase-view" type="button">
+
+                                VIEW PROJECT
+
+                                <span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- IT 04 -->
+
+                    <article
+                        class="showcase-card reveal-item"
+                        data-project-index="8"
+                        tabindex="0"
+                    >
+
+                        <div class="showcase-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1500&q=90"
+                                alt="Business automation development"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="showcase-shade"></div>
+
+                        <div class="showcase-top">
+
+                            <span>
+                                AUTOMATION
+                            </span>
+
+                            <small>
+                                IT04
+                            </small>
+
+                        </div>
+
+
+                        <div class="showcase-content">
+
+                            <h3>
+                                Business Workflow Automation
+                            </h3>
+
+                            <p>
+                                Internal Tools + Workflow + Reporting
+                            </p>
+
+                            <button class="showcase-view" type="button">
+
+                                VIEW PROJECT
+
+                                <span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- IT 05 -->
+
+                    <article
+                        class="showcase-card showcase-wide reveal-item"
+                        data-project-index="9"
+                        tabindex="0"
+                    >
+
+                        <div class="showcase-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1700&q=90"
+                                alt="Cyber security infrastructure"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="showcase-shade"></div>
+
+                        <div class="showcase-top">
+
+                            <span>
+                                CYBER SECURITY
+                            </span>
+
+                            <small>
+                                IT05
+                            </small>
+
+                        </div>
+
+
+                        <div class="showcase-content">
+
+                            <h3>
+                                Secure Business Infrastructure
+                            </h3>
+
+                            <p>
+                                Security + Access + Data Protection
+                            </p>
+
+                            <button class="showcase-view" type="button">
+
+                                VIEW PROJECT
+
+                                <span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROJECT MODAL
+        ====================================================== -->
+
+        <div
+            class="project-modal"
+            id="projectModal"
+            aria-hidden="true"
+        >
+
+            <div
+                class="project-modal-backdrop"
+                data-project-close
+            ></div>
+
+
+            <div
+                class="project-modal-dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="modalProjectTitle"
+            >
+
+                <button
+                    type="button"
+                    class="project-modal-close"
+                    id="projectModalClose"
+                    aria-label="Close project"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+
+                <div class="project-modal-media">
+
+                    <img
+                        id="modalProjectImage"
+                        src=""
+                        alt=""
+                    >
+
+                    <div class="project-modal-image-shade"></div>
+
+
+                    <div class="project-modal-counter">
+
+                        <span id="modalCurrentProject">
+                            01
+                        </span>
+
+                        <i></i>
+
+                        <span id="modalTotalProjects">
+                            05
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="modal-arrow modal-arrow-prev"
+                        id="modalPrev"
+                        aria-label="Previous project"
+                    >
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="modal-arrow modal-arrow-next"
+                        id="modalNext"
+                        aria-label="Next project"
+                    >
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="project-modal-content">
+
+                    <div>
+
+                        <span
+                            class="modal-project-category"
+                            id="modalProjectCategory"
+                        ></span>
+
+                        <p
+                            class="modal-project-type"
+                            id="modalProjectType"
+                        ></p>
+
+                        <h2 id="modalProjectTitle"></h2>
+
+                        <p
+                            class="modal-project-location"
+                            id="modalProjectLocation"
+                        ></p>
+
+                        <p
+                            class="modal-project-description"
+                            id="modalProjectDescription"
+                        ></p>
+
+                        <div
+                            class="modal-project-tags"
+                            id="modalProjectTags"
+                        ></div>
+
+                    </div>
+
+
+                    <div class="project-modal-footer">
+
+                        <div class="modal-discipline">
+
+                            <span>
+                                <i
+                                    class="fa-solid fa-building"
+                                    id="modalProjectIcon"
+                                ></i>
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    DISCIPLINE
+                                </small>
+
+                                <strong id="modalProjectDiscipline"></strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="modal-mobile-navigation">
+
+                            <button
+                                type="button"
+                                id="modalMobilePrev"
+                            >
+                                <i class="fa-solid fa-arrow-left"></i>
+                                PREVIOUS
+                            </button>
+
+                            <button
+                                type="button"
+                                id="modalMobileNext"
+                            >
+                                NEXT
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-
-                <form
-                    class="contact-form reveal-item"
-                    id="contactForm"
-                >
-
-                    <div class="form-row">
-
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Your name"
-                            autocomplete="name"
-                            required
-                        >
-
-
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Email address"
-                            autocomplete="email"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="form-row">
-
-                        <input
-                            type="text"
-                            name="company"
-                            placeholder="Company / Organization"
-                            autocomplete="organization"
-                        >
-
-
-                        <input
-                            type="tel"
-                            name="phone"
-                            placeholder="Phone number"
-                            autocomplete="tel"
-                        >
-
-                    </div>
-
-
-                    <input
-                        type="hidden"
-                        name="title"
-                        value="New Project Inquiry"
-                    >
-
-
-                    <textarea
-                        name="message"
-                        rows="7"
-                        placeholder="Tell us about your project..."
-                        required
-                    ></textarea>
-
-
-                    <button
-                        type="submit"
-                        class="btn btn-orange full-btn magnetic"
-                        id="submitBtn"
-                    >
-
-                        <span id="submitText">
-                            SEND MESSAGE
-                        </span>
-
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </button>
-
-
-                    <p
-                        class="form-note"
-                        id="formNote"
-                        aria-live="polite"
-                    ></p>
-
-                </form>
-
             </div>
 
+        </div>
 
-            <div class="showcase-action">
 
-                <a
-                    href="contact.html"
-                    class="btn btn-dark magnetic"
-                >
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
 
-                    OPEN CONTACT PAGE
+        <section
+            id="contact"
+            class="contact section scroll-section"
+        >
 
-                    <i class="fa-solid fa-arrow-right"></i>
+            <div class="container">
 
-                </a>
+                <div class="contact-panel">
+
+                    <div class="contact-copy reveal-item">
+
+                        <p class="eyebrow contact-eyebrow">
+                            START SOMETHING
+                        </p>
+
+                        <h2 class="section-title">
+
+                            Have an idea?
+
+                            <em>
+                                Let's build it.
+                            </em>
+
+                        </h2>
+
+                        <p class="contact-description">
+
+                            Tell us about your next engineering,
+                            website, application or digital system.
+
+                        </p>
+
+
+                        <div class="contact-info">
+
+                            <div>
+
+                                <span>
+                                    <i class="fa-solid fa-envelope"></i>
+                                </span>
+
+                                <p>
+
+                                    <small>
+                                        EMAIL
+                                    </small>
+
+                                    <a href="mailto:snoozzybruv@gmail.com">
+                                        surreal.engineerings@gmail.com
+                                    </a>
+
+                                </p>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </span>
+
+                                <p>
+
+                                    <small>
+                                        LOCATION
+                                    </small>
+
+                                    Nepal
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        id="contactForm"
+                        class="contact-form reveal-item"
+                    >
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label for="name">
+                                    Full Name
+                                </label>
+
+                                <input
+                                    id="name"
+                                    name="name"
+                                    type="text"
+                                    placeholder="Your name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    Email Address
+                                </label>
+
+                                <input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    placeholder="name@example.com"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="company">
+                                    Company
+                                </label>
+
+                                <input
+                                    id="company"
+                                    name="company"
+                                    type="text"
+                                    placeholder="Company name"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="phone">
+                                    Phone
+                                </label>
+
+                                <input
+                                    id="phone"
+                                    name="phone"
+                                    type="tel"
+                                    placeholder="Phone number"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group form-group-full">
+
+                                <label for="message">
+                                    Project Details
+                                </label>
+
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    placeholder="Tell us what you want to build..."
+                                    required
+                                ></textarea>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-orange full-btn magnetic"
+                            id="submitBtn"
+                        >
+
+                            <span id="submitText">
+                                SEND MESSAGE
+                            </span>
+
+                            <i class="fa-solid fa-paper-plane"></i>
+
+                        </button>
+
+
+                        <p
+                            class="form-note"
+                            id="formNote"
+                        ></p>
+
+                    </form>
+
+                </div>
 
             </div>
 
@@ -1775,129 +2560,101 @@
          FOOTER
     ====================================================== -->
 
-    <footer class="site-footer">
+    <footer class="footer">
 
-        <div class="container footer-inner">
-
+        <div class="container footer-main">
 
             <div class="footer-brand">
 
-                <a
-                    href="index.html"
-                    class="logo footer-logo"
+                <img
+                    src="logo1.png"
+                    alt="SURREAL Engineering"
+                    class="footer-logo"
                 >
 
-                    <img
-                        src="logo1.png"
-                        alt="SURREAL IT & Civil Engineering"
-                        class="footer-logo-image"
-                    >
-
-                </a>
-
-
                 <p>
-                    Engineering physical spaces and
-                    digital experiences for a changing world.
+
+                    Engineering, technology and design brought
+                    together to build practical solutions.
+
                 </p>
 
+            </div>
 
-                <div class="footer-social">
 
-                    <a href="#" aria-label="Facebook">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
+            <div class="footer-links">
 
-                    <a href="#" aria-label="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
+                <h4>
+                    COMPANY
+                </h4>
 
-                    <a href="#" aria-label="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
+                <a href="#about">
+                    About
+                </a>
 
-                </div>
+                <a href="#services">
+                    Services
+                </a>
+
+                <a href="#projects">
+                    Projects
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
 
             </div>
 
 
-            <div class="footer-col">
+            <div class="footer-links">
 
                 <h4>
-                    EXPLORE
+                    EXPERTISE
                 </h4>
 
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a >Services</a>
-                <a >Projects</a>
-                <a href="contact.html">Contact</a>
-
-            </div>
-
-
-            <div class="footer-col">
-
-                <h4>
-                    SERVICES
-                </h4>
-
-                <a >
+                <a href="#civil-projects">
                     Civil Engineering
                 </a>
 
-                <a >
-                    Software Development
+                <a href="#it-projects">
+                    Websites
                 </a>
 
-                <a >
-                    Web Development
+                <a href="#it-projects">
+                    Applications
                 </a>
 
-                <a >
-                    Mobile Apps
-                </a>
-
-                <a >
-                    UI / UX Design
+                <a href="#it-projects">
+                    Cyber Security
                 </a>
 
             </div>
 
 
-            <div class="footer-news">
+            <div class="footer-newsletter">
 
                 <h4>
                     STAY CONNECTED
                 </h4>
 
-
                 <p>
-                    Subscribe for company updates,
-                    new projects and useful insights.
+                    Receive project and company updates.
                 </p>
 
-
-                <form
-                    class="newsletter-form"
-                    id="newsletterForm"
-                >
+                <form id="newsletterForm">
 
                     <input
                         type="email"
-                        name="newsletter_email"
-                        placeholder="Your email"
+                        placeholder="Email address"
                         required
                     >
-
 
                     <button
                         type="submit"
                         aria-label="Subscribe"
                     >
-
                         <i class="fa-solid fa-arrow-right"></i>
-
                     </button>
 
                 </form>
@@ -1907,94 +2664,28 @@
         </div>
 
 
-        <div class="footer-bottom">
+        <div class="container footer-bottom">
 
-            <div class="container footer-bottom-inner">
+            <p>
+                © 2026 SURREAL Engineering. All rights reserved.
+            </p>
 
-                <p>
-                    © 2026 SURREAL. All rights reserved.
-                </p>
-
-
-                <div class="footer-legal">
-
-                    <a href="privacy.html">
-                        Privacy
-                    </a>
-
-                    <a href="terms.html">
-                        Terms
-                    </a>
-
-                </div>
-
-            </div>
+            <span>
+                IT & Civil Engineering
+            </span>
 
         </div>
 
     </footer>
 
 
-    <!-- =====================================================
-         IMAGE LIGHTBOX
-    ====================================================== -->
-
-    <div
-        class="civil-lightbox"
-        id="civilLightbox"
-        aria-hidden="true"
-    >
-
-        <div class="lightbox-inner">
-
-            <button
-                type="button"
-                class="lightbox-close"
-                id="lightboxClose"
-                aria-label="Close image"
-            >
-
-                <i class="fa-solid fa-xmark"></i>
-
-            </button>
-
-
-            <div class="lightbox-image-wrap">
-
-                <img
-                    id="lightboxImage"
-                    src=""
-                    alt=""
-                >
-
-            </div>
-
-
-            <div class="lightbox-caption">
-
-                <span id="lightboxCategory">
-                    CIVIL ENGINEERING
-                </span>
-
-                <h3 id="lightboxTitle">
-                    Project
-                </h3>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- EMAILJS -->
-
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-
-    <!-- JAVASCRIPT -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
 
     <script src="script.js"></script>
+
+    <script src="about.js"></script>
 
 </body>
 

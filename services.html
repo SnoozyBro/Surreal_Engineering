@@ -1,0 +1,7882 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="SURREAL Civil Engineering and IT services including structural engineering, infrastructure, construction management, software development, cybersecurity, cloud, automation, data systems and digital transformation."
+    >
+
+    <meta
+        name="author"
+        content="SURREAL Engineering"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b1f3a"
+    >
+
+    <title>
+        Services — SURREAL Engineering
+    </title>
+
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="circlelogo.png"
+    >
+
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@400;500;600&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+
+    <style>
+
+        /* =========================================================
+           SURREAL SERVICES
+           CURRENT INDEX THEME
+        ========================================================= */
+
+        :root {
+
+            color-scheme: light dark;
+
+            --orange: #f6a91b;
+            --orange-2: #f4791d;
+            --yellow: #ffc94d;
+
+            --navy: #0b1f3a;
+            --navy-2: #12325a;
+            --navy-3: #183f6d;
+
+            --blue: #3f82d1;
+            --blue-2: #60a5e7;
+
+            --purple: #7357d9;
+            --purple-2: #927cef;
+
+            --green: #3f9b72;
+            --green-2: #63ba91;
+
+            --page-bg: #f6f8fb;
+
+            --surface: #ffffff;
+            --surface-2: #f3f6fa;
+
+            --section-blue: #eef5fb;
+            --section-purple: #f6f3ff;
+            --section-green: #f0f8f4;
+            --section-warm: #fff8ed;
+
+            --text: #10233d;
+            --text-soft: #586d84;
+            --muted: #8190a1;
+
+            --border: rgba(13, 35, 66, .10);
+            --border-strong: rgba(13, 35, 66, .17);
+
+            --shadow:
+                0 18px 55px
+                rgba(13, 35, 66, .08);
+
+            --shadow-hover:
+                0 35px 90px
+                rgba(13, 35, 66, .15);
+
+            --container: 1280px;
+
+        }
+
+
+
+        /* =========================================================
+           DEVICE DARK MODE
+        ========================================================= */
+
+        @media (prefers-color-scheme: dark) {
+
+            :root {
+
+                --page-bg: #071526;
+
+                --surface: #0d213a;
+                --surface-2: #142d49;
+
+                --section-blue: #0b223c;
+                --section-purple: #181d3a;
+                --section-green: #102d2a;
+                --section-warm: #28231a;
+
+                --text: #f5f8fb;
+                --text-soft: #b5c4d5;
+                --muted: #8498ad;
+
+                --border:
+                    rgba(255, 255, 255, .09);
+
+                --border-strong:
+                    rgba(255, 255, 255, .15);
+
+                --shadow:
+                    0 20px 60px
+                    rgba(0,0,0,.22);
+
+                --shadow-hover:
+                    0 36px 95px
+                    rgba(0,0,0,.34);
+
+            }
+
+        }
+
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        *,
+        *::before,
+        *::after {
+
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        html,
+        body {
+
+            width: 100%;
+
+            max-width: 100%;
+
+            overflow-x: hidden;
+
+        }
+
+
+        body {
+
+            margin: 0;
+
+            color: var(--text);
+
+            background: var(--page-bg);
+
+            font-family:
+                "Manrope",
+                "Poppins",
+                Arial,
+                sans-serif;
+
+        }
+
+
+        body.nav-open {
+
+            overflow: hidden;
+
+        }
+
+
+        img {
+
+            max-width: 100%;
+
+            display: block;
+
+        }
+
+
+        a {
+
+            color: inherit;
+
+        }
+
+
+        button,
+        input {
+
+            font: inherit;
+
+        }
+
+
+        button {
+
+            cursor: pointer;
+
+        }
+
+
+        .container {
+
+            width:
+                min(
+                    calc(100% - 48px),
+                    var(--container)
+                );
+
+            margin: 0 auto;
+
+        }
+
+
+
+        /* =========================================================
+           INTERACTIVE SECTION BACKGROUND
+        ========================================================= */
+
+        .interactive-section {
+
+            position: relative;
+
+            overflow: hidden;
+
+            --cursor-x: 50%;
+            --cursor-y: 50%;
+
+        }
+
+
+        .interactive-section::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 0;
+
+            pointer-events: none;
+
+            opacity: .72;
+
+            background:
+
+                radial-gradient(
+                    420px circle at
+                    var(--cursor-x)
+                    var(--cursor-y),
+
+                    rgba(63, 130, 209, .08),
+
+                    transparent 72%
+                );
+
+            transition:
+                opacity .25s ease;
+
+        }
+
+
+        .interactive-section
+        > .container {
+
+            position: relative;
+
+            z-index: 3;
+
+        }
+
+
+
+        /* =========================================================
+           BACKGROUND PARTICLES
+        ========================================================= */
+
+        .section-particles {
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 1;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+        }
+
+
+        .section-particle {
+
+            position: absolute;
+
+            width: var(--particle-size);
+
+            height: var(--particle-size);
+
+            border-radius: 50%;
+
+            opacity: var(--particle-opacity);
+
+            background: var(--particle-color);
+
+            transform:
+
+                translate3d(
+                    var(--particle-x),
+                    var(--particle-y),
+                    0
+                );
+
+            box-shadow:
+
+                0 0 15px
+                color-mix(
+                    in srgb,
+                    var(--particle-color)
+                    50%,
+                    transparent
+                );
+
+            will-change: transform;
+
+        }
+
+
+
+        /* =========================================================
+           COMMON
+        ========================================================= */
+
+        .eyebrow {
+
+            color: var(--orange);
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 2.6px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .section-title {
+
+            margin:
+                18px 0
+                0;
+
+            color: var(--text);
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(
+                    46px,
+                    5.6vw,
+                    78px
+                );
+
+            font-weight: 500;
+
+            line-height: .98;
+
+            letter-spacing: -2.5px;
+
+        }
+
+
+        .section-title em {
+
+            color: var(--orange);
+
+            font-style: italic;
+
+        }
+
+
+        .section-intro {
+
+            color: var(--text-soft);
+
+            font-size: 14px;
+
+            line-height: 1.85;
+
+        }
+
+
+
+        /* =========================================================
+           BUTTONS
+        ========================================================= */
+
+        .btn {
+
+            min-height: 50px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 11px;
+
+            padding:
+                0 21px;
+
+            border:
+                1px solid
+                transparent;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: .8px;
+
+            transition:
+                transform .3s ease,
+                background .3s ease,
+                color .3s ease,
+                border-color .3s ease,
+                box-shadow .3s ease;
+
+        }
+
+
+        .btn-orange {
+
+            color: #10233d;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #ffd261,
+                    var(--orange)
+                );
+
+            box-shadow:
+
+                0 13px 34px
+                rgba(246,169,27,.18);
+
+        }
+
+
+        .btn-orange:hover {
+
+            background: #ffffff;
+
+            box-shadow:
+
+                0 16px 45px
+                rgba(246,169,27,.25);
+
+        }
+
+
+        .btn-outline {
+
+            color: var(--text);
+
+            border-color: var(--border-strong);
+
+            background: transparent;
+
+        }
+
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        .site-header {
+
+            position: fixed;
+
+            left: 0;
+            top: 0;
+
+            z-index: 1000;
+
+            width: 100%;
+
+            color: #ffffff;
+
+            border-bottom:
+
+                1px solid
+                rgba(255,255,255,.07);
+
+            background:
+                rgba(7,21,38,.84);
+
+            backdrop-filter: blur(20px);
+
+            -webkit-backdrop-filter: blur(20px);
+
+            transition:
+
+                transform .42s
+                cubic-bezier(.22,.61,.36,1),
+
+                background .3s ease,
+
+                box-shadow .3s ease;
+
+        }
+
+
+        .site-header.scrolled {
+
+            background:
+                rgba(7,21,38,.97);
+
+            box-shadow:
+
+                0 15px 45px
+                rgba(0,0,0,.17);
+
+        }
+
+
+        .site-header.nav-hidden {
+
+            transform:
+                translateY(-115%);
+
+        }
+
+
+        .header-inner {
+
+            min-height: 78px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 28px;
+
+        }
+
+
+        .logo {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            text-decoration: none;
+
+        }
+
+
+        .nav-logo {
+
+            width: 185px;
+
+            height: auto;
+
+        }
+
+
+        .main-nav {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 34px;
+
+        }
+
+
+        .nav-link {
+
+            position: relative;
+
+            color: #aebdcd;
+
+            text-decoration: none;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 1.1px;
+
+        }
+
+
+        .nav-link::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -10px;
+
+            width: 0;
+
+            height: 2px;
+
+            background: var(--orange);
+
+            transition: width .3s ease;
+
+        }
+
+
+        .nav-link:hover,
+        .nav-link.active {
+
+            color: #ffffff;
+
+        }
+
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+
+            width: 100%;
+
+        }
+
+
+        .header-actions {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+
+        .search-box {
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+
+        .search-box input {
+
+            width: 0;
+
+            opacity: 0;
+
+            padding: 0;
+
+            border: 0;
+
+            outline: none;
+
+            color: #ffffff;
+
+            background: transparent;
+
+            transition:
+                width .3s ease,
+                opacity .3s ease,
+                padding .3s ease;
+
+        }
+
+
+        .search-box.open input {
+
+            width: 165px;
+
+            opacity: 1;
+
+            padding:
+                9px 10px;
+
+        }
+
+
+        .icon-btn {
+
+            width: 40px;
+
+            height: 40px;
+
+            display: grid;
+
+            place-items: center;
+
+            border: 0;
+
+            color: #ffffff;
+
+            background: transparent;
+
+        }
+
+
+        .hamburger {
+
+            display: none;
+
+        }
+
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .services-hero {
+
+            min-height: 96vh;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            overflow: hidden;
+
+            padding:
+                145px 0
+                90px;
+
+            color: #ffffff;
+
+            background:
+
+                radial-gradient(
+                    circle at 82% 30%,
+                    rgba(246,169,27,.16),
+                    transparent 26%
+                ),
+
+                radial-gradient(
+                    circle at 15% 85%,
+                    rgba(63,130,209,.18),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 55% 15%,
+                    rgba(115,87,217,.09),
+                    transparent 22%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #071526,
+                    #0b2544 58%,
+                    #12345b
+                );
+
+        }
+
+
+        .hero-grid-bg {
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 0;
+
+            opacity: .11;
+
+            pointer-events: none;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(255,255,255,.07) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.07) 1px,
+                    transparent 1px
+                );
+
+            background-size:
+                64px 64px;
+
+            mask-image:
+
+                linear-gradient(
+                    to bottom,
+                    #000,
+                    transparent 96%
+                );
+
+        }
+
+
+        .services-hero::after {
+
+            background:
+
+                radial-gradient(
+                    480px circle at
+                    var(--cursor-x)
+                    var(--cursor-y),
+
+                    rgba(246,169,27,.10),
+
+                    rgba(63,130,209,.05) 35%,
+
+                    transparent 72%
+                );
+
+        }
+
+
+        .services-hero-inner {
+
+            position: relative;
+
+            z-index: 3;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0,1.08fr)
+                minmax(430px,.92fr);
+
+            gap:
+                clamp(
+                    45px,
+                    6vw,
+                    90px
+                );
+
+            align-items: center;
+
+        }
+
+
+        .services-hero-copy {
+
+            min-width: 0;
+
+            max-width: 790px;
+
+        }
+
+
+        .services-hero h1 {
+
+            max-width: 840px;
+
+            margin:
+                20px 0
+                28px;
+
+            color: #ffffff;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(
+                    62px,
+                    7vw,
+                    102px
+                );
+
+            font-weight: 500;
+
+            line-height: .94;
+
+            letter-spacing: -4px;
+
+        }
+
+
+        .services-hero h1 em {
+
+            display: block;
+
+            color: var(--orange);
+
+            font-style: italic;
+
+        }
+
+
+        .services-hero-copy > p {
+
+            max-width: 670px;
+
+            margin: 0;
+
+            color: #b7c7d8;
+
+            font-size: 15px;
+
+            line-height: 1.9;
+
+        }
+
+
+        .hero-actions {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 35px;
+
+        }
+
+
+        .services-hero
+        .btn-outline {
+
+            color: #ffffff;
+
+            border-color:
+                rgba(255,255,255,.19);
+
+        }
+
+
+        .services-hero
+        .btn-outline:hover {
+
+            color: var(--navy);
+
+            background: #ffffff;
+
+        }
+
+
+
+        /* =========================================================
+           HERO ORBIT SYSTEM
+        ========================================================= */
+
+        .services-icon-universe {
+
+            position: relative;
+
+            width: 100%;
+
+            max-width: 600px;
+
+            min-height: 590px;
+
+            justify-self: end;
+
+            perspective: 1200px;
+
+        }
+
+
+        .universe-orbit {
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 50%;
+
+            border-radius: 50%;
+
+            transform:
+                translate(-50%,-50%);
+
+            pointer-events: none;
+
+        }
+
+
+        .universe-orbit.one {
+
+            width: 320px;
+
+            height: 320px;
+
+            border:
+
+                1px solid
+                rgba(246,169,27,.20);
+
+        }
+
+
+        .universe-orbit.two {
+
+            width: 440px;
+
+            height: 440px;
+
+            border:
+
+                1px solid
+                rgba(63,130,209,.15);
+
+        }
+
+
+        .universe-orbit.three {
+
+            width: 555px;
+
+            height: 555px;
+
+            border:
+
+                1px solid
+                rgba(115,87,217,.10);
+
+        }
+
+
+
+        /* =========================================================
+           CENTER CONTENT
+        ========================================================= */
+
+        .universe-center {
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 50%;
+
+            z-index: 12;
+
+            width: 150px;
+
+            height: 150px;
+
+            display: grid;
+
+            place-items: center;
+
+            padding: 20px;
+
+            border:
+
+                1px solid
+                rgba(255,255,255,.14);
+
+            border-radius: 50%;
+
+            background:
+                rgba(10,35,61,.88);
+
+            backdrop-filter:
+                blur(17px);
+
+            -webkit-backdrop-filter:
+                blur(17px);
+
+            box-shadow:
+
+                0 0 75px
+                rgba(246,169,27,.10),
+
+                inset 0 0 32px
+                rgba(255,255,255,.025);
+
+            transform:
+                translate(-50%,-50%);
+
+        }
+
+
+        .universe-center::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: -17px;
+
+            border-radius: 50%;
+
+            border:
+
+                1px dashed
+                rgba(246,169,27,.20);
+
+            animation:
+                centerRingSpin
+                18s linear
+                infinite;
+
+        }
+
+
+        @keyframes centerRingSpin {
+
+            from {
+
+                transform:
+                    rotate(0deg);
+
+            }
+
+            to {
+
+                transform:
+                    rotate(360deg);
+
+            }
+
+        }
+
+
+        .universe-center-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            text-align: center;
+
+        }
+
+
+        .universe-center-content i {
+
+            display: block;
+
+            margin-bottom: 10px;
+
+            color: var(--orange);
+
+            font-size: 19px;
+
+        }
+
+
+        .universe-center-content span {
+
+            display: block;
+
+            color: #91a7bd;
+
+            font-size: 7px;
+
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .universe-center-content strong {
+
+            display: block;
+
+            margin-top: 6px;
+
+            color: #ffffff;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            line-height: 1.4;
+
+            letter-spacing: 1.5px;
+
+        }
+
+
+
+        /* =========================================================
+           ORBITING SERVICE ITEMS
+        ========================================================= */
+
+        .hero-orbit-item {
+
+            --icon-accent:
+                var(--orange);
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 50%;
+
+            z-index: 10;
+
+            width: 103px;
+
+            height: 103px;
+
+            margin:
+                -51.5px 0 0
+                -51.5px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            padding: 10px;
+
+            border:
+
+                1px solid
+                rgba(255,255,255,.11);
+
+            border-radius: 20px;
+
+            color: #ffffff;
+
+            background:
+                rgba(8,29,51,.82);
+
+            backdrop-filter:
+                blur(17px);
+
+            -webkit-backdrop-filter:
+                blur(17px);
+
+            box-shadow:
+
+                0 18px 50px
+                rgba(0,0,0,.21);
+
+            will-change: transform;
+
+            transition:
+
+                border-color .3s ease,
+
+                background .3s ease,
+
+                box-shadow .3s ease;
+
+        }
+
+
+        .hero-orbit-item:hover {
+
+            border-color:
+
+                color-mix(
+                    in srgb,
+                    var(--icon-accent)
+                    55%,
+                    transparent
+                );
+
+            background:
+                rgba(13,43,73,.96);
+
+            box-shadow:
+
+                0 25px 70px
+                rgba(0,0,0,.32),
+
+                0 0 32px
+                color-mix(
+                    in srgb,
+                    var(--icon-accent)
+                    12%,
+                    transparent
+                );
+
+        }
+
+
+        .hero-orbit-item i {
+
+            color:
+                var(--icon-accent);
+
+            font-size: 23px;
+
+            transition:
+                transform .35s ease;
+
+        }
+
+
+        .hero-orbit-item:hover i {
+
+            transform:
+                scale(1.18)
+                rotate(-8deg);
+
+        }
+
+
+        .hero-orbit-item span {
+
+            color: #9eb0c3;
+
+            font-size: 7px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            text-align: center;
+
+        }
+
+
+        .hero-orbit-item.orange {
+
+            --icon-accent:
+                var(--orange);
+
+        }
+
+
+        .hero-orbit-item.green {
+
+            --icon-accent:
+                var(--green-2);
+
+        }
+
+
+        .hero-orbit-item.blue {
+
+            --icon-accent:
+                var(--blue-2);
+
+        }
+
+
+        .hero-orbit-item.purple {
+
+            --icon-accent:
+                var(--purple-2);
+
+        }
+
+
+
+        /* =========================================================
+           SWITCHER
+        ========================================================= */
+
+        .services-switcher-section {
+
+            padding:
+                85px 0;
+
+            background: var(--surface);
+
+        }
+
+
+        .switcher-box {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0,1fr)
+                auto;
+
+            gap: 35px;
+
+            align-items: end;
+
+            padding: 35px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 22px;
+
+            background: var(--surface-2);
+
+            box-shadow: var(--shadow);
+
+        }
+
+
+        .switcher-copy h2 {
+
+            margin:
+                10px 0
+                7px;
+
+            color: var(--text);
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 32px;
+
+            font-weight: 500;
+
+        }
+
+
+        .switcher-copy p {
+
+            max-width: 650px;
+
+            margin: 0;
+
+            color: var(--text-soft);
+
+            font-size: 12px;
+
+            line-height: 1.75;
+
+        }
+
+
+        .service-switch-buttons {
+
+            display: flex;
+
+            gap: 7px;
+
+            padding: 6px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 13px;
+
+            background: var(--surface);
+
+        }
+
+
+        .service-switch {
+
+            min-height: 43px;
+
+            padding:
+                0 18px;
+
+            border: 0;
+
+            border-radius: 9px;
+
+            color: var(--text-soft);
+
+            background: transparent;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            letter-spacing: .9px;
+
+            transition:
+                color .3s ease,
+                background .3s ease,
+                transform .3s ease;
+
+        }
+
+
+        .service-switch:hover {
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        .service-switch.active {
+
+            color: #10233d;
+
+            background: var(--orange);
+
+        }
+
+
+
+        /* =========================================================
+           DISCIPLINE INTRO
+        ========================================================= */
+
+        .discipline-intro {
+
+            padding:
+                130px 0
+                75px;
+
+        }
+
+
+        .discipline-heading {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0,1fr)
+                minmax(300px,.55fr);
+
+            gap: 70px;
+
+            align-items: end;
+
+        }
+
+
+        .discipline-heading
+        .section-intro {
+
+            max-width: 480px;
+
+            margin:
+                0 0
+                7px;
+
+        }
+
+
+
+        /* =========================================================
+           CIVIL WORLD
+        ========================================================= */
+
+        .civil-world {
+
+            --civil-grid:
+                rgba(16,35,61,.055);
+
+            background:
+
+                radial-gradient(
+                    circle at 12% 20%,
+                    rgba(246,169,27,.09),
+                    transparent 26%
+                ),
+
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(63,155,114,.05),
+                    transparent 26%
+                ),
+
+                var(--section-warm);
+
+        }
+
+
+        .civil-world::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 0;
+
+            pointer-events: none;
+
+            opacity: .21;
+
+            background-image:
+
+                linear-gradient(
+                    var(--civil-grid) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    var(--civil-grid) 1px,
+                    transparent 1px
+                );
+
+            background-size:
+                52px 52px;
+
+        }
+
+
+        .civil-world::after {
+
+            background:
+
+                radial-gradient(
+                    430px circle at
+                    var(--cursor-x)
+                    var(--cursor-y),
+
+                    rgba(246,169,27,.11),
+
+                    rgba(63,155,114,.035) 42%,
+
+                    transparent 72%
+                );
+
+        }
+
+
+
+        /* =========================================================
+           IT WORLD
+        ========================================================= */
+
+        .it-world {
+
+            background:
+
+                radial-gradient(
+                    circle at 85% 16%,
+                    rgba(115,87,217,.12),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 8% 85%,
+                    rgba(63,130,209,.10),
+                    transparent 26%
+                ),
+
+                linear-gradient(
+                    180deg,
+                    color-mix(
+                        in srgb,
+                        var(--section-purple)
+                        86%,
+                        var(--section-blue)
+                    ),
+                    var(--section-purple)
+                );
+
+        }
+
+
+        .it-world::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 0;
+
+            opacity: .23;
+
+            pointer-events: none;
+
+            background-image:
+
+                radial-gradient(
+                    circle,
+                    rgba(115,87,217,.25)
+                    1.4px,
+                    transparent
+                    1.4px
+                );
+
+            background-size:
+                33px 33px;
+
+        }
+
+
+        .it-world::after {
+
+            background:
+
+                radial-gradient(
+                    430px circle at
+                    var(--cursor-x)
+                    var(--cursor-y),
+
+                    rgba(63,130,209,.13),
+
+                    rgba(115,87,217,.055) 42%,
+
+                    transparent 72%
+                );
+
+        }
+
+
+
+        /* =========================================================
+           DISCIPLINE LABEL
+        ========================================================= */
+
+        .discipline-visual-label {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-top: 23px;
+
+            padding:
+                10px 13px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 12px;
+
+            background:
+
+                color-mix(
+                    in srgb,
+                    var(--surface)
+                    76%,
+                    transparent
+                );
+
+            backdrop-filter:
+                blur(10px);
+
+        }
+
+
+        .discipline-label-icon {
+
+            width: 40px;
+
+            height: 40px;
+
+            flex:
+                0 0
+                40px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 10px;
+
+        }
+
+
+        .civil-label
+        .discipline-label-icon {
+
+            color: #10233d;
+
+            background: var(--orange);
+
+        }
+
+
+        .it-label
+        .discipline-label-icon {
+
+            color: #ffffff;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    var(--purple),
+                    var(--blue)
+                );
+
+        }
+
+
+        .discipline-visual-label > div {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 3px;
+
+        }
+
+
+        .discipline-visual-label strong {
+
+            color: var(--text);
+
+            font-size: 8px;
+
+            letter-spacing: 1.6px;
+
+        }
+
+
+        .discipline-visual-label small {
+
+            color: var(--text-soft);
+
+            font-size: 9px;
+
+        }
+
+
+        .discipline-tag {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-top: 22px;
+
+            color: var(--text-soft);
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+        }
+
+
+        .discipline-tag i {
+
+            color: var(--green);
+
+        }
+
+
+
+        /* =========================================================
+           SERVICES GRID
+        ========================================================= */
+
+        .services-grid-section {
+
+            padding:
+                0 0
+                140px;
+
+        }
+
+
+        .services-grid {
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(
+                    3,
+                    minmax(0,1fr)
+                );
+
+            gap: 16px;
+
+        }
+
+
+
+        /* =========================================================
+           CARDS
+        ========================================================= */
+
+        .service-card {
+
+            --service-accent:
+                var(--orange);
+
+            position: relative;
+
+            min-height: 365px;
+
+            overflow: hidden;
+
+            padding: 30px;
+
+            border:
+
+                1px solid
+                var(--border);
+
+            background: var(--surface);
+
+            box-shadow: var(--shadow);
+
+            transform-style: preserve-3d;
+
+            transition:
+
+                transform .25s ease,
+
+                box-shadow .4s ease,
+
+                border-color .35s ease;
+
+        }
+
+
+        .civil-world
+        .service-card {
+
+            border-radius: 13px;
+
+        }
+
+
+        .it-world
+        .service-card {
+
+            border-radius: 22px;
+
+        }
+
+
+        .service-card:nth-child(4n+2) {
+
+            --service-accent:
+                var(--blue);
+
+        }
+
+
+        .service-card:nth-child(4n+3) {
+
+            --service-accent:
+                var(--green);
+
+        }
+
+
+        .service-card:nth-child(4n+4) {
+
+            --service-accent:
+                var(--purple);
+
+        }
+
+
+        .service-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            background:
+
+                radial-gradient(
+                    circle at
+                    var(--pointer-x,50%)
+                    var(--pointer-y,50%),
+
+                    color-mix(
+                        in srgb,
+                        var(--service-accent)
+                        16%,
+                        transparent
+                    ),
+
+                    transparent 42%
+                );
+
+            transition:
+                opacity .3s ease;
+
+        }
+
+
+        .service-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            right: -130px;
+
+            bottom: -130px;
+
+            width: 210px;
+
+            height: 210px;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            background:
+
+                color-mix(
+                    in srgb,
+                    var(--service-accent)
+                    12%,
+                    transparent
+                );
+
+            transition:
+                transform .55s ease;
+
+        }
+
+
+        .service-card:hover {
+
+            border-color:
+
+                color-mix(
+                    in srgb,
+                    var(--service-accent)
+                    35%,
+                    transparent
+                );
+
+            box-shadow:
+                var(--shadow-hover);
+
+        }
+
+
+        .service-card:hover::before {
+
+            opacity: 1;
+
+        }
+
+
+        .service-card:hover::after {
+
+            transform:
+                scale(2.45);
+
+        }
+
+
+
+        /* =========================================================
+           SERVICE CATEGORY — NUMBERS REMOVED
+        ========================================================= */
+
+        .service-category {
+
+            position: relative;
+
+            z-index: 2;
+
+            color:
+                var(--service-accent);
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.7px;
+
+        }
+
+
+        .service-icon {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 58px;
+
+            height: 58px;
+
+            display: grid;
+
+            place-items: center;
+
+            margin:
+                44px 0
+                24px;
+
+            border:
+
+                1px solid
+                color-mix(
+                    in srgb,
+                    var(--service-accent)
+                    30%,
+                    transparent
+                );
+
+            color:
+                var(--service-accent);
+
+            background:
+
+                color-mix(
+                    in srgb,
+                    var(--service-accent)
+                    7%,
+                    transparent
+                );
+
+            font-size: 20px;
+
+            transition:
+                transform .4s ease,
+                background .4s ease;
+
+        }
+
+
+        .civil-world
+        .service-icon {
+
+            border-radius: 9px;
+
+        }
+
+
+        .it-world
+        .service-icon {
+
+            border-radius: 17px;
+
+        }
+
+
+        .service-card:hover
+        .service-icon {
+
+            transform:
+                rotate(-7deg)
+                scale(1.08);
+
+        }
+
+
+        .service-card h3 {
+
+            position: relative;
+
+            z-index: 2;
+
+            margin:
+                0 0
+                12px;
+
+            color: var(--text);
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 25px;
+
+            font-weight: 500;
+
+            line-height: 1.08;
+
+        }
+
+
+        .service-card > p {
+
+            position: relative;
+
+            z-index: 2;
+
+            min-height: 70px;
+
+            margin: 0;
+
+            color: var(--text-soft);
+
+            font-size: 11px;
+
+            line-height: 1.78;
+
+        }
+
+
+        .service-points {
+
+            position: relative;
+
+            z-index: 2;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 6px;
+
+            margin-top: 22px;
+
+        }
+
+
+        .service-points span {
+
+            padding:
+                7px 9px;
+
+            border:
+
+                1px solid
+                var(--border);
+
+            border-radius: 999px;
+
+            color: var(--text-soft);
+
+            background: var(--surface-2);
+
+            font-size: 8px;
+
+            font-weight: 700;
+
+        }
+
+
+
+        /* =========================================================
+           PROCESS
+        ========================================================= */
+
+        .process-section {
+
+            padding:
+                135px 0;
+
+            color: #ffffff;
+
+            background:
+
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(115,87,217,.16),
+                    transparent 26%
+                ),
+
+                radial-gradient(
+                    circle at 8% 90%,
+                    rgba(63,130,209,.13),
+                    transparent 26%
+                ),
+
+                #07182b;
+
+        }
+
+
+        .process-section::after {
+
+            background:
+
+                radial-gradient(
+                    430px circle at
+                    var(--cursor-x)
+                    var(--cursor-y),
+
+                    rgba(63,130,209,.11),
+
+                    rgba(115,87,217,.04) 42%,
+
+                    transparent 72%
+                );
+
+        }
+
+
+        .process-header {
+
+            max-width: 850px;
+
+            margin-bottom: 70px;
+
+        }
+
+
+        .process-section
+        .section-title {
+
+            color: #ffffff;
+
+        }
+
+
+        .process-header p {
+
+            max-width: 650px;
+
+            margin:
+                25px 0
+                0;
+
+            color: #9db0c4;
+
+            font-size: 13px;
+
+            line-height: 1.85;
+
+        }
+
+
+        .process-grid {
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(
+                    5,
+                    minmax(0,1fr)
+                );
+
+            gap: 1px;
+
+            overflow: hidden;
+
+            border:
+
+                1px solid
+                rgba(255,255,255,.08);
+
+            border-radius: 20px;
+
+            background:
+                rgba(255,255,255,.08);
+
+        }
+
+
+        .process-step {
+
+            --process-accent:
+                var(--orange);
+
+            position: relative;
+
+            min-height: 285px;
+
+            overflow: hidden;
+
+            padding:
+                30px 25px;
+
+            background: #0b213c;
+
+            transition:
+                background .35s ease;
+
+        }
+
+
+        .process-step:nth-child(2) {
+
+            --process-accent:
+                var(--blue);
+
+        }
+
+
+        .process-step:nth-child(3) {
+
+            --process-accent:
+                var(--purple);
+
+        }
+
+
+        .process-step:nth-child(4) {
+
+            --process-accent:
+                var(--green);
+
+        }
+
+
+        .process-step:nth-child(5) {
+
+            --process-accent:
+                var(--orange-2);
+
+        }
+
+
+        .process-step::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: 0;
+
+            width: 100%;
+
+            height: 3px;
+
+            background:
+                var(--process-accent);
+
+            transform:
+                scaleX(0);
+
+            transform-origin: left;
+
+            transition:
+                transform .4s ease;
+
+        }
+
+
+        .process-step:hover {
+
+            background: #102b4b;
+
+        }
+
+
+        .process-step:hover::after {
+
+            transform:
+                scaleX(1);
+
+        }
+
+
+        .process-step .process-label {
+
+            color:
+                var(--process-accent);
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+
+        }
+
+
+        .process-step i {
+
+            display: block;
+
+            margin:
+                55px 0
+                23px;
+
+            color:
+                var(--process-accent);
+
+            font-size: 22px;
+
+            transition:
+                transform .35s ease;
+
+        }
+
+
+        .process-step:hover i {
+
+            transform:
+                translateY(-5px)
+                scale(1.08);
+
+        }
+
+
+        .process-step h3 {
+
+            margin:
+                0 0
+                12px;
+
+            color: #ffffff;
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 22px;
+
+            font-weight: 500;
+
+        }
+
+
+        .process-step p {
+
+            margin: 0;
+
+            color: #8da2b7;
+
+            font-size: 10px;
+
+            line-height: 1.75;
+
+        }
+
+
+
+        /* =========================================================
+           DELIVERY
+        ========================================================= */
+
+        .delivery-section {
+
+            padding:
+                130px 0;
+
+            background: var(--surface);
+
+        }
+
+
+        .delivery-heading {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0,1fr)
+                minmax(280px,.5fr);
+
+            gap: 70px;
+
+            align-items: end;
+
+            margin-bottom: 60px;
+
+        }
+
+
+        .delivery-grid {
+
+            display: grid;
+
+            grid-template-columns:
+
+                repeat(
+                    4,
+                    minmax(0,1fr)
+                );
+
+            gap: 15px;
+
+        }
+
+
+        .delivery-card {
+
+            min-height: 280px;
+
+            padding: 30px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 18px;
+
+            background: var(--surface-2);
+
+            transition:
+                transform .35s ease,
+                box-shadow .35s ease,
+                background .35s ease;
+
+        }
+
+
+        .delivery-card:hover {
+
+            transform:
+                translateY(-7px);
+
+            background: var(--surface);
+
+            box-shadow:
+                var(--shadow-hover);
+
+        }
+
+
+        .delivery-card i {
+
+            width: 52px;
+
+            height: 52px;
+
+            display: grid;
+
+            place-items: center;
+
+            margin-bottom: 45px;
+
+            border-radius: 14px;
+
+            color: var(--orange);
+
+            background:
+                rgba(246,169,27,.10);
+
+            font-size: 18px;
+
+        }
+
+
+        .delivery-card:nth-child(2) i {
+
+            color: var(--blue);
+
+            background:
+                rgba(63,130,209,.10);
+
+        }
+
+
+        .delivery-card:nth-child(3) i {
+
+            color: var(--purple);
+
+            background:
+                rgba(115,87,217,.10);
+
+        }
+
+
+        .delivery-card:nth-child(4) i {
+
+            color: var(--green);
+
+            background:
+                rgba(63,155,114,.10);
+
+        }
+
+
+        .delivery-card h3 {
+
+            margin:
+                0 0
+                12px;
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 23px;
+
+            font-weight: 500;
+
+        }
+
+
+        .delivery-card p {
+
+            margin: 0;
+
+            color: var(--text-soft);
+
+            font-size: 11px;
+
+            line-height: 1.78;
+
+        }
+
+
+
+        /* =========================================================
+           PROFESSIONAL NOTE
+        ========================================================= */
+
+        .professional-note {
+
+            padding:
+                0 0
+                130px;
+
+            background: var(--surface);
+
+        }
+
+
+        .note-box {
+
+            display: grid;
+
+            grid-template-columns:
+                auto
+                minmax(0,1fr);
+
+            gap: 25px;
+
+            padding: 35px;
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 18px;
+
+            background: var(--surface-2);
+
+        }
+
+
+        .note-box > i {
+
+            width: 55px;
+
+            height: 55px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 15px;
+
+            color: var(--orange);
+
+            background:
+                rgba(246,169,27,.10);
+
+            font-size: 20px;
+
+        }
+
+
+        .note-box h3 {
+
+            margin:
+                0 0
+                9px;
+
+            font-size: 16px;
+
+        }
+
+
+        .note-box p {
+
+            margin: 0;
+
+            color: var(--text-soft);
+
+            font-size: 11px;
+
+            line-height: 1.8;
+
+        }
+
+
+
+        /* =========================================================
+           CTA
+        ========================================================= */
+
+        .services-final-cta {
+
+            padding:
+                0 0
+                120px;
+
+            background: var(--surface);
+
+        }
+
+
+        .services-cta-inner {
+
+            min-height: 330px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 50px;
+
+            overflow: hidden;
+
+            padding: 65px;
+
+            border-radius: 28px;
+
+            color: #ffffff;
+
+            background:
+
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(115,87,217,.22),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 5% 100%,
+                    rgba(63,155,114,.10),
+                    transparent 24%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #08182b,
+                    #173d68
+                );
+
+        }
+
+
+        .services-cta-inner h2 {
+
+            max-width: 760px;
+
+            margin:
+                15px 0
+                0;
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(
+                    45px,
+                    5.6vw,
+                    76px
+                );
+
+            font-weight: 500;
+
+            line-height: .98;
+
+        }
+
+
+        .services-cta-inner h2 em {
+
+            color: var(--orange);
+
+            font-style: italic;
+
+        }
+
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        .site-footer {
+
+            padding:
+                90px 0
+                0;
+
+            color: #ffffff;
+
+            background:
+                #07182b;
+
+        }
+
+
+        .footer-inner {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(280px,1.45fr)
+                minmax(150px,.65fr)
+                minmax(190px,.75fr)
+                minmax(260px,1fr);
+
+            gap: 70px;
+
+            padding-bottom: 75px;
+
+        }
+
+
+        .footer-brand {
+
+            max-width: 370px;
+
+        }
+
+
+        .footer-logo {
+
+            display: inline-flex;
+
+            margin-bottom: 27px;
+
+        }
+
+
+        .footer-logo-image {
+
+            width: 230px;
+
+            height: auto;
+
+        }
+
+
+        .footer-brand > p {
+
+            max-width: 340px;
+
+            margin: 0;
+
+            color: #93a6ba;
+
+            font-size: 12px;
+
+            line-height: 1.8;
+
+        }
+
+
+        .footer-social {
+
+            display: flex;
+
+            gap: 10px;
+
+            margin-top: 27px;
+
+        }
+
+
+        .footer-social a {
+
+            width: 38px;
+
+            height: 38px;
+
+            display: grid;
+
+            place-items: center;
+
+            border:
+
+                1px solid
+                rgba(255,255,255,.11);
+
+            border-radius: 50%;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            transition: .3s ease;
+
+        }
+
+
+        .footer-social a:hover {
+
+            color: var(--navy);
+
+            background: var(--orange);
+
+            transform:
+                translateY(-4px);
+
+        }
+
+
+        .footer-col {
+
+            display: flex;
+
+            flex-direction: column;
+
+        }
+
+
+        .footer-col h4,
+        .footer-news h4 {
+
+            margin:
+                0 0
+                24px;
+
+            font-size: 10px;
+
+            letter-spacing: 1.8px;
+
+        }
+
+
+        .footer-col a {
+
+            margin-bottom: 13px;
+
+            color: #93a6ba;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+        }
+
+
+        .footer-news p {
+
+            color: #93a6ba;
+
+            font-size: 12px;
+
+            line-height: 1.75;
+
+        }
+
+
+        .newsletter-form {
+
+            height: 50px;
+
+            display: flex;
+
+            overflow: hidden;
+
+            border:
+
+                1px solid
+                rgba(255,255,255,.12);
+
+            border-radius: 10px;
+
+        }
+
+
+        .newsletter-form input {
+
+            flex: 1;
+
+            min-width: 0;
+
+            padding:
+                0 16px;
+
+            border: 0;
+
+            outline: none;
+
+            color: #ffffff;
+
+            background: transparent;
+
+        }
+
+
+        .newsletter-form button {
+
+            width: 50px;
+
+            border: 0;
+
+            color: var(--navy);
+
+            background: var(--orange);
+
+        }
+
+
+        .footer-bottom {
+
+            border-top:
+
+                1px solid
+                rgba(255,255,255,.08);
+
+        }
+
+
+        .footer-bottom-inner {
+
+            min-height: 78px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        .footer-bottom p,
+        .footer-legal a {
+
+            color: #667d94;
+
+            font-size: 10px;
+
+        }
+
+
+        .footer-legal {
+
+            display: flex;
+
+            gap: 25px;
+
+        }
+
+
+        .footer-legal a {
+
+            text-decoration: none;
+
+        }
+
+
+
+        /* =========================================================
+           REVEAL
+        ========================================================= */
+
+        .reveal-item {
+
+            opacity: 0;
+
+            transform:
+                translateY(28px);
+
+            transition:
+
+                opacity .75s ease,
+
+                transform .75s
+                cubic-bezier(.22,.61,.36,1);
+
+        }
+
+
+        .reveal-item.visible {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+
+        }
+
+
+
+        /* =========================================================
+           LAPTOP
+        ========================================================= */
+
+        @media (max-width: 1150px) {
+
+            .services-hero-inner {
+
+                grid-template-columns:
+                    1fr
+                    410px;
+
+                gap: 40px;
+
+            }
+
+
+            .services-icon-universe {
+
+                min-height: 520px;
+
+            }
+
+
+            .services-grid {
+
+                grid-template-columns:
+                    repeat(
+                        2,
+                        minmax(0,1fr)
+                    );
+
+            }
+
+
+            .process-grid {
+
+                grid-template-columns:
+                    repeat(
+                        3,
+                        minmax(0,1fr)
+                    );
+
+            }
+
+
+            .delivery-grid {
+
+                grid-template-columns:
+                    repeat(
+                        2,
+                        minmax(0,1fr)
+                    );
+
+            }
+
+
+            .footer-inner {
+
+                grid-template-columns:
+                    1.3fr
+                    .7fr
+                    .7fr;
+
+            }
+
+
+            .footer-news {
+
+                grid-column:
+                    1 / -1;
+
+            }
+
+        }
+
+
+
+        /* =========================================================
+           TABLET
+        ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .services-hero-inner {
+
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+            }
+
+
+            .services-hero-copy {
+
+                margin: 0 auto;
+
+            }
+
+
+            .services-hero-copy p {
+
+                margin: 0 auto;
+
+            }
+
+
+            .hero-actions {
+
+                justify-content: center;
+
+            }
+
+
+            .services-icon-universe {
+
+                width:
+                    min(
+                        100%,
+                        600px
+                    );
+
+                margin: 0 auto;
+
+                justify-self: center;
+
+            }
+
+
+            .switcher-box,
+            .discipline-heading,
+            .delivery-heading {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+
+
+        /* =========================================================
+           MOBILE NAV
+        ========================================================= */
+
+        @media (max-width: 850px) {
+
+            .header-contact {
+
+                display: none;
+
+            }
+
+
+            .hamburger {
+
+                width: 44px;
+
+                height: 44px;
+
+                display: flex;
+
+                flex-direction: column;
+
+                justify-content: center;
+
+                align-items: center;
+
+                gap: 5px;
+
+                padding: 0;
+
+                border: 0;
+
+                color: #ffffff;
+
+                background: transparent;
+
+            }
+
+
+            .hamburger span {
+
+                width: 23px;
+
+                height: 2px;
+
+                background: currentColor;
+
+                transition: .3s ease;
+
+            }
+
+
+            .hamburger.active
+            span:nth-child(1) {
+
+                transform:
+                    translateY(7px)
+                    rotate(45deg);
+
+            }
+
+
+            .hamburger.active
+            span:nth-child(2) {
+
+                opacity: 0;
+
+            }
+
+
+            .hamburger.active
+            span:nth-child(3) {
+
+                transform:
+                    translateY(-7px)
+                    rotate(-45deg);
+
+            }
+
+
+            .main-nav {
+
+                position: fixed;
+
+                top: 78px;
+
+                left: 18px;
+
+                right: 18px;
+
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 0;
+
+                max-height: 0;
+
+                overflow: hidden;
+
+                visibility: hidden;
+
+                opacity: 0;
+
+                padding:
+                    0 20px;
+
+                border:
+
+                    1px solid
+                    rgba(255,255,255,.09);
+
+                border-radius: 18px;
+
+                background:
+                    rgba(7,24,43,.98);
+
+                transform:
+                    translateY(-12px);
+
+                transition:
+                    .35s ease;
+
+            }
+
+
+            .main-nav.open {
+
+                max-height: 520px;
+
+                visibility: visible;
+
+                opacity: 1;
+
+                padding:
+                    14px 20px;
+
+                transform:
+                    translateY(0);
+
+            }
+
+
+            .main-nav .nav-link {
+
+                padding:
+                    16px 4px;
+
+                border-bottom:
+
+                    1px solid
+                    rgba(255,255,255,.07);
+
+            }
+
+
+            .main-nav
+            .nav-link::after {
+
+                display: none;
+
+            }
+
+
+            .search-box input {
+
+                display: none;
+
+            }
+
+        }
+
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 700px) {
+
+            .container {
+
+                width:
+                    calc(100% - 34px);
+
+            }
+
+
+            .nav-logo {
+
+                width: 155px;
+
+            }
+
+
+            .services-hero {
+
+                min-height: auto;
+
+                padding:
+                    130px 0
+                    65px;
+
+            }
+
+
+            .services-hero h1 {
+
+                font-size:
+                    clamp(
+                        50px,
+                        14vw,
+                        70px
+                    );
+
+                letter-spacing: -2px;
+
+            }
+
+
+            .hero-actions {
+
+                display: grid;
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .services-icon-universe {
+
+                min-height: 450px;
+
+            }
+
+
+            .universe-orbit.one {
+
+                width: 240px;
+
+                height: 240px;
+
+            }
+
+
+            .universe-orbit.two {
+
+                width: 330px;
+
+                height: 330px;
+
+            }
+
+
+            .universe-orbit.three {
+
+                width: 410px;
+
+                height: 410px;
+
+            }
+
+
+            .universe-center {
+
+                width: 120px;
+
+                height: 120px;
+
+            }
+
+
+            .hero-orbit-item {
+
+                width: 75px;
+
+                height: 75px;
+
+                margin:
+                    -37.5px 0 0
+                    -37.5px;
+
+            }
+
+
+            .hero-orbit-item i {
+
+                font-size: 17px;
+
+            }
+
+
+            .hero-orbit-item span {
+
+                font-size: 6px;
+
+            }
+
+
+            .service-switch-buttons {
+
+                display: grid;
+
+                grid-template-columns:
+                    1fr 1fr;
+
+            }
+
+
+            .services-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .service-card {
+
+                min-height: auto;
+
+            }
+
+
+            .process-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .delivery-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .services-cta-inner {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                padding: 45px 27px;
+
+            }
+
+
+            .footer-inner {
+
+                grid-template-columns:
+                    repeat(
+                        2,
+                        1fr
+                    );
+
+            }
+
+
+            .footer-brand,
+            .footer-news {
+
+                grid-column:
+                    1 / -1;
+
+            }
+
+        }
+
+
+
+        /* =========================================================
+           VERY SMALL MOBILE
+        ========================================================= */
+
+        @media (max-width: 470px) {
+
+            .services-icon-universe {
+
+                min-height: 390px;
+
+            }
+
+
+            .universe-orbit.one {
+
+                width: 195px;
+
+                height: 195px;
+
+            }
+
+
+            .universe-orbit.two {
+
+                width: 265px;
+
+                height: 265px;
+
+            }
+
+
+            .universe-orbit.three {
+
+                width: 335px;
+
+                height: 335px;
+
+            }
+
+
+            .universe-center {
+
+                width: 100px;
+
+                height: 100px;
+
+            }
+
+
+            .universe-center-content strong {
+
+                font-size: 8px;
+
+            }
+
+
+            .universe-center-content span {
+
+                font-size: 5px;
+
+            }
+
+
+            .hero-orbit-item {
+
+                width: 58px;
+
+                height: 58px;
+
+                margin:
+                    -29px 0 0
+                    -29px;
+
+            }
+
+
+            .hero-orbit-item span {
+
+                display: none;
+
+            }
+
+
+            .footer-inner {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .footer-brand,
+            .footer-news {
+
+                grid-column: auto;
+
+            }
+
+        }
+
+
+
+        /* =========================================================
+           TOUCH
+        ========================================================= */
+
+        @media (pointer: coarse) {
+
+            .section-particles {
+
+                opacity: .45;
+
+            }
+
+        }
+
+
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .reveal-item {
+
+                opacity: 1 !important;
+
+                transform: none !important;
+
+            }
+
+
+            .universe-center::before {
+
+                animation: none;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================= -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+
+            <a
+                href="index.html"
+                class="logo"
+                aria-label="SURREAL Home"
+            >
+
+                <img
+                    src="logo1.png"
+                    alt="SURREAL Engineering"
+                    class="nav-logo"
+                >
+
+            </a>
+
+
+
+            <nav
+                class="main-nav"
+                id="mainNav"
+            >
+
+                <a
+                    href="index.html"
+                    class="nav-link"
+                >
+                    HOME
+                </a>
+
+                <a
+                    href="about.html"
+                    class="nav-link"
+                >
+                    ABOUT
+                </a>
+
+                <a
+                    href="services.html"
+                    class="nav-link active"
+                >
+                    SERVICES
+                </a>
+
+                <a
+                    href="index.html#projects"
+                    class="nav-link"
+                >
+                    PROJECTS
+                </a>
+
+                <a
+                    href="contact.html"
+                    class="nav-link"
+                >
+                    CONTACT
+                </a>
+
+            </nav>
+
+
+
+            <div class="header-actions">
+
+
+                <div
+                    class="search-box"
+                    id="searchBox"
+                >
+
+                    <input
+                        type="search"
+                        id="siteSearch"
+                        placeholder="Search services..."
+                        aria-label="Search services"
+                    >
+
+
+                    <button
+                        type="button"
+                        class="icon-btn"
+                        id="searchToggle"
+                        aria-label="Search services"
+                    >
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </button>
+
+                </div>
+
+
+
+                <a
+                    href="contact.html"
+                    class="btn btn-orange magnetic header-contact"
+                >
+
+                    LET'S TALK
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+
+
+                <button
+                    type="button"
+                    class="hamburger"
+                    id="hamburger"
+                    aria-label="Open navigation"
+                    aria-expanded="false"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section
+            class="services-hero interactive-section"
+        >
+
+            <div class="hero-grid-bg"></div>
+
+            <div class="section-particles"></div>
+
+
+            <div class="container services-hero-inner">
+
+
+                <div class="services-hero-copy reveal-item">
+
+                    <div class="eyebrow">
+                        SURREAL / SERVICES
+                    </div>
+
+
+                    <h1>
+
+                        Built for the
+
+                        <em>
+                            real world.
+                        </em>
+
+                    </h1>
+
+
+                    <p>
+
+                        From physical infrastructure to digital
+                        infrastructure, SURREAL combines engineering,
+                        technology, design and disciplined project
+                        delivery to transform requirements into
+                        practical working solutions.
+
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="#civilServices"
+                            class="btn btn-orange magnetic"
+                        >
+
+                            CIVIL ENGINEERING
+
+                            <i class="fa-solid fa-arrow-down"></i>
+
+                        </a>
+
+
+                        <a
+                            href="#itServices"
+                            class="btn btn-outline magnetic"
+                        >
+
+                            IT & DIGITAL
+
+                            <i class="fa-solid fa-arrow-down"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ROTATING SERVICES UNIVERSE
+                ================================================== -->
+
+                <div
+                    class="services-icon-universe reveal-item"
+                    id="iconUniverse"
+                >
+
+                    <div class="universe-orbit three"></div>
+
+                    <div class="universe-orbit two"></div>
+
+                    <div class="universe-orbit one"></div>
+
+
+
+                    <!-- CENTER -->
+
+                    <div class="universe-center">
+
+                        <div class="universe-center-content">
+
+                            <i class="fa-solid fa-layer-group"></i>
+
+                            <span>
+                                SURREAL
+                            </span>
+
+                            <strong>
+                                SERVICES<br>
+                                WE PROVIDE
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div
+                        class="hero-orbit-item orange"
+                        data-angle="205"
+                        data-radius="0.95"
+                        data-speed="0.0044"
+                    >
+
+                        <i class="fa-solid fa-building"></i>
+
+                        <span>
+                            STRUCTURE
+                        </span>
+
+                    </div>
+
+
+
+                    <div
+                        class="hero-orbit-item green"
+                        data-angle="300"
+                        data-radius="0.88"
+                        data-speed="0.0044"
+                    >
+
+                        <i class="fa-solid fa-helmet-safety"></i>
+
+                        <span>
+                            CIVIL
+                        </span>
+
+                    </div>
+
+
+
+                    <div
+                        class="hero-orbit-item green"
+                        data-angle="255"
+                        data-radius="0.62"
+                        data-speed="0.0044"
+                    >
+
+                        <i class="fa-solid fa-gears"></i>
+
+                        <span>
+                            AUTOMATION
+                        </span>
+
+                    </div>
+
+
+
+                    <div
+                        class="hero-orbit-item blue"
+                        data-angle="5"
+                        data-radius="0.96"
+                        data-speed="0.0044"
+                    >
+
+                        <i class="fa-solid fa-code"></i>
+
+                        <span>
+                            SOFTWARE
+                        </span>
+
+                    </div>
+
+
+
+                    <div
+                        class="hero-orbit-item blue"
+                        data-angle="55"
+                        data-radius="0.82"
+                        data-speed="0.0044"
+                    >
+
+                        <i class="fa-solid fa-cloud"></i>
+
+                        <span>
+                            CLOUD
+                        </span>
+
+                    </div>
+
+
+
+                    <div
+                        class="hero-orbit-item purple"
+                        data-angle="94"
+                        data-radius="0.92"
+                        data-speed="0.0044"
+                    >
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        <span>
+                            SECURITY
+                        </span>
+
+                    </div>
+
+
+
+                    <div
+                        class="hero-orbit-item purple"
+                        data-angle="145"
+                        data-radius="0.88"
+                        data-speed="0.0044"
+                    >
+
+                        <i class="fa-solid fa-database"></i>
+
+                        <span>
+                            DATA
+                        </span>
+
+                    </div>
+
+
+
+                    <div
+                        class="hero-orbit-item blue"
+                        data-angle="180"
+                        data-radius="0.95"
+                        data-speed="0.0044"
+                    >
+
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+
+                        <span>
+                            MOBILE
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SWITCH
+        ====================================================== -->
+
+        <section class="services-switcher-section">
+
+            <div class="container">
+
+                <div class="switcher-box reveal-item">
+
+
+                    <div class="switcher-copy">
+
+                        <div class="eyebrow">
+                            EXPLORE CAPABILITIES
+                        </div>
+
+
+                        <h2>
+                            Physical systems or digital systems?
+                        </h2>
+
+
+                        <p>
+
+                            Civil Engineering focuses on the physical
+                            built environment. IT & Digital focuses on
+                            software, security, information,
+                            automation and technology infrastructure.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="service-switch-buttons">
+
+                        <button
+                            class="service-switch active"
+                            data-target="civilServices"
+                            type="button"
+                        >
+                            CIVIL ENGINEERING
+                        </button>
+
+                        <button
+                            class="service-switch"
+                            data-target="itServices"
+                            type="button"
+                        >
+                            IT & DIGITAL
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CIVIL INTRO
+        ====================================================== -->
+
+        <section
+            class="discipline-intro civil-world interactive-section"
+            id="civilServices"
+        >
+
+            <div class="section-particles"></div>
+
+
+            <div class="container">
+
+                <div class="discipline-heading reveal-item">
+
+
+                    <div>
+
+                        <!-- NO NUMBER -->
+
+                        <div class="eyebrow">
+                            CIVIL ENGINEERING
+                        </div>
+
+
+                        <div class="discipline-visual-label civil-label">
+
+                            <span class="discipline-label-icon">
+
+                                <i class="fa-solid fa-building"></i>
+
+                            </span>
+
+
+                            <div>
+
+                                <strong>
+                                    PHYSICAL SYSTEMS
+                                </strong>
+
+                                <small>
+                                    Structures • Sites • Infrastructure • Delivery
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <h2 class="section-title">
+
+                            From feasibility to
+
+                            <em>
+                                built reality.
+                            </em>
+
+                        </h2>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <p class="section-intro">
+
+                            Civil engineering projects require
+                            coordinated technical decisions, planning,
+                            site knowledge, cost awareness, compliance,
+                            quality management and controlled execution
+                            throughout the project lifecycle.
+
+                        </p>
+
+
+                        <div class="discipline-tag">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            Scope is configured around each
+                            project's technical requirements.
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CIVIL SERVICES
+        ====================================================== -->
+
+        <section
+            class="services-grid-section civil-world interactive-section"
+        >
+
+            <div class="section-particles"></div>
+
+
+            <div class="container">
+
+                <div class="services-grid">
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            PROJECT PLANNING
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        </div>
+
+                        <h3>
+                            Feasibility & Project Planning
+                        </h3>
+
+                        <p>
+
+                            Early assessment of objectives,
+                            site constraints, technical feasibility,
+                            development options, risk and project
+                            implementation strategy.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Feasibility</span>
+                            <span>Site Review</span>
+                            <span>Project Brief</span>
+                            <span>Risk Review</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            SURVEYING
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-ruler-combined"></i>
+                        </div>
+
+                        <h3>
+                            Surveying & Site Assessment
+                        </h3>
+
+                        <p>
+
+                            Coordination of measurements,
+                            topographic information and existing
+                            site conditions required for design and
+                            engineering decisions.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Topography</span>
+                            <span>Site Data</span>
+                            <span>Measurements</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            STRUCTURAL ENGINEERING
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+
+                        <h3>
+                            Structural Engineering
+                        </h3>
+
+                        <p>
+
+                            Structural analysis, framing concepts,
+                            reinforced concrete and steel coordination,
+                            technical documentation and structural
+                            detailing.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>RCC</span>
+                            <span>Steel</span>
+                            <span>Analysis</span>
+                            <span>Detailing</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            GEOTECHNICAL
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-mountain"></i>
+                        </div>
+
+                        <h3>
+                            Geotechnical Coordination
+                        </h3>
+
+                        <p>
+
+                            Integration of soil information,
+                            ground conditions and foundation
+                            recommendations into structural and
+                            civil engineering decisions.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Soil</span>
+                            <span>Foundations</span>
+                            <span>Ground Conditions</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            SITE DEVELOPMENT
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-compass-drafting"></i>
+                        </div>
+
+                        <h3>
+                            Site Development Engineering
+                        </h3>
+
+                        <p>
+
+                            Grading, access, external works,
+                            utilities and engineering relationships
+                            between structures and their surrounding
+                            sites.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Grading</span>
+                            <span>Access</span>
+                            <span>Utilities</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            WATER SYSTEMS
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+
+                        <h3>
+                            Drainage & Water Systems
+                        </h3>
+
+                        <p>
+
+                            Planning and coordination for stormwater,
+                            drainage, water distribution,
+                            wastewater systems and site water
+                            management.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Drainage</span>
+                            <span>Stormwater</span>
+                            <span>Water Supply</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            INFRASTRUCTURE
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-road"></i>
+                        </div>
+
+                        <h3>
+                            Roads & Infrastructure
+                        </h3>
+
+                        <p>
+
+                            Engineering support for roadways,
+                            access infrastructure, pavements,
+                            circulation networks and associated
+                            civil works.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Roads</span>
+                            <span>Pavement</span>
+                            <span>Infrastructure</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            DIGITAL ENGINEERING
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-cube"></i>
+                        </div>
+
+                        <h3>
+                            CAD, BIM & Documentation
+                        </h3>
+
+                        <p>
+
+                            Coordinated drawings, engineering models,
+                            documentation packages and digital
+                            information supporting project delivery.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>CAD</span>
+                            <span>BIM</span>
+                            <span>Coordination</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            COST PLANNING
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+
+                        <h3>
+                            Quantity & Cost Planning
+                        </h3>
+
+                        <p>
+
+                            Quantity assessment, estimating,
+                            BOQ preparation support and cost-focused
+                            technical coordination.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>BOQ</span>
+                            <span>Estimate</span>
+                            <span>Cost Planning</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            PROCUREMENT
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+
+                        <h3>
+                            Tender & Procurement Support
+                        </h3>
+
+                        <p>
+
+                            Technical tender documentation,
+                            contractor comparison, scope clarification
+                            and engineering support during procurement.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Tender</span>
+                            <span>Scope</span>
+                            <span>Evaluation</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            CONSTRUCTION
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-helmet-safety"></i>
+                        </div>
+
+                        <h3>
+                            Construction Management
+                        </h3>
+
+                        <p>
+
+                            Coordination of contractors,
+                            schedules, technical decisions,
+                            site activities and project
+                            communication.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Site</span>
+                            <span>Schedule</span>
+                            <span>Coordination</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <!-- 12 / QUALITY REMOVED -->
+
+                        <span class="service-category">
+                            QUALITY
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-clipboard-check"></i>
+                        </div>
+
+                        <h3>
+                            Site Supervision & QA/QC
+                        </h3>
+
+                        <p>
+
+                            Site inspections, construction monitoring,
+                            material quality checks, reporting and
+                            corrective-action coordination.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Inspection</span>
+                            <span>QA/QC</span>
+                            <span>Reports</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            SAFETY & RISK
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <h3>
+                            Safety & Risk Coordination
+                        </h3>
+
+                        <p>
+
+                            Coordination supporting risk
+                            identification, construction safety
+                            considerations and appropriate site
+                            control practices.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Safety</span>
+                            <span>Risk</span>
+                            <span>Control</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            PROJECT HANDOVER
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+
+                        <h3>
+                            Handover & Project Closeout
+                        </h3>
+
+                        <p>
+
+                            Completion inspections,
+                            punch-list coordination, records,
+                            as-built information and structured
+                            project handover.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Handover</span>
+                            <span>As-Built</span>
+                            <span>Closeout</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            EXISTING ASSETS
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-building-circle-check"></i>
+                        </div>
+
+                        <h3>
+                            Rehabilitation & Improvement
+                        </h3>
+
+                        <p>
+
+                            Engineering support for repair,
+                            renovation, strengthening, upgrading
+                            and improving existing structures and
+                            infrastructure.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Repair</span>
+                            <span>Upgrade</span>
+                            <span>Rehabilitation</span>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             IT INTRO
+        ====================================================== -->
+
+        <section
+            class="discipline-intro it-world interactive-section"
+            id="itServices"
+        >
+
+            <div class="section-particles"></div>
+
+
+            <div class="container">
+
+                <div class="discipline-heading reveal-item">
+
+
+                    <div>
+
+                        <!-- NO 02 / -->
+
+                        <div class="eyebrow">
+                            IT & DIGITAL
+                        </div>
+
+
+                        <div class="discipline-visual-label it-label">
+
+                            <span class="discipline-label-icon">
+
+                                <i class="fa-solid fa-microchip"></i>
+
+                            </span>
+
+
+                            <div>
+
+                                <strong>
+                                    DIGITAL SYSTEMS
+                                </strong>
+
+                                <small>
+                                    Software • Cloud • Security • Automation
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <h2 class="section-title">
+
+                            From requirements to
+
+                            <em>
+                                connected systems.
+                            </em>
+
+                        </h2>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <p class="section-intro">
+
+                            Digital solutions should solve operational
+                            problems, connect workflows, protect
+                            information and remain maintainable as an
+                            organization evolves.
+
+                        </p>
+
+
+                        <div class="discipline-tag">
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            Technology is selected around
+                            actual business requirements.
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             IT SERVICES
+        ====================================================== -->
+
+        <section
+            class="services-grid-section it-world interactive-section"
+        >
+
+            <div class="section-particles"></div>
+
+
+            <div class="container">
+
+                <div class="services-grid">
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            CONSULTING
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+
+                        <h3>
+                            IT Consulting & Discovery
+                        </h3>
+
+                        <p>
+
+                            Requirements discovery,
+                            workflow analysis, solution planning,
+                            architecture and technology recommendations.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Requirements</span>
+                            <span>Architecture</span>
+                            <span>Roadmap</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            UI / UX
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-pen-ruler"></i>
+                        </div>
+
+                        <h3>
+                            UI / UX Design
+                        </h3>
+
+                        <p>
+
+                            User journeys, wireframes,
+                            interface systems, prototypes and
+                            responsive digital experiences.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>UX</span>
+                            <span>UI</span>
+                            <span>Prototype</span>
+                            <span>Design Systems</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            WEB DEVELOPMENT
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+
+                        <h3>
+                            Web Development
+                        </h3>
+
+                        <p>
+
+                            Responsive websites, web applications,
+                            portals and digital platforms designed
+                            for usability, performance and scalability.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Frontend</span>
+                            <span>Backend</span>
+                            <span>Responsive</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            MOBILE APPLICATIONS
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+
+                        <h3>
+                            Mobile Applications
+                        </h3>
+
+                        <p>
+
+                            Customer-facing and operational
+                            mobile applications with backend,
+                            authentication and service integration.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Android</span>
+                            <span>iOS</span>
+                            <span>Cross Platform</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            CUSTOM SOFTWARE
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+
+                        <h3>
+                            Custom Software Development
+                        </h3>
+
+                        <p>
+
+                            Tailored systems designed around
+                            business processes, roles, permissions,
+                            workflows and reporting requirements.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Applications</span>
+                            <span>Portals</span>
+                            <span>Business Systems</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            AUTOMATION
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+
+                        <h3>
+                            Business Process Automation
+                        </h3>
+
+                        <p>
+
+                            Digital workflows that reduce
+                            repetitive work, connect processes
+                            and improve operational visibility.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Workflow</span>
+                            <span>Automation</span>
+                            <span>Integration</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            CRM
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+
+                        <h3>
+                            CRM & Business Systems
+                        </h3>
+
+                        <p>
+
+                            Customer, sales, service and operations
+                            platforms configured around business
+                            processes and information flow.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>CRM</span>
+                            <span>Operations</span>
+                            <span>Customer Data</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            SYSTEM INTEGRATION
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-plug"></i>
+                        </div>
+
+                        <h3>
+                            API & System Integration
+                        </h3>
+
+                        <p>
+
+                            Secure connections between applications,
+                            databases and third-party services to
+                            create coordinated digital workflows.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>API</span>
+                            <span>Webhooks</span>
+                            <span>Integration</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            DATA ENGINEERING
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+
+                        <h3>
+                            Database & Data Engineering
+                        </h3>
+
+                        <p>
+
+                            Database architecture,
+                            structured storage, migration,
+                            data models and performance-focused
+                            data workflows.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Database</span>
+                            <span>Migration</span>
+                            <span>Data Models</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            CLOUD INFRASTRUCTURE
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-cloud"></i>
+                        </div>
+
+                        <h3>
+                            Cloud & Infrastructure
+                        </h3>
+
+                        <p>
+
+                            Cloud environments, hosting,
+                            application deployment and scalable
+                            technical infrastructure.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Cloud</span>
+                            <span>Hosting</span>
+                            <span>Infrastructure</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            DEVOPS
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-code-branch"></i>
+                        </div>
+
+                        <h3>
+                            DevOps & Deployment
+                        </h3>
+
+                        <p>
+
+                            Source control, environment management,
+                            deployment pipelines and reliable
+                            software release practices.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>CI/CD</span>
+                            <span>Deployment</span>
+                            <span>Environments</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            CYBERSECURITY
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <h3>
+                            Cybersecurity
+                        </h3>
+
+                        <p>
+
+                            Security assessments,
+                            application hardening, vulnerability
+                            reviews and practical security improvements.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Assessment</span>
+                            <span>Hardening</span>
+                            <span>Vulnerability</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            DATA SECURITY
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+
+                        <h3>
+                            Data Security & Access Control
+                        </h3>
+
+                        <p>
+
+                            Role-based access, account security,
+                            permissions, secure storage and
+                            information protection.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>IAM</span>
+                            <span>Permissions</span>
+                            <span>Protection</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            BUSINESS CONTINUITY
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+
+                        <h3>
+                            Backup & Disaster Recovery
+                        </h3>
+
+                        <p>
+
+                            Backup strategies, recovery procedures,
+                            redundancy and operational continuity
+                            planning.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Backup</span>
+                            <span>Recovery</span>
+                            <span>Continuity</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            ANALYTICS
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+
+                        <h3>
+                            Analytics & Business Intelligence
+                        </h3>
+
+                        <p>
+
+                            Dashboards, reporting systems,
+                            operational metrics and tools that
+                            transform data into useful information.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Dashboard</span>
+                            <span>Reports</span>
+                            <span>BI</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            ARTIFICIAL INTELLIGENCE
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+
+                        <h3>
+                            AI-Assisted Solutions
+                        </h3>
+
+                        <p>
+
+                            Practical AI integrations for
+                            workflow assistance, automation,
+                            information processing and selected
+                            business use cases.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>AI</span>
+                            <span>Assistants</span>
+                            <span>Automation</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            SOFTWARE QUALITY
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-bug-slash"></i>
+                        </div>
+
+                        <h3>
+                            Software Testing & QA
+                        </h3>
+
+                        <p>
+
+                            Functional, responsive and usability
+                            testing, defect management and
+                            release-readiness verification.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>QA</span>
+                            <span>Testing</span>
+                            <span>Validation</span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="service-card reveal-item">
+
+                        <span class="service-category">
+                            SUPPORT
+                        </span>
+
+                        <div class="service-icon">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+
+                        <h3>
+                            Maintenance & Technical Support
+                        </h3>
+
+                        <p>
+
+                            Updates, issue resolution,
+                            system monitoring, optimization and
+                            iterative improvements after launch.
+
+                        </p>
+
+                        <div class="service-points">
+
+                            <span>Maintenance</span>
+                            <span>Updates</span>
+                            <span>Support</span>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PROCESS
+        ====================================================== -->
+
+        <section
+            class="process-section interactive-section"
+        >
+
+            <div class="section-particles"></div>
+
+
+            <div class="container">
+
+
+                <div class="process-header reveal-item">
+
+                    <div class="eyebrow">
+                        HOW WE DELIVER
+                    </div>
+
+
+                    <h2 class="section-title">
+
+                        One disciplined process.
+
+                        <em>
+                            Different outcomes.
+                        </em>
+
+                    </h2>
+
+
+                    <p>
+
+                        Whether the final result is physical
+                        infrastructure or a digital system,
+                        professional delivery begins by
+                        understanding the actual problem.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="process-grid">
+
+
+                    <article class="process-step reveal-item">
+
+                        <span class="process-label">
+                            DISCOVER
+                        </span>
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <h3>
+                            Understand
+                        </h3>
+
+                        <p>
+                            Requirements, stakeholders,
+                            constraints and priorities.
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="process-step reveal-item">
+
+                        <span class="process-label">
+                            DEFINE
+                        </span>
+
+                        <i class="fa-solid fa-compass-drafting"></i>
+
+                        <h3>
+                            Plan
+                        </h3>
+
+                        <p>
+                            Scope, architecture,
+                            specifications and responsibilities.
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="process-step reveal-item">
+
+                        <span class="process-label">
+                            DESIGN
+                        </span>
+
+                        <i class="fa-solid fa-pen-ruler"></i>
+
+                        <h3>
+                            Design
+                        </h3>
+
+                        <p>
+                            Technical design,
+                            documentation and review.
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="process-step reveal-item">
+
+                        <span class="process-label">
+                            EXECUTE
+                        </span>
+
+                        <i class="fa-solid fa-gears"></i>
+
+                        <h3>
+                            Build
+                        </h3>
+
+                        <p>
+                            Construction, development,
+                            coordination and testing.
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="process-step reveal-item">
+
+                        <span class="process-label">
+                            EVOLVE
+                        </span>
+
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+
+                        <h3>
+                            Deliver & Improve
+                        </h3>
+
+                        <p>
+                            Handover, maintenance,
+                            support and optimization.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             WORKING MODELS
+        ====================================================== -->
+
+        <section class="delivery-section">
+
+            <div class="container">
+
+
+                <div class="delivery-heading reveal-item">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            WORKING WITH SURREAL
+                        </div>
+
+
+                        <h2 class="section-title">
+
+                            Flexible around the
+
+                            <em>
+                                project.
+                            </em>
+
+                        </h2>
+
+                    </div>
+
+
+                    <p class="section-intro">
+
+                        Engagement can cover complete delivery,
+                        a specialist technical package,
+                        consultation or continuing support.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="delivery-grid">
+
+
+                    <article class="delivery-card reveal-item">
+
+                        <i class="fa-solid fa-diagram-project"></i>
+
+                        <h3>
+                            End-to-End Project
+                        </h3>
+
+                        <p>
+                            Coordinated delivery from planning
+                            through implementation and completion.
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="delivery-card reveal-item">
+
+                        <i class="fa-solid fa-puzzle-piece"></i>
+
+                        <h3>
+                            Specialist Scope
+                        </h3>
+
+                        <p>
+                            A focused engineering or technology
+                            package within a wider project.
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="delivery-card reveal-item">
+
+                        <i class="fa-solid fa-comments"></i>
+
+                        <h3>
+                            Consultation
+                        </h3>
+
+                        <p>
+                            Assessment, advisory and planning
+                            before major project decisions.
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="delivery-card reveal-item">
+
+                        <i class="fa-solid fa-arrows-rotate"></i>
+
+                        <h3>
+                            Ongoing Support
+                        </h3>
+
+                        <p>
+                            Continuing maintenance,
+                            improvements and technical assistance.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PROFESSIONAL NOTE
+        ====================================================== -->
+
+        <section class="professional-note">
+
+            <div class="container">
+
+                <div class="note-box reveal-item">
+
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+
+                    <div>
+
+                        <h3>
+                            Professional & regulatory scope
+                        </h3>
+
+
+                        <p>
+
+                            Engineering approvals, certifications,
+                            professional sign-off and regulated
+                            engineering services must be undertaken
+                            or reviewed by appropriately qualified
+                            and licensed professionals wherever
+                            required by the applicable jurisdiction.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
+
+        <section class="services-final-cta">
+
+            <div class="container">
+
+                <div class="services-cta-inner reveal-item">
+
+
+                    <div>
+
+                        <div class="eyebrow">
+                            HAVE A PROJECT?
+                        </div>
+
+
+                        <h2>
+
+                            Bring us the problem.
+
+                            <em>
+                                We'll define the path.
+                            </em>
+
+                        </h2>
+
+                    </div>
+
+
+                    <a
+                        href="contact.html"
+                        class="btn btn-orange magnetic"
+                    >
+
+                        START A CONVERSATION
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="logo footer-logo"
+                >
+
+                    <img
+                        src="logo1.png"
+                        alt="SURREAL Engineering"
+                        class="footer-logo-image"
+                    >
+
+                </a>
+
+
+                <p>
+
+                    Engineering physical spaces and
+                    digital experiences for a changing world.
+
+                </p>
+
+
+                <div class="footer-social">
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="footer-col">
+
+                <h4>
+                    EXPLORE
+                </h4>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="services.html">
+                    Services
+                </a>
+
+                <a href="index.html#projects">
+                    Projects
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-col">
+
+                <h4>
+                    SERVICES
+                </h4>
+
+                <a href="#civilServices">
+                    Civil Engineering
+                </a>
+
+                <a href="#itServices">
+                    Software Development
+                </a>
+
+                <a href="#itServices">
+                    Web Development
+                </a>
+
+                <a href="#itServices">
+                    Mobile Applications
+                </a>
+
+                <a href="#itServices">
+                    Cybersecurity
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-news">
+
+                <h4>
+                    STAY CONNECTED
+                </h4>
+
+                <p>
+                    Subscribe for company updates,
+                    projects and useful insights.
+                </p>
+
+
+                <form
+                    class="newsletter-form"
+                    id="newsletterForm"
+                >
+
+                    <input
+                        type="email"
+                        placeholder="Your email"
+                        aria-label="Your email"
+                        required
+                    >
+
+                    <button
+                        type="submit"
+                        aria-label="Subscribe"
+                    >
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <div class="container footer-bottom-inner">
+
+                <p>
+                    © 2026 SURREAL. All rights reserved.
+                </p>
+
+
+                <div class="footer-legal">
+
+                    <a href="privacy.html">
+                        Privacy
+                    </a>
+
+                    <a href="terms.html">
+                        Terms
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================= -->
+
+    <script>
+
+        const reducedMotion =
+            window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches;
+
+
+        const touchDevice =
+            window.matchMedia(
+                "(pointer: coarse)"
+            ).matches;
+
+
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+                initHeader();
+
+                initMobileNav();
+
+                initSearch();
+
+                initSmoothLinks();
+
+                initReveal();
+
+                initServiceCards();
+
+                initSwitcher();
+
+                initOrbitSystem();
+
+                initInteractiveSections();
+
+                initSectionParticles();
+
+                initMagneticButtons();
+
+                initNewsletter();
+
+            }
+        );
+
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        function initHeader() {
+
+            const header =
+                document.querySelector(
+                    ".site-header"
+                );
+
+
+            if (!header) return;
+
+
+            let lastY =
+                window.scrollY;
+
+
+            let ticking =
+                false;
+
+
+            function update() {
+
+                const current =
+                    window.scrollY;
+
+
+                header.classList.toggle(
+                    "scrolled",
+                    current > 35
+                );
+
+
+                if (current <= 80) {
+
+                    header.classList.remove(
+                        "nav-hidden"
+                    );
+
+                }
+
+                else if (
+                    current >
+                    lastY + 7
+                ) {
+
+                    header.classList.add(
+                        "nav-hidden"
+                    );
+
+                }
+
+                else if (
+                    current <
+                    lastY - 7
+                ) {
+
+                    header.classList.remove(
+                        "nav-hidden"
+                    );
+
+                }
+
+
+                lastY =
+                    current;
+
+
+                ticking =
+                    false;
+
+            }
+
+
+            window.addEventListener(
+                "scroll",
+                () => {
+
+                    if (ticking) return;
+
+
+                    ticking = true;
+
+
+                    requestAnimationFrame(
+                        update
+                    );
+
+                },
+                {
+                    passive: true
+                }
+            );
+
+
+            update();
+
+        }
+
+
+
+        /* =========================================================
+           MOBILE NAV
+        ========================================================= */
+
+        function initMobileNav() {
+
+            const button =
+                document.getElementById(
+                    "hamburger"
+                );
+
+
+            const nav =
+                document.getElementById(
+                    "mainNav"
+                );
+
+
+            if (
+                !button ||
+                !nav
+            ) return;
+
+
+            function close() {
+
+                nav.classList.remove(
+                    "open"
+                );
+
+
+                button.classList.remove(
+                    "active"
+                );
+
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+
+                document.body
+                    .classList
+                    .remove(
+                        "nav-open"
+                    );
+
+            }
+
+
+            button.addEventListener(
+                "click",
+                event => {
+
+                    event.stopPropagation();
+
+
+                    const open =
+                        nav.classList.toggle(
+                            "open"
+                        );
+
+
+                    button.classList.toggle(
+                        "active",
+                        open
+                    );
+
+
+                    button.setAttribute(
+                        "aria-expanded",
+                        String(open)
+                    );
+
+
+                    document.body
+                        .classList
+                        .toggle(
+                            "nav-open",
+                            open
+                        );
+
+                }
+            );
+
+
+            nav.querySelectorAll(
+                "a"
+            )
+            .forEach(
+                link => {
+
+                    link.addEventListener(
+                        "click",
+                        close
+                    );
+
+                }
+            );
+
+
+            document.addEventListener(
+                "keydown",
+                event => {
+
+                    if (
+                        event.key ===
+                        "Escape"
+                    ) {
+
+                        close();
+
+                    }
+
+                }
+            );
+
+
+            document.addEventListener(
+                "click",
+                event => {
+
+                    if (
+                        nav.classList.contains(
+                            "open"
+                        ) &&
+                        !nav.contains(
+                            event.target
+                        ) &&
+                        !button.contains(
+                            event.target
+                        )
+                    ) {
+
+                        close();
+
+                    }
+
+                }
+            );
+
+
+            window.addEventListener(
+                "resize",
+                () => {
+
+                    if (
+                        window.innerWidth >
+                        850
+                    ) {
+
+                        close();
+
+                    }
+
+                }
+            );
+
+        }
+
+
+
+        /* =========================================================
+           SEARCH
+        ========================================================= */
+
+        function initSearch() {
+
+            const box =
+                document.getElementById(
+                    "searchBox"
+                );
+
+
+            const button =
+                document.getElementById(
+                    "searchToggle"
+                );
+
+
+            const input =
+                document.getElementById(
+                    "siteSearch"
+                );
+
+
+            if (
+                !box ||
+                !button ||
+                !input
+            ) return;
+
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    box.classList.toggle(
+                        "open"
+                    );
+
+
+                    if (
+                        box.classList.contains(
+                            "open"
+                        )
+                    ) {
+
+                        input.focus();
+
+                    }
+
+                }
+            );
+
+
+            input.addEventListener(
+                "input",
+                () => {
+
+                    const query =
+                        input.value
+                            .trim()
+                            .toLowerCase();
+
+
+                    document
+                        .querySelectorAll(
+                            ".service-card"
+                        )
+                        .forEach(
+                            card => {
+
+                                const found =
+                                    card.textContent
+                                        .toLowerCase()
+                                        .includes(
+                                            query
+                                        );
+
+
+                                card.style.display =
+                                    !query ||
+                                    found
+                                        ? ""
+                                        : "none";
+
+                            }
+                        );
+
+                }
+            );
+
+        }
+
+
+
+        /* =========================================================
+           SMOOTH LINKS
+        ========================================================= */
+
+        function scrollToTarget(
+            target
+        ) {
+
+            const header =
+                document.querySelector(
+                    ".site-header"
+                );
+
+
+            const offset =
+                header
+                    ? header.offsetHeight
+                    : 0;
+
+
+            const top =
+                target
+                    .getBoundingClientRect()
+                    .top
+                +
+                window.scrollY
+                -
+                offset;
+
+
+            window.scrollTo({
+
+                top,
+
+                behavior:
+                    reducedMotion
+                        ? "auto"
+                        : "smooth"
+
+            });
+
+        }
+
+
+        function initSmoothLinks() {
+
+            document
+                .querySelectorAll(
+                    'a[href^="#"]'
+                )
+                .forEach(
+                    link => {
+
+                        link.addEventListener(
+                            "click",
+                            event => {
+
+                                const selector =
+                                    link.getAttribute(
+                                        "href"
+                                    );
+
+
+                                if (
+                                    !selector ||
+                                    selector === "#"
+                                ) return;
+
+
+                                const target =
+                                    document.querySelector(
+                                        selector
+                                    );
+
+
+                                if (!target) return;
+
+
+                                event.preventDefault();
+
+
+                                scrollToTarget(
+                                    target
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+        }
+
+
+
+        /* =========================================================
+           REVEAL
+        ========================================================= */
+
+        function initReveal() {
+
+            const items =
+                document.querySelectorAll(
+                    ".reveal-item"
+                );
+
+
+            if (
+                reducedMotion ||
+                !(
+                    "IntersectionObserver"
+                    in window
+                )
+            ) {
+
+                items.forEach(
+                    item => {
+
+                        item.classList.add(
+                            "visible"
+                        );
+
+                    }
+                );
+
+
+                return;
+
+            }
+
+
+            const observer =
+                new IntersectionObserver(
+
+                    entries => {
+
+                        entries.forEach(
+                            entry => {
+
+                                if (
+                                    !entry.isIntersecting
+                                ) return;
+
+
+                                entry.target
+                                    .classList
+                                    .add(
+                                        "visible"
+                                    );
+
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+                        );
+
+                    },
+
+                    {
+                        threshold: .08
+                    }
+
+                );
+
+
+            items.forEach(
+                item => {
+
+                    observer.observe(
+                        item
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =========================================================
+           CARD INTERACTION
+        ========================================================= */
+
+        function initServiceCards() {
+
+            document
+                .querySelectorAll(
+                    ".service-card"
+                )
+                .forEach(
+                    card => {
+
+                        card.addEventListener(
+                            "pointermove",
+                            event => {
+
+                                const rect =
+                                    card
+                                        .getBoundingClientRect();
+
+
+                                const x =
+                                    event.clientX -
+                                    rect.left;
+
+
+                                const y =
+                                    event.clientY -
+                                    rect.top;
+
+
+                                card.style.setProperty(
+                                    "--pointer-x",
+                                    `${x}px`
+                                );
+
+
+                                card.style.setProperty(
+                                    "--pointer-y",
+                                    `${y}px`
+                                );
+
+
+                                if (
+                                    touchDevice ||
+                                    reducedMotion
+                                ) return;
+
+
+                                const rotateY =
+                                    (
+                                        x /
+                                        rect.width -
+                                        .5
+                                    ) * 2.7;
+
+
+                                const rotateX =
+                                    (
+                                        y /
+                                        rect.height -
+                                        .5
+                                    ) * -2.7;
+
+
+                                card.style.transform =
+                                    `
+                                    perspective(1100px)
+                                    rotateX(${rotateX}deg)
+                                    rotateY(${rotateY}deg)
+                                    translateY(-8px)
+                                    `;
+
+                            }
+                        );
+
+
+                        card.addEventListener(
+                            "pointerleave",
+                            () => {
+
+                                card.style.transform =
+                                    "";
+
+                            }
+                        );
+
+                    }
+                );
+
+        }
+
+
+
+        /* =========================================================
+           SWITCHER
+        ========================================================= */
+
+        function initSwitcher() {
+
+            const buttons =
+                document.querySelectorAll(
+                    ".service-switch"
+                );
+
+
+            buttons.forEach(
+                button => {
+
+                    button.addEventListener(
+                        "click",
+                        () => {
+
+                            buttons.forEach(
+                                item => {
+
+                                    item.classList.remove(
+                                        "active"
+                                    );
+
+                                }
+                            );
+
+
+                            button.classList.add(
+                                "active"
+                            );
+
+
+                            const target =
+                                document.getElementById(
+                                    button.dataset.target
+                                );
+
+
+                            if (target) {
+
+                                scrollToTarget(
+                                    target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =========================================================
+           ROTATING HERO ICONS
+        ========================================================= */
+
+        function initOrbitSystem() {
+
+            const universe =
+                document.getElementById(
+                    "iconUniverse"
+                );
+
+
+            if (!universe) return;
+
+
+            const items =
+                Array.from(
+                    universe.querySelectorAll(
+                        ".hero-orbit-item"
+                    )
+                );
+
+
+            const states =
+                items.map(
+                    item => ({
+
+                        element:
+                            item,
+
+                        angle:
+                            Number(
+                                item.dataset.angle ||
+                                0
+                            ) *
+                            Math.PI /
+                            180,
+
+                        radius:
+                            Number(
+                                item.dataset.radius ||
+                                .9
+                            ),
+
+                        speed:
+                            Number(
+                                item.dataset.speed ||
+                                .004
+                            ),
+
+                        hover:
+                            false
+
+                    })
+                );
+
+
+            let pointerX = 0;
+
+            let pointerY = 0;
+
+            let smoothX = 0;
+
+            let smoothY = 0;
+
+
+            if (
+                !touchDevice &&
+                !reducedMotion
+            ) {
+
+                universe.addEventListener(
+                    "pointermove",
+                    event => {
+
+                        const rect =
+                            universe
+                                .getBoundingClientRect();
+
+
+                        pointerX =
+                            (
+                                event.clientX -
+                                rect.left
+                            ) /
+                            rect.width -
+                            .5;
+
+
+                        pointerY =
+                            (
+                                event.clientY -
+                                rect.top
+                            ) /
+                            rect.height -
+                            .5;
+
+                    }
+                );
+
+
+                universe.addEventListener(
+                    "pointerleave",
+                    () => {
+
+                        pointerX = 0;
+
+                        pointerY = 0;
+
+                    }
+                );
+
+            }
+
+
+            states.forEach(
+                state => {
+
+                    state.element
+                        .addEventListener(
+                            "pointerenter",
+                            () => {
+
+                                state.hover =
+                                    true;
+
+                            }
+                        );
+
+
+                    state.element
+                        .addEventListener(
+                            "pointerleave",
+                            () => {
+
+                                state.hover =
+                                    false;
+
+                            }
+                        );
+
+                }
+            );
+
+
+            function animate() {
+
+                const rect =
+                    universe
+                        .getBoundingClientRect();
+
+
+                const width =
+                    rect.width;
+
+
+                const height =
+                    rect.height;
+
+
+                const baseRadius =
+                    Math.min(
+                        width,
+                        height
+                    ) * .42;
+
+
+                const radiusX =
+                    baseRadius;
+
+
+                const radiusY =
+                    baseRadius * .92;
+
+
+                smoothX +=
+                    (
+                        pointerX -
+                        smoothX
+                    ) *
+                    .045;
+
+
+                smoothY +=
+                    (
+                        pointerY -
+                        smoothY
+                    ) *
+                    .045;
+
+
+                states.forEach(
+                    state => {
+
+                        if (
+                            !reducedMotion &&
+                            !state.hover
+                        ) {
+
+                            state.angle +=
+                                state.speed;
+
+                        }
+
+
+                        const radius =
+                            state.radius;
+
+
+                        const x =
+                            Math.cos(
+                                state.angle
+                            ) *
+                            radiusX *
+                            radius;
+
+
+                        const y =
+                            Math.sin(
+                                state.angle
+                            ) *
+                            radiusY *
+                            radius;
+
+
+                        const cursorOffsetX =
+                            touchDevice
+                                ? 0
+                                : smoothX *
+                                  28 *
+                                  radius;
+
+
+                        const cursorOffsetY =
+                            touchDevice
+                                ? 0
+                                : smoothY *
+                                  20 *
+                                  radius;
+
+
+                        const scale =
+                            state.hover
+                                ? 1.10
+                                : 1;
+
+
+                        state.element.style.transform =
+                            `
+                            translate3d(
+                                ${x + cursorOffsetX}px,
+                                ${y + cursorOffsetY}px,
+                                0
+                            )
+                            scale(${scale})
+                            `;
+
+                    }
+                );
+
+
+                requestAnimationFrame(
+                    animate
+                );
+
+            }
+
+
+            animate();
+
+        }
+
+
+
+        /* =========================================================
+           INTERACTIVE SECTION GLOW
+        ========================================================= */
+
+        function initInteractiveSections() {
+
+            if (
+                touchDevice ||
+                reducedMotion
+            ) return;
+
+
+            document
+                .querySelectorAll(
+                    ".interactive-section"
+                )
+                .forEach(
+                    section => {
+
+                        section.addEventListener(
+                            "pointermove",
+                            event => {
+
+                                const rect =
+                                    section
+                                        .getBoundingClientRect();
+
+
+                                const x =
+                                    event.clientX -
+                                    rect.left;
+
+
+                                const y =
+                                    event.clientY -
+                                    rect.top;
+
+
+                                section.style.setProperty(
+                                    "--cursor-x",
+                                    `${x}px`
+                                );
+
+
+                                section.style.setProperty(
+                                    "--cursor-y",
+                                    `${y}px`
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+        }
+
+
+
+        /* =========================================================
+           SECTION PARTICLES
+           BEHIND CONTENT ONLY
+        ========================================================= */
+
+        function initSectionParticles() {
+
+            document
+                .querySelectorAll(
+                    ".section-particles"
+                )
+                .forEach(
+                    field => {
+
+                        const section =
+                            field.closest(
+                                ".interactive-section"
+                            );
+
+
+                        if (!section) return;
+
+
+                        const isCivil =
+                            section.classList.contains(
+                                "civil-world"
+                            );
+
+
+                        const isIT =
+                            section.classList.contains(
+                                "it-world"
+                            );
+
+
+                        let colors;
+
+
+                        if (isCivil) {
+
+                            colors = [
+                                "#f6a91b",
+                                "#3f9b72"
+                            ];
+
+                        }
+
+                        else if (isIT) {
+
+                            colors = [
+                                "#3f82d1",
+                                "#7357d9"
+                            ];
+
+                        }
+
+                        else {
+
+                            colors = [
+                                "#f6a91b",
+                                "#3f82d1",
+                                "#7357d9"
+                            ];
+
+                        }
+
+
+                        const count =
+                            window.innerWidth >
+                            900
+                                ? 16
+                                : 8;
+
+
+                        const particles =
+                            [];
+
+
+                        for (
+                            let i = 0;
+                            i < count;
+                            i++
+                        ) {
+
+                            const particle =
+                                document.createElement(
+                                    "span"
+                                );
+
+
+                            particle.className =
+                                "section-particle";
+
+
+                            const x =
+                                Math.random() *
+                                100;
+
+
+                            const y =
+                                Math.random() *
+                                100;
+
+
+                            const depth =
+                                Math.random() *
+                                .8 +
+                                .2;
+
+
+                            particle.dataset.baseX =
+                                x;
+
+
+                            particle.dataset.baseY =
+                                y;
+
+
+                            particle.dataset.depth =
+                                depth;
+
+
+                            particle.style
+                                .setProperty(
+                                    "--particle-size",
+                                    `${
+                                        Math.random() *
+                                        3 +
+                                        1.2
+                                    }px`
+                                );
+
+
+                            particle.style
+                                .setProperty(
+                                    "--particle-opacity",
+                                    `${
+                                        Math.random() *
+                                        .18 +
+                                        .05
+                                    }`
+                                );
+
+
+                            particle.style
+                                .setProperty(
+                                    "--particle-color",
+                                    colors[
+                                        Math.floor(
+                                            Math.random() *
+                                            colors.length
+                                        )
+                                    ]
+                                );
+
+
+                            particle.style
+                                .setProperty(
+                                    "--particle-x",
+                                    `${x}%`
+                                );
+
+
+                            particle.style
+                                .setProperty(
+                                    "--particle-y",
+                                    `${y}%`
+                                );
+
+
+                            field.appendChild(
+                                particle
+                            );
+
+
+                            particles.push(
+                                particle
+                            );
+
+                        }
+
+
+                        if (
+                            touchDevice ||
+                            reducedMotion
+                        ) return;
+
+
+                        let pointerX =
+                            .5;
+
+
+                        let pointerY =
+                            .5;
+
+
+                        let smoothX =
+                            .5;
+
+
+                        let smoothY =
+                            .5;
+
+
+                        section.addEventListener(
+                            "pointermove",
+                            event => {
+
+                                const rect =
+                                    section
+                                        .getBoundingClientRect();
+
+
+                                pointerX =
+                                    (
+                                        event.clientX -
+                                        rect.left
+                                    ) /
+                                    rect.width;
+
+
+                                pointerY =
+                                    (
+                                        event.clientY -
+                                        rect.top
+                                    ) /
+                                    rect.height;
+
+                            }
+                        );
+
+
+                        section.addEventListener(
+                            "pointerleave",
+                            () => {
+
+                                pointerX =
+                                    .5;
+
+
+                                pointerY =
+                                    .5;
+
+                            }
+                        );
+
+
+                        function animate() {
+
+                            smoothX +=
+                                (
+                                    pointerX -
+                                    smoothX
+                                ) *
+                                .04;
+
+
+                            smoothY +=
+                                (
+                                    pointerY -
+                                    smoothY
+                                ) *
+                                .04;
+
+
+                            const offsetX =
+                                smoothX -
+                                .5;
+
+
+                            const offsetY =
+                                smoothY -
+                                .5;
+
+
+                            particles.forEach(
+                                particle => {
+
+                                    const baseX =
+                                        Number(
+                                            particle.dataset.baseX
+                                        );
+
+
+                                    const baseY =
+                                        Number(
+                                            particle.dataset.baseY
+                                        );
+
+
+                                    const depth =
+                                        Number(
+                                            particle.dataset.depth
+                                        );
+
+
+                                    const x =
+                                        baseX +
+                                        offsetX *
+                                        4 *
+                                        depth;
+
+
+                                    const y =
+                                        baseY +
+                                        offsetY *
+                                        4 *
+                                        depth;
+
+
+                                    particle.style
+                                        .setProperty(
+                                            "--particle-x",
+                                            `${x}%`
+                                        );
+
+
+                                    particle.style
+                                        .setProperty(
+                                            "--particle-y",
+                                            `${y}%`
+                                        );
+
+                                }
+                            );
+
+
+                            requestAnimationFrame(
+                                animate
+                            );
+
+                        }
+
+
+                        animate();
+
+                    }
+                );
+
+        }
+
+
+
+        /* =========================================================
+           MAGNETIC BUTTONS
+        ========================================================= */
+
+        function initMagneticButtons() {
+
+            if (
+                touchDevice ||
+                reducedMotion
+            ) return;
+
+
+            document
+                .querySelectorAll(
+                    ".magnetic"
+                )
+                .forEach(
+                    element => {
+
+                        element.addEventListener(
+                            "pointermove",
+                            event => {
+
+                                const rect =
+                                    element
+                                        .getBoundingClientRect();
+
+
+                                const x =
+                                    event.clientX -
+                                    rect.left -
+                                    rect.width / 2;
+
+
+                                const y =
+                                    event.clientY -
+                                    rect.top -
+                                    rect.height / 2;
+
+
+                                element.style.transform =
+                                    `
+                                    translate(
+                                        ${x * .06}px,
+                                        ${y * .06}px
+                                    )
+                                    `;
+
+                            }
+                        );
+
+
+                        element.addEventListener(
+                            "pointerleave",
+                            () => {
+
+                                element.style.transform =
+                                    "";
+
+                            }
+                        );
+
+                    }
+                );
+
+        }
+
+
+
+        /* =========================================================
+           NEWSLETTER
+        ========================================================= */
+
+        function initNewsletter() {
+
+            const form =
+                document.getElementById(
+                    "newsletterForm"
+                );
+
+
+            if (!form) return;
+
+
+            form.addEventListener(
+                "submit",
+                event => {
+
+                    event.preventDefault();
+
+
+                    const input =
+                        form.querySelector(
+                            "input"
+                        );
+
+
+                    if (
+                        !input ||
+                        !input.checkValidity()
+                    ) {
+
+                        input?.reportValidity();
+
+                        return;
+
+                    }
+
+
+                    const button =
+                        form.querySelector(
+                            "button"
+                        );
+
+
+                    if (button) {
+
+                        const old =
+                            button.innerHTML;
+
+
+                        button.innerHTML =
+                            '<i class="fa-solid fa-check"></i>';
+
+
+                        setTimeout(
+                            () => {
+
+                                button.innerHTML =
+                                    old;
+
+                            },
+                            1500
+                        );
+
+                    }
+
+
+                    form.reset();
+
+                }
+            );
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

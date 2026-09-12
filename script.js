@@ -1,144 +1,261 @@
 /* =========================================================
-   SURREAL WEBSITE JAVASCRIPT
-   FULL CORRECTED VERSION
-
-   FEATURES:
-   - EmailJS contact form
-   - Smooth navigation
-   - Active navigation
-   - Mobile hamburger
-   - Search
-   - Scroll reveal
-   - Animated counters
-   - Hero network
-   - Cursor particles
-   - Magnetic buttons
-   - Service card tilt
-   - Hero service interaction
-   - Newsletter
-   - Image fallback
+   SURREAL ENGINEERING
+   COMPLETE HOMEPAGE JAVASCRIPT
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
-    "use strict";
-
-
-    /* =====================================================
-       EMAILJS CONFIGURATION
-    ====================================================== */
-
-    const EMAILJS_PUBLIC_KEY =
-        "3acIhgg32PRhhzCd_";
-
-    const EMAILJS_SERVICE_ID =
-        "service_yzmd5rl";
-
-    const EMAILJS_TEMPLATE_ID =
-        "template_8vf53eh";
+        "use strict";
 
 
-    /* =====================================================
-       EMAILJS INITIALIZATION
-    ====================================================== */
+        /* =====================================================
+           GLOBAL
+        ====================================================== */
 
-    let emailJSReady = false;
+        const reducedMotion =
+            window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches;
 
-    if (typeof emailjs !== "undefined") {
 
-        try {
+        const isTouchDevice =
+            window.matchMedia(
+                "(pointer: coarse)"
+            ).matches;
 
-            emailjs.init({
-                publicKey: EMAILJS_PUBLIC_KEY
-            });
 
-            emailJSReady = true;
 
-            console.log(
-                "EmailJS initialized successfully."
+        /* =====================================================
+           EMAILJS
+        ====================================================== */
+
+        const EMAILJS_PUBLIC_KEY =
+            "fNqiot-ag2AMAvrSp";
+
+
+        const EMAILJS_SERVICE_ID =
+            "service_uxvq9eq";
+
+
+        const EMAILJS_TEMPLATE_ID =
+            "template_tj0wsdg";
+
+
+        let emailJSReady =
+            false;
+
+
+        if (
+            typeof emailjs !==
+            "undefined"
+        ) {
+
+            try {
+
+                emailjs.init({
+                    publicKey:
+                        EMAILJS_PUBLIC_KEY
+                });
+
+
+                emailJSReady =
+                    true;
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "EmailJS initialization failed:",
+                    error
+                );
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           HEADER
+        ====================================================== */
+
+        const header =
+            document.querySelector(
+                ".site-header"
             );
 
-        } catch (error) {
 
-            console.error(
-                "EmailJS initialization failed:",
-                error
+        function updateHeader() {
+
+            if (!header) {
+                return;
+            }
+
+
+            header.classList.toggle(
+                "scrolled",
+                window.scrollY > 20
             );
 
         }
 
-    } else {
 
-        console.error(
-            "EmailJS library was not loaded."
+        updateHeader();
+
+
+        window.addEventListener(
+            "scroll",
+            updateHeader,
+            {
+                passive:
+                    true
+            }
         );
 
-    }
 
 
-    /* =====================================================
-       NAVIGATION
-    ====================================================== */
+        /* =====================================================
+           HIDE / SHOW HEADER
+        ====================================================== */
 
-    const navLinks =
-        document.querySelectorAll("[data-nav]");
+        let lastScrollY =
+            window.scrollY;
 
 
-    navLinks.forEach(link => {
+        let navbarTicking =
+            false;
 
-        link.addEventListener("click", function (e) {
 
-            const target =
-                this.getAttribute("href");
+        function handleNavbarDirection() {
+
+            if (!header) {
+
+                navbarTicking =
+                    false;
+
+                return;
+
+            }
+
+
+            const currentScroll =
+                window.scrollY;
 
 
             if (
-                !target ||
-                !target.startsWith("#")
+                currentScroll <=
+                80
             ) {
 
+                header.classList.remove(
+                    "nav-hidden"
+                );
+
+
+                lastScrollY =
+                    currentScroll;
+
+
+                navbarTicking =
+                    false;
+
+
                 return;
 
             }
 
 
-            const section =
-                document.querySelector(target);
+            if (
+                currentScroll >
+                lastScrollY + 6
+            ) {
 
+                header.classList.add(
+                    "nav-hidden"
+                );
 
-            if (!section) {
+            }
 
-                return;
+            else if (
+                currentScroll <
+                lastScrollY - 6
+            ) {
+
+                header.classList.remove(
+                    "nav-hidden"
+                );
 
             }
 
 
-            e.preventDefault();
+            lastScrollY =
+                currentScroll;
 
 
-            section.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
+            navbarTicking =
+                false;
+
+        }
 
 
-            const mobileNav =
-                document.getElementById("mainNav");
+        window.addEventListener(
+            "scroll",
+            () => {
+
+                if (
+                    navbarTicking
+                ) {
+
+                    return;
+
+                }
 
 
-            if (mobileNav) {
+                navbarTicking =
+                    true;
 
-                mobileNav.classList.remove(
+
+                requestAnimationFrame(
+                    handleNavbarDirection
+                );
+
+            },
+            {
+                passive:
+                    true
+            }
+        );
+
+
+
+        /* =====================================================
+           MOBILE MENU
+        ====================================================== */
+
+        const hamburger =
+            document.getElementById(
+                "hamburger"
+            );
+
+
+        const mainNav =
+            document.getElementById(
+                "mainNav"
+            );
+
+
+        function closeMobileNav() {
+
+            if (mainNav) {
+
+                mainNav.classList.remove(
                     "open"
                 );
 
             }
-
-
-            const hamburger =
-                document.getElementById(
-                    "hamburger"
-                );
 
 
             if (hamburger) {
@@ -150,2000 +267,2967 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
-        });
 
-    });
+            document.body
+                .classList
+                .remove(
+                    "nav-open"
+                );
 
-
-    /* =====================================================
-       ACTIVE NAVIGATION
-    ====================================================== */
-
-    const sections =
-        document.querySelectorAll(
-            "section[id]"
-        );
+        }
 
 
-    const mainNavLinks =
-        document.querySelectorAll(
-            ".main-nav .nav-link"
-        );
+        if (
+            hamburger &&
+            mainNav
+        ) {
+
+            hamburger.addEventListener(
+                "click",
+                event => {
+
+                    event.stopPropagation();
 
 
-    if ("IntersectionObserver" in window) {
-
-        const navObserver =
-            new IntersectionObserver(
-
-                entries => {
-
-                    entries.forEach(entry => {
-
-                        if (
-                            !entry.isIntersecting
-                        ) {
-
-                            return;
-
-                        }
-
-
-                        const id =
-                            entry.target.getAttribute(
-                                "id"
+                    const open =
+                        mainNav
+                            .classList
+                            .toggle(
+                                "open"
                             );
 
 
-                        mainNavLinks.forEach(link => {
+                    hamburger.setAttribute(
+                        "aria-expanded",
+                        String(open)
+                    );
 
-                            link.classList.remove(
-                                "active"
-                            );
+
+                    document.body
+                        .classList
+                        .toggle(
+                            "nav-open",
+                            open
+                        );
+
+                }
+            );
+
+        }
 
 
-                            if (
-                                link.getAttribute(
-                                    "href"
-                                ) === "#" + id
-                            ) {
+        document.addEventListener(
+            "click",
+            event => {
 
-                                link.classList.add(
-                                    "active"
-                                );
+                if (
+                    !mainNav ||
+                    !hamburger
+                ) {
 
-                            }
+                    return;
 
-                        });
-
-                    });
-
-                },
-
-                {
-                    rootMargin:
-                        "-30% 0px -60% 0px"
                 }
 
+
+                if (
+                    !mainNav
+                        .classList
+                        .contains(
+                            "open"
+                        )
+                ) {
+
+                    return;
+
+                }
+
+
+                if (
+                    !mainNav.contains(
+                        event.target
+                    ) &&
+                    !hamburger.contains(
+                        event.target
+                    )
+                ) {
+
+                    closeMobileNav();
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           SEARCH
+        ====================================================== */
+
+        const searchBox =
+            document.getElementById(
+                "searchBox"
             );
 
 
-        sections.forEach(section => {
-
-            navObserver.observe(section);
-
-        });
-
-    }
+        const searchToggle =
+            document.getElementById(
+                "searchToggle"
+            );
 
 
-    /* =====================================================
-       HAMBURGER MENU
-    ====================================================== */
-
-    const hamburger =
-        document.getElementById(
-            "hamburger"
-        );
+        const siteSearch =
+            document.getElementById(
+                "siteSearch"
+            );
 
 
-    const mainNav =
-        document.getElementById(
-            "mainNav"
-        );
+        function closeSearch() {
 
+            if (searchBox) {
 
-    if (
-        hamburger &&
-        mainNav
-    ) {
-
-        hamburger.addEventListener(
-            "click",
-            () => {
-
-                const isOpen =
-                    mainNav.classList.toggle(
-                        "open"
-                    );
-
-
-                hamburger.setAttribute(
-                    "aria-expanded",
-                    String(isOpen)
-                );
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       SEARCH
-    ====================================================== */
-
-    const searchBox =
-        document.getElementById(
-            "searchBox"
-        );
-
-
-    const searchToggle =
-        document.getElementById(
-            "searchToggle"
-        );
-
-
-    const siteSearch =
-        document.getElementById(
-            "siteSearch"
-        );
-
-
-    if (
-        searchToggle &&
-        searchBox
-    ) {
-
-        searchToggle.addEventListener(
-            "click",
-            () => {
-
-                searchBox.classList.toggle(
+                searchBox.classList.remove(
                     "open"
                 );
 
-
-                if (
-                    searchBox.classList.contains(
-                        "open"
-                    ) &&
-                    siteSearch
-                ) {
-
-                    setTimeout(
-                        () => {
-
-                            siteSearch.focus();
-
-                        },
-                        150
-                    );
-
-                }
-
             }
-        );
 
-    }
-
-
-    if (siteSearch) {
-
-        siteSearch.addEventListener(
-            "keydown",
-            e => {
-
-                if (
-                    e.key !== "Enter"
-                ) {
-
-                    return;
-
-                }
+        }
 
 
-                const query =
-                    siteSearch.value
-                        .trim()
-                        .toLowerCase();
+        if (
+            searchToggle &&
+            searchBox
+        ) {
+
+            searchToggle.addEventListener(
+                "click",
+                event => {
+
+                    event.stopPropagation();
 
 
-                if (!query) {
-
-                    return;
-
-                }
-
-
-                const searchable =
-                    document.querySelectorAll(
-                        "h1,h2,h3,h4,p,li"
+                    searchBox.classList.toggle(
+                        "open"
                     );
 
-
-                let found = false;
-
-
-                searchable.forEach(
-                    element => {
-
-                        element.classList.remove(
-                            "search-highlight"
-                        );
-
-                    }
-                );
-
-
-                for (
-                    const element of searchable
-                ) {
 
                     if (
-                        element.textContent
-                            .toLowerCase()
-                            .includes(query)
+                        searchBox
+                            .classList
+                            .contains(
+                                "open"
+                            ) &&
+                        siteSearch
                     ) {
-
-                        element.scrollIntoView({
-                            behavior: "smooth",
-                            block: "center"
-                        });
-
-
-                        element.classList.add(
-                            "search-highlight"
-                        );
-
-
-                        found = true;
-
 
                         setTimeout(
                             () => {
 
-                                element.classList.remove(
-                                    "search-highlight"
-                                );
+                                siteSearch.focus();
 
                             },
-                            2500
+                            80
                         );
-
-
-                        break;
 
                     }
 
                 }
-
-
-                if (!found) {
-
-                    alert(
-                        "No matching content was found."
-                    );
-
-                }
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       SCROLL REVEAL
-    ====================================================== */
-
-    const revealItems =
-        document.querySelectorAll(
-            ".reveal-item"
-        );
-
-
-    if ("IntersectionObserver" in window) {
-
-        const revealObserver =
-            new IntersectionObserver(
-
-                entries => {
-
-                    entries.forEach(entry => {
-
-                        if (
-                            entry.isIntersecting
-                        ) {
-
-                            entry.target.classList.add(
-                                "visible"
-                            );
-
-
-                            revealObserver.unobserve(
-                                entry.target
-                            );
-
-                        }
-
-                    });
-
-                },
-
-                {
-                    threshold: 0.12
-                }
-
             );
-
-
-        revealItems.forEach(item => {
-
-            revealObserver.observe(item);
-
-        });
-
-    } else {
-
-        revealItems.forEach(item => {
-
-            item.classList.add(
-                "visible"
-            );
-
-        });
-
-    }
-
-
-    /* =====================================================
-       COUNTERS
-    ====================================================== */
-
-    const counters =
-        document.querySelectorAll(
-            ".counter"
-        );
-
-
-    let countersStarted = false;
-
-
-    const counterSection =
-        document.querySelector(
-            ".about-stats"
-        );
-
-
-    function animateCounters() {
-
-        if (countersStarted) {
-
-            return;
 
         }
 
 
-        countersStarted = true;
 
+        if (siteSearch) {
 
-        counters.forEach(counter => {
-
-            const target =
-                Number(
-                    counter.dataset.target
-                );
-
-
-            const duration =
-                1200;
-
-
-            const startTime =
-                performance.now();
-
-
-            function updateCounter(
-                currentTime
-            ) {
-
-                const elapsed =
-                    currentTime -
-                    startTime;
-
-
-                const progress =
-                    Math.min(
-                        elapsed /
-                            duration,
-                        1
-                    );
-
-
-                const eased =
-                    1 -
-                    Math.pow(
-                        1 - progress,
-                        3
-                    );
-
-
-                const current =
-                    Math.floor(
-                        target *
-                        eased
-                    );
-
-
-                counter.textContent =
-                    current + "+";
-
-
-                if (
-                    progress < 1
-                ) {
-
-                    requestAnimationFrame(
-                        updateCounter
-                    );
-
-                } else {
-
-                    counter.textContent =
-                        target + "+";
-
-                }
-
-            }
-
-
-            requestAnimationFrame(
-                updateCounter
-            );
-
-        });
-
-    }
-
-
-    if (
-        counterSection &&
-        "IntersectionObserver" in window
-    ) {
-
-        const counterObserver =
-            new IntersectionObserver(
-
-                entries => {
+            siteSearch.addEventListener(
+                "keydown",
+                event => {
 
                     if (
-                        entries[0]
-                            .isIntersecting
+                        event.key !==
+                        "Enter"
                     ) {
-
-                        animateCounters();
-
-                        counterObserver.disconnect();
-
-                    }
-
-                },
-
-                {
-                    threshold: 0.25
-                }
-
-            );
-
-
-        counterObserver.observe(
-            counterSection
-        );
-
-    }
-
-
-    /* =====================================================
-       HERO NETWORK
-    ====================================================== */
-
-    const canvas =
-        document.getElementById(
-            "heroNetwork"
-        );
-
-
-    const reducedMotion =
-        window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        ).matches;
-
-
-    if (
-        canvas &&
-        !reducedMotion
-    ) {
-
-        const ctx =
-            canvas.getContext("2d");
-
-
-        let width = 0;
-        let height = 0;
-
-
-        const nodes = [];
-
-
-        const NODE_COUNT =
-            28;
-
-
-        const CONNECTION_DISTANCE =
-            125;
-
-
-        function resizeCanvas() {
-
-            const dpr =
-                Math.min(
-                    window.devicePixelRatio || 1,
-                    1.5
-                );
-
-
-            width =
-                window.innerWidth;
-
-
-            height =
-                window.innerHeight;
-
-
-            canvas.width =
-                width * dpr;
-
-
-            canvas.height =
-                height * dpr;
-
-
-            canvas.style.width =
-                width + "px";
-
-
-            canvas.style.height =
-                height + "px";
-
-
-            ctx.setTransform(
-                dpr,
-                0,
-                0,
-                dpr,
-                0,
-                0
-            );
-
-        }
-
-
-        resizeCanvas();
-
-
-        window.addEventListener(
-            "resize",
-            resizeCanvas,
-            {
-                passive: true
-            }
-        );
-
-
-        for (
-            let i = 0;
-            i < NODE_COUNT;
-            i++
-        ) {
-
-            nodes.push({
-
-                x:
-                    Math.random() *
-                    window.innerWidth,
-
-                y:
-                    Math.random() *
-                    window.innerHeight,
-
-                vx:
-                    (
-                        Math.random() -
-                        0.5
-                    ) * 0.18,
-
-                vy:
-                    (
-                        Math.random() -
-                        0.5
-                    ) * 0.18
-
-            });
-
-        }
-
-
-        let lastFrame = 0;
-
-
-        function drawNetwork(
-            timestamp
-        ) {
-
-            if (
-                timestamp -
-                lastFrame <
-                33
-            ) {
-
-                requestAnimationFrame(
-                    drawNetwork
-                );
-
-                return;
-
-            }
-
-
-            lastFrame =
-                timestamp;
-
-
-            ctx.clearRect(
-                0,
-                0,
-                width,
-                height
-            );
-
-
-            nodes.forEach(
-                node => {
-
-                    node.x += node.vx;
-                    node.y += node.vy;
-
-
-                    if (
-                        node.x < 0 ||
-                        node.x > width
-                    ) {
-
-                        node.vx *= -1;
-
-                    }
-
-
-                    if (
-                        node.y < 0 ||
-                        node.y > height
-                    ) {
-
-                        node.vy *= -1;
-
-                    }
-
-                }
-            );
-
-
-            for (
-                let i = 0;
-                i < nodes.length;
-                i++
-            ) {
-
-                for (
-                    let j = i + 1;
-                    j < nodes.length;
-                    j++
-                ) {
-
-                    const dx =
-                        nodes[i].x -
-                        nodes[j].x;
-
-
-                    const dy =
-                        nodes[i].y -
-                        nodes[j].y;
-
-
-                    const distanceSquared =
-                        dx * dx +
-                        dy * dy;
-
-
-                    if (
-                        distanceSquared <
-                        CONNECTION_DISTANCE *
-                        CONNECTION_DISTANCE
-                    ) {
-
-                        ctx.beginPath();
-
-
-                        ctx.moveTo(
-                            nodes[i].x,
-                            nodes[i].y
-                        );
-
-
-                        ctx.lineTo(
-                            nodes[j].x,
-                            nodes[j].y
-                        );
-
-
-                        ctx.strokeStyle =
-                            "rgba(80,80,80,.06)";
-
-
-                        ctx.lineWidth =
-                            0.6;
-
-
-                        ctx.stroke();
-
-                    }
-
-                }
-
-            }
-
-
-            nodes.forEach(
-                node => {
-
-                    ctx.beginPath();
-
-
-                    ctx.arc(
-                        node.x,
-                        node.y,
-                        1.2,
-                        0,
-                        Math.PI * 2
-                    );
-
-
-                    ctx.fillStyle =
-                        "rgba(244,121,29,.18)";
-
-
-                    ctx.fill();
-
-                }
-            );
-
-
-            requestAnimationFrame(
-                drawNetwork
-            );
-
-        }
-
-
-        requestAnimationFrame(
-            drawNetwork
-        );
-
-    }
-
-
-    /* =====================================================
-       CURSOR PARTICLES
-    ====================================================== */
-
-    const particleCanvas =
-        document.getElementById(
-            "cursorParticles"
-        );
-
-
-    const isTouchDevice =
-        window.matchMedia(
-            "(pointer: coarse)"
-        ).matches;
-
-
-    if (
-        particleCanvas &&
-        !isTouchDevice &&
-        !reducedMotion
-    ) {
-
-        const pctx =
-            particleCanvas.getContext(
-                "2d"
-            );
-
-
-        let mouseX =
-            window.innerWidth / 2;
-
-
-        let mouseY =
-            window.innerHeight / 2;
-
-
-        let particleWidth =
-            window.innerWidth;
-
-
-        let particleHeight =
-            window.innerHeight;
-
-
-        const PARTICLE_COUNT =
-            14;
-
-
-        const PARTICLE_DISTANCE =
-            90;
-
-
-        const MOUSE_DISTANCE =
-            110;
-
-
-        let mouseInside =
-            false;
-
-
-        function resizeParticleCanvas() {
-
-            const dpr =
-                Math.min(
-                    window.devicePixelRatio || 1,
-                    1.5
-                );
-
-
-            particleWidth =
-                window.innerWidth;
-
-
-            particleHeight =
-                window.innerHeight;
-
-
-            particleCanvas.width =
-                particleWidth * dpr;
-
-
-            particleCanvas.height =
-                particleHeight * dpr;
-
-
-            particleCanvas.style.width =
-                particleWidth + "px";
-
-
-            particleCanvas.style.height =
-                particleHeight + "px";
-
-
-            pctx.setTransform(
-                dpr,
-                0,
-                0,
-                dpr,
-                0,
-                0
-            );
-
-        }
-
-
-        resizeParticleCanvas();
-
-
-        window.addEventListener(
-            "resize",
-            resizeParticleCanvas,
-            {
-                passive: true
-            }
-        );
-
-
-        window.addEventListener(
-            "mousemove",
-            e => {
-
-                mouseX =
-                    e.clientX;
-
-
-                mouseY =
-                    e.clientY;
-
-
-                mouseInside =
-                    true;
-
-            },
-            {
-                passive: true
-            }
-        );
-
-
-        document.addEventListener(
-            "mouseleave",
-            () => {
-
-                mouseInside =
-                    false;
-
-
-                pctx.clearRect(
-                    0,
-                    0,
-                    particleWidth,
-                    particleHeight
-                );
-
-            }
-        );
-
-
-        class CursorParticle {
-
-            constructor() {
-
-                this.reset();
-
-            }
-
-
-            reset() {
-
-                const angle =
-                    Math.random() *
-                    Math.PI *
-                    2;
-
-
-                const radius =
-                    50 +
-                    Math.random() *
-                    100;
-
-
-                this.x =
-                    mouseX +
-                    Math.cos(angle) *
-                    radius;
-
-
-                this.y =
-                    mouseY +
-                    Math.sin(angle) *
-                    radius;
-
-
-                this.vx =
-                    (
-                        Math.random() -
-                        0.5
-                    ) * 0.35;
-
-
-                this.vy =
-                    (
-                        Math.random() -
-                        0.5
-                    ) * 0.35;
-
-
-                this.size =
-                    0.8 +
-                    Math.random() *
-                    1.4;
-
-
-                this.alpha =
-                    0.18 +
-                    Math.random() *
-                    0.25;
-
-            }
-
-
-            update() {
-
-                const dx =
-                    mouseX -
-                    this.x;
-
-
-                const dy =
-                    mouseY -
-                    this.y;
-
-
-                const distance =
-                    Math.sqrt(
-                        dx * dx +
-                        dy * dy
-                    );
-
-
-                if (
-                    distance < 180
-                ) {
-
-                    const force =
-                        (
-                            180 -
-                            distance
-                        ) / 180;
-
-
-                    this.vx +=
-                        dx *
-                        0.00025 *
-                        force;
-
-
-                    this.vy +=
-                        dy *
-                        0.00025 *
-                        force;
-
-                }
-
-
-                this.vx *=
-                    0.985;
-
-
-                this.vy *=
-                    0.985;
-
-
-                this.x +=
-                    this.vx;
-
-
-                this.y +=
-                    this.vy;
-
-
-                if (
-                    distance > 260 ||
-                    this.x < -80 ||
-                    this.x >
-                        particleWidth + 80 ||
-                    this.y < -80 ||
-                    this.y >
-                        particleHeight + 80
-                ) {
-
-                    this.reset();
-
-                }
-
-            }
-
-
-            draw() {
-
-                pctx.beginPath();
-
-
-                pctx.arc(
-                    this.x,
-                    this.y,
-                    this.size,
-                    0,
-                    Math.PI * 2
-                );
-
-
-                pctx.fillStyle =
-                    `rgba(244,121,29,${this.alpha})`;
-
-
-                pctx.fill();
-
-            }
-
-        }
-
-
-        const particles = [];
-
-
-        for (
-            let i = 0;
-            i < PARTICLE_COUNT;
-            i++
-        ) {
-
-            particles.push(
-                new CursorParticle()
-            );
-
-        }
-
-
-        let lastParticleFrame = 0;
-
-
-        function drawCursorNetwork(
-            timestamp
-        ) {
-
-            if (
-                timestamp -
-                lastParticleFrame <
-                33
-            ) {
-
-                requestAnimationFrame(
-                    drawCursorNetwork
-                );
-
-                return;
-
-            }
-
-
-            lastParticleFrame =
-                timestamp;
-
-
-            pctx.clearRect(
-                0,
-                0,
-                particleWidth,
-                particleHeight
-            );
-
-
-            if (!mouseInside) {
-
-                requestAnimationFrame(
-                    drawCursorNetwork
-                );
-
-                return;
-
-            }
-
-
-            particles.forEach(
-                particle => {
-
-                    particle.update();
-
-                }
-            );
-
-
-            for (
-                let i = 0;
-                i < particles.length;
-                i++
-            ) {
-
-                for (
-                    let j = i + 1;
-                    j < particles.length;
-                    j++
-                ) {
-
-                    const a =
-                        particles[i];
-
-
-                    const b =
-                        particles[j];
-
-
-                    const dx =
-                        a.x -
-                        b.x;
-
-
-                    const dy =
-                        a.y -
-                        b.y;
-
-
-                    const distance =
-                        Math.sqrt(
-                            dx * dx +
-                            dy * dy
-                        );
-
-
-                    if (
-                        distance <
-                        PARTICLE_DISTANCE
-                    ) {
-
-                        const opacity =
-                            (
-                                1 -
-                                distance /
-                                PARTICLE_DISTANCE
-                            ) * 0.20;
-
-
-                        pctx.beginPath();
-
-
-                        pctx.moveTo(
-                            a.x,
-                            a.y
-                        );
-
-
-                        pctx.lineTo(
-                            b.x,
-                            b.y
-                        );
-
-
-                        pctx.strokeStyle =
-                            `rgba(244,121,29,${opacity})`;
-
-
-                        pctx.lineWidth =
-                            0.6;
-
-
-                        pctx.stroke();
-
-                    }
-
-                }
-
-            }
-
-
-            particles.forEach(
-                particle => {
-
-                    const dx =
-                        particle.x -
-                        mouseX;
-
-
-                    const dy =
-                        particle.y -
-                        mouseY;
-
-
-                    const distance =
-                        Math.sqrt(
-                            dx * dx +
-                            dy * dy
-                        );
-
-
-                    if (
-                        distance <
-                        MOUSE_DISTANCE
-                    ) {
-
-                        const opacity =
-                            (
-                                1 -
-                                distance /
-                                MOUSE_DISTANCE
-                            ) * 0.28;
-
-
-                        pctx.beginPath();
-
-
-                        pctx.moveTo(
-                            particle.x,
-                            particle.y
-                        );
-
-
-                        pctx.lineTo(
-                            mouseX,
-                            mouseY
-                        );
-
-
-                        pctx.strokeStyle =
-                            `rgba(244,121,29,${opacity})`;
-
-
-                        pctx.lineWidth =
-                            0.7;
-
-
-                        pctx.stroke();
-
-                    }
-
-                }
-            );
-
-
-            particles.forEach(
-                particle => {
-
-                    particle.draw();
-
-                }
-            );
-
-
-            requestAnimationFrame(
-                drawCursorNetwork
-            );
-
-        }
-
-
-        requestAnimationFrame(
-            drawCursorNetwork
-        );
-
-    }
-
-
-    /* =====================================================
-       MAGNETIC BUTTON EFFECT
-    ====================================================== */
-
-    if (!isTouchDevice) {
-
-        const magneticElements =
-            document.querySelectorAll(
-                ".magnetic"
-            );
-
-
-        magneticElements.forEach(
-            element => {
-
-                element.addEventListener(
-                    "mousemove",
-                    e => {
-
-                        const rect =
-                            element.getBoundingClientRect();
-
-
-                        const x =
-                            e.clientX -
-                            rect.left -
-                            rect.width / 2;
-
-
-                        const y =
-                            e.clientY -
-                            rect.top -
-                            rect.height / 2;
-
-
-                        element.style.transform =
-                            `translate(${x * 0.08}px, ${y * 0.08}px)`;
-
-                    }
-                );
-
-
-                element.addEventListener(
-                    "mouseleave",
-                    () => {
-
-                        element.style.transform =
-                            "";
-
-                    }
-                );
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       SERVICE CARD HOVER TILT
-    ====================================================== */
-
-    if (!isTouchDevice) {
-
-        const tiltCards =
-            document.querySelectorAll(
-                ".service-card, .detail-card, .stat-item"
-            );
-
-
-        tiltCards.forEach(
-            card => {
-
-                card.addEventListener(
-                    "mousemove",
-                    e => {
-
-                        const rect =
-                            card.getBoundingClientRect();
-
-
-                        const x =
-                            e.clientX -
-                            rect.left;
-
-
-                        const y =
-                            e.clientY -
-                            rect.top;
-
-
-                        const centerX =
-                            rect.width / 2;
-
-
-                        const centerY =
-                            rect.height / 2;
-
-
-                        const rotateX =
-                            (
-                                y -
-                                centerY
-                            ) /
-                            centerY *
-                            -1.2;
-
-
-                        const rotateY =
-                            (
-                                x -
-                                centerX
-                            ) /
-                            centerX *
-                            1.2;
-
-
-                        card.style.transform =
-                            `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
-
-                    }
-                );
-
-
-                card.addEventListener(
-                    "mouseleave",
-                    () => {
-
-                        card.style.transform =
-                            "";
-
-                    }
-                );
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       HERO LABEL INTERACTION
-    ====================================================== */
-
-    const heroLabels =
-        document.querySelectorAll(
-            "[data-service-target]"
-        );
-
-
-    heroLabels.forEach(
-        label => {
-
-            label.addEventListener(
-                "click",
-                () => {
-
-                    const target =
-                        label.dataset.serviceTarget;
-
-
-                    const card =
-                        document.querySelector(
-                            `.service-card[data-service="${target}"]`
-                        );
-
-
-                    if (!card) {
 
                         return;
 
                     }
 
 
-                    card.scrollIntoView({
-                        behavior: "smooth",
-                        block: "center"
+                    const query =
+                        siteSearch
+                            .value
+                            .trim()
+                            .toLowerCase();
+
+
+                    if (!query) {
+                        return;
+                    }
+
+
+                    const searchable =
+                        document.querySelectorAll(
+                            "h1,h2,h3,h4,p,li"
+                        );
+
+
+                    let found =
+                        null;
+
+
+                    for (
+                        const element
+                        of searchable
+                    ) {
+
+                        if (
+                            element
+                                .textContent
+                                .toLowerCase()
+                                .includes(
+                                    query
+                                )
+                        ) {
+
+                            found =
+                                element;
+
+                            break;
+
+                        }
+
+                    }
+
+
+                    if (!found) {
+
+                        alert(
+                            "No matching content was found."
+                        );
+
+                        return;
+
+                    }
+
+
+                    found.scrollIntoView({
+
+                        behavior:
+                            reducedMotion
+                                ? "auto"
+                                : "smooth",
+
+                        block:
+                            "center"
+
                     });
 
 
-                    card.classList.add(
-                        "service-focus"
+                    found.classList.add(
+                        "search-highlight"
                     );
 
 
                     setTimeout(
                         () => {
 
-                            card.classList.remove(
-                                "service-focus"
+                            found.classList.remove(
+                                "search-highlight"
                             );
 
                         },
-                        1800
+                        2200
+                    );
+
+
+                    closeSearch();
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           SMOOTH LINKS
+        ====================================================== */
+
+        document
+            .querySelectorAll(
+                'a[href^="#"]'
+            )
+            .forEach(
+                link => {
+
+                    link.addEventListener(
+                        "click",
+                        event => {
+
+                            const href =
+                                link.getAttribute(
+                                    "href"
+                                );
+
+
+                            if (
+                                !href ||
+                                href === "#"
+                            ) {
+
+                                return;
+
+                            }
+
+
+                            let target =
+                                null;
+
+
+                            try {
+
+                                target =
+                                    document.querySelector(
+                                        href
+                                    );
+
+                            }
+
+                            catch {
+
+                                return;
+
+                            }
+
+
+                            if (!target) {
+                                return;
+                            }
+
+
+                            event.preventDefault();
+
+
+                            const headerHeight =
+                                header
+                                    ? header.offsetHeight
+                                    : 0;
+
+
+                            const targetTop =
+
+                                target
+                                    .getBoundingClientRect()
+                                    .top +
+
+                                window.pageYOffset -
+
+                                headerHeight -
+
+                                10;
+
+
+                            window.scrollTo({
+
+                                top:
+                                    targetTop,
+
+                                behavior:
+                                    reducedMotion
+                                        ? "auto"
+                                        : "smooth"
+
+                            });
+
+
+                            closeMobileNav();
+
+                        }
+                    );
+
+                }
+            );
+
+
+
+        /* =====================================================
+           ACTIVE NAV
+        ====================================================== */
+
+        const navLinks =
+            document.querySelectorAll(
+                ".main-nav .nav-link"
+            );
+
+
+        const sections =
+            document.querySelectorAll(
+                "section[id]"
+            );
+
+
+        if (
+            "IntersectionObserver"
+            in window
+        ) {
+
+            const navObserver =
+                new IntersectionObserver(
+
+                    entries => {
+
+                        entries.forEach(
+                            entry => {
+
+                                if (
+                                    !entry.isIntersecting
+                                ) {
+
+                                    return;
+
+                                }
+
+
+                                navLinks.forEach(
+                                    link => {
+
+                                        link.classList.remove(
+                                            "active"
+                                        );
+
+
+                                        if (
+                                            link.getAttribute(
+                                                "href"
+                                            ) ===
+                                            "#" +
+                                            entry.target.id
+                                        ) {
+
+                                            link.classList.add(
+                                                "active"
+                                            );
+
+                                        }
+
+                                    }
+                                );
+
+                            }
+                        );
+
+                    },
+
+                    {
+                        rootMargin:
+                            "-30% 0px -60% 0px"
+                    }
+
+                );
+
+
+            sections.forEach(
+                section => {
+
+                    navObserver.observe(
+                        section
                     );
 
                 }
             );
 
         }
-    );
-
-/* =====================================================
-   CIVIL ENGINEERING IMAGE LIGHTBOX
-====================================================== */
-
-const civilGalleryItems =
-    document.querySelectorAll(
-        ".civil-gallery-item"
-    );
-
-const civilLightbox =
-    document.getElementById(
-        "civilLightbox"
-    );
-
-const lightboxImage =
-    document.getElementById(
-        "lightboxImage"
-    );
-
-const lightboxTitle =
-    document.getElementById(
-        "lightboxTitle"
-    );
-
-const lightboxCategory =
-    document.getElementById(
-        "lightboxCategory"
-    );
-
-const lightboxClose =
-    document.getElementById(
-        "lightboxClose"
-    );
 
 
-if (
-    civilGalleryItems.length &&
-    civilLightbox &&
-    lightboxImage
-) {
 
-    civilGalleryItems.forEach(
-        item => {
+        /* =====================================================
+           REVEAL
+        ====================================================== */
 
-            item.addEventListener(
-                "click",
-                () => {
+        const revealItems =
+            document.querySelectorAll(
+                ".reveal-item"
+            );
 
-                    const image =
-                        item.dataset.image;
 
-                    const title =
-                        item.dataset.title ||
-                        "Civil Engineering";
+        if (
+            "IntersectionObserver"
+            in window
+        ) {
 
-                    lightboxImage.src =
-                        image;
+            const revealObserver =
+                new IntersectionObserver(
 
-                    lightboxImage.alt =
-                        title;
+                    entries => {
 
-                    if (lightboxTitle) {
+                        entries.forEach(
+                            entry => {
 
-                        lightboxTitle.textContent =
-                            title;
+                                if (
+                                    !entry.isIntersecting
+                                ) {
+
+                                    return;
+
+                                }
+
+
+                                entry.target.classList.add(
+                                    "visible"
+                                );
+
+
+                                revealObserver.unobserve(
+                                    entry.target
+                                );
+
+                            }
+                        );
+
+                    },
+
+                    {
+
+                        threshold:
+                            .1,
+
+                        rootMargin:
+                            "0px 0px -35px 0px"
 
                     }
 
-                    if (lightboxCategory) {
-
-                        lightboxCategory.textContent =
-                            "CIVIL ENGINEERING";
-
-                    }
+                );
 
 
-                    civilLightbox.classList.add(
-                        "active"
+            revealItems.forEach(
+                item => {
+
+                    revealObserver.observe(
+                        item
                     );
-
-
-                    civilLightbox.setAttribute(
-                        "aria-hidden",
-                        "false"
-                    );
-
-
-                    document.body.style.overflow =
-                        "hidden";
 
                 }
             );
 
         }
-    );
+
+        else {
+
+            revealItems.forEach(
+                item => {
+
+                    item.classList.add(
+                        "visible"
+                    );
+
+                }
+            );
+
+        }
 
 
-    function closeCivilLightbox() {
 
-        civilLightbox.classList.remove(
-            "active"
+        /* =====================================================
+           COUNTERS
+        ====================================================== */
+
+        const counterSection =
+            document.querySelector(
+                ".hero-stats"
+            );
+
+
+        const counters =
+            document.querySelectorAll(
+                ".counter"
+            );
+
+
+        let countersStarted =
+            false;
+
+
+        function animateCounters() {
+
+            if (
+                countersStarted
+            ) {
+
+                return;
+
+            }
+
+
+            countersStarted =
+                true;
+
+
+            counters.forEach(
+                counter => {
+
+                    const target =
+                        Number(
+                            counter.dataset.target
+                        );
+
+
+                    if (
+                        Number.isNaN(
+                            target
+                        )
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    if (reducedMotion) {
+
+                        counter.textContent =
+                            target;
+
+                        return;
+
+                    }
+
+
+                    const duration =
+                        1300;
+
+
+                    const start =
+                        performance.now();
+
+
+                    function update(
+                        now
+                    ) {
+
+                        const progress =
+                            Math.min(
+
+                                (
+                                    now -
+                                    start
+                                ) /
+                                duration,
+
+                                1
+
+                            );
+
+
+                        const eased =
+                            1 -
+                            Math.pow(
+                                1 -
+                                progress,
+                                3
+                            );
+
+
+                        counter.textContent =
+                            Math.floor(
+                                target *
+                                eased
+                            );
+
+
+                        if (
+                            progress <
+                            1
+                        ) {
+
+                            requestAnimationFrame(
+                                update
+                            );
+
+                        }
+
+                        else {
+
+                            counter.textContent =
+                                target;
+
+                        }
+
+                    }
+
+
+                    requestAnimationFrame(
+                        update
+                    );
+
+                }
+            );
+
+        }
+
+
+        if (
+            counterSection &&
+            "IntersectionObserver"
+            in window
+        ) {
+
+            const counterObserver =
+                new IntersectionObserver(
+
+                    entries => {
+
+                        if (
+                            entries[0]
+                                .isIntersecting
+                        ) {
+
+                            animateCounters();
+
+                            counterObserver.disconnect();
+
+                        }
+
+                    },
+
+                    {
+                        threshold:
+                            .25
+                    }
+
+                );
+
+
+            counterObserver.observe(
+                counterSection
+            );
+
+        }
+
+        else {
+
+            animateCounters();
+
+        }
+
+
+
+        /* =====================================================
+           HERO NETWORK
+        ====================================================== */
+
+        const networkCanvas =
+            document.getElementById(
+                "heroNetwork"
+            );
+
+
+        if (
+            networkCanvas &&
+            !reducedMotion
+        ) {
+
+            const ctx =
+                networkCanvas
+                    .getContext(
+                        "2d"
+                    );
+
+
+            let width =
+                0;
+
+
+            let height =
+                0;
+
+
+            const nodes =
+                [];
+
+
+            const nodeCount =
+                window.innerWidth <
+                700
+                    ? 15
+                    : 27;
+
+
+            function resizeNetwork() {
+
+                const dpr =
+                    Math.min(
+                        window.devicePixelRatio ||
+                        1,
+                        1.5
+                    );
+
+
+                width =
+                    networkCanvas.clientWidth;
+
+
+                height =
+                    networkCanvas.clientHeight;
+
+
+                networkCanvas.width =
+                    width *
+                    dpr;
+
+
+                networkCanvas.height =
+                    height *
+                    dpr;
+
+
+                ctx.setTransform(
+                    dpr,
+                    0,
+                    0,
+                    dpr,
+                    0,
+                    0
+                );
+
+            }
+
+
+            resizeNetwork();
+
+
+            for (
+                let i = 0;
+                i < nodeCount;
+                i++
+            ) {
+
+                nodes.push({
+
+                    x:
+                        Math.random() *
+                        window.innerWidth,
+
+                    y:
+                        Math.random() *
+                        window.innerHeight,
+
+                    vx:
+                        (
+                            Math.random() -
+                            .5
+                        ) *
+                        .18,
+
+                    vy:
+                        (
+                            Math.random() -
+                            .5
+                        ) *
+                        .18
+
+                });
+
+            }
+
+
+            function renderNetwork() {
+
+                ctx.clearRect(
+                    0,
+                    0,
+                    width,
+                    height
+                );
+
+
+                nodes.forEach(
+                    node => {
+
+                        node.x +=
+                            node.vx;
+
+                        node.y +=
+                            node.vy;
+
+
+                        if (
+                            node.x < 0 ||
+                            node.x > width
+                        ) {
+
+                            node.vx *=
+                                -1;
+
+                        }
+
+
+                        if (
+                            node.y < 0 ||
+                            node.y > height
+                        ) {
+
+                            node.vy *=
+                                -1;
+
+                        }
+
+                    }
+                );
+
+
+                for (
+                    let i = 0;
+                    i < nodes.length;
+                    i++
+                ) {
+
+                    for (
+                        let j =
+                            i + 1;
+                        j <
+                        nodes.length;
+                        j++
+                    ) {
+
+                        const dx =
+                            nodes[i].x -
+                            nodes[j].x;
+
+
+                        const dy =
+                            nodes[i].y -
+                            nodes[j].y;
+
+
+                        const distance =
+                            Math.sqrt(
+                                dx * dx +
+                                dy * dy
+                            );
+
+
+                        if (
+                            distance <
+                            130
+                        ) {
+
+                            const opacity =
+                                (
+                                    1 -
+                                    distance /
+                                    130
+                                ) *
+                                .09;
+
+
+                            ctx.beginPath();
+
+
+                            ctx.moveTo(
+                                nodes[i].x,
+                                nodes[i].y
+                            );
+
+
+                            ctx.lineTo(
+                                nodes[j].x,
+                                nodes[j].y
+                            );
+
+
+                            ctx.strokeStyle =
+                                `rgba(246,169,27,${opacity})`;
+
+
+                            ctx.lineWidth =
+                                .7;
+
+
+                            ctx.stroke();
+
+                        }
+
+                    }
+
+                }
+
+
+                nodes.forEach(
+                    node => {
+
+                        ctx.beginPath();
+
+
+                        ctx.arc(
+                            node.x,
+                            node.y,
+                            1.25,
+                            0,
+                            Math.PI *
+                            2
+                        );
+
+
+                        ctx.fillStyle =
+                            "rgba(246,169,27,.24)";
+
+
+                        ctx.fill();
+
+                    }
+                );
+
+
+                requestAnimationFrame(
+                    renderNetwork
+                );
+
+            }
+
+
+            renderNetwork();
+
+
+            window.addEventListener(
+                "resize",
+                resizeNetwork,
+                {
+                    passive:
+                        true
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           MAGNETIC BUTTONS
+        ====================================================== */
+
+        if (
+            !isTouchDevice &&
+            !reducedMotion
+        ) {
+
+            document
+                .querySelectorAll(
+                    ".magnetic"
+                )
+                .forEach(
+                    element => {
+
+                        element.addEventListener(
+                            "mousemove",
+                            event => {
+
+                                const rect =
+                                    element
+                                        .getBoundingClientRect();
+
+
+                                const x =
+
+                                    event.clientX -
+
+                                    rect.left -
+
+                                    rect.width /
+                                    2;
+
+
+                                const y =
+
+                                    event.clientY -
+
+                                    rect.top -
+
+                                    rect.height /
+                                    2;
+
+
+                                element.style.transform =
+                                    `translate(${x * .07}px, ${y * .07}px)`;
+
+                            }
+                        );
+
+
+                        element.addEventListener(
+                            "mouseleave",
+                            () => {
+
+                                element.style.transform =
+                                    "";
+
+                            }
+                        );
+
+                    }
+                );
+
+        }
+
+
+
+        /* =====================================================
+           GENERAL TILT
+        ====================================================== */
+
+        if (
+            !isTouchDevice &&
+            !reducedMotion
+        ) {
+
+            document
+                .querySelectorAll(
+                    ".interactive-tilt"
+                )
+                .forEach(
+                    card => {
+
+                        card.addEventListener(
+                            "mousemove",
+                            event => {
+
+                                const rect =
+                                    card
+                                        .getBoundingClientRect();
+
+
+                                const x =
+                                    event.clientX -
+                                    rect.left;
+
+
+                                const y =
+                                    event.clientY -
+                                    rect.top;
+
+
+                                const rotateX =
+
+                                    (
+                                        y -
+                                        rect.height /
+                                        2
+                                    ) /
+
+                                    (
+                                        rect.height /
+                                        2
+                                    ) *
+
+                                    -1.05;
+
+
+                                const rotateY =
+
+                                    (
+                                        x -
+                                        rect.width /
+                                        2
+                                    ) /
+
+                                    (
+                                        rect.width /
+                                        2
+                                    ) *
+
+                                    1.05;
+
+
+                                card.style.transform =
+                                    `
+                                    perspective(1100px)
+                                    rotateX(${rotateX}deg)
+                                    rotateY(${rotateY}deg)
+                                    translateY(-5px)
+                                    `;
+
+                            }
+                        );
+
+
+                        card.addEventListener(
+                            "mouseleave",
+                            () => {
+
+                                card.style.transform =
+                                    "";
+
+                            }
+                        );
+
+                    }
+                );
+
+        }
+
+
+
+        /* =====================================================
+           HOW WE HELP INTERACTION
+        ====================================================== */
+
+        const helpCards =
+            document.querySelectorAll(
+                ".interactive-card"
+            );
+
+
+        helpCards.forEach(
+            card => {
+
+                card.addEventListener(
+                    "pointermove",
+                    event => {
+
+                        const rect =
+                            card
+                                .getBoundingClientRect();
+
+
+                        const x =
+
+                            (
+                                event.clientX -
+                                rect.left
+                            ) /
+                            rect.width *
+                            100;
+
+
+                        const y =
+
+                            (
+                                event.clientY -
+                                rect.top
+                            ) /
+                            rect.height *
+                            100;
+
+
+                        card.style.setProperty(
+                            "--pointer-x",
+                            `${x}%`
+                        );
+
+
+                        card.style.setProperty(
+                            "--pointer-y",
+                            `${y}%`
+                        );
+
+                    }
+                );
+
+            }
         );
 
 
-        civilLightbox.setAttribute(
-            "aria-hidden",
-            "true"
+
+        if (
+            !isTouchDevice &&
+            !reducedMotion
+        ) {
+
+            helpCards.forEach(
+                card => {
+
+                    card.addEventListener(
+                        "mousemove",
+                        event => {
+
+                            const rect =
+                                card
+                                    .getBoundingClientRect();
+
+
+                            const x =
+                                event.clientX -
+                                rect.left;
+
+
+                            const y =
+                                event.clientY -
+                                rect.top;
+
+
+                            const rotateX =
+
+                                (
+                                    y -
+                                    rect.height /
+                                    2
+                                ) /
+                                rect.height *
+                                -4;
+
+
+                            const rotateY =
+
+                                (
+                                    x -
+                                    rect.width /
+                                    2
+                                ) /
+                                rect.width *
+                                4;
+
+
+                            card.style.transform =
+                                `
+                                perspective(900px)
+                                rotateX(${rotateX}deg)
+                                rotateY(${rotateY}deg)
+                                translateY(-7px)
+                                `;
+
+                        }
+                    );
+
+
+                    card.addEventListener(
+                        "mouseleave",
+                        () => {
+
+                            card.style.transform =
+                                "";
+
+                        }
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           PROCESS INTERACTION
+        ====================================================== */
+
+        const processSteps =
+            Array.from(
+                document.querySelectorAll(
+                    ".process-step"
+                )
+            );
+
+
+        const processProgress =
+            document.getElementById(
+                "processLineProgress"
+            );
+
+
+        function activateProcessStep(
+            index
+        ) {
+
+            processSteps.forEach(
+                (
+                    step,
+                    stepIndex
+                ) => {
+
+                    step.classList.toggle(
+                        "active",
+                        stepIndex === index
+                    );
+
+                }
+            );
+
+
+            if (
+                processProgress
+            ) {
+
+                const progress =
+
+                    processSteps.length <=
+                    1
+
+                        ? 100
+
+                        : (
+                            index /
+                            (
+                                processSteps.length -
+                                1
+                            )
+                        ) *
+                        100;
+
+
+                processProgress.style.width =
+                    `${progress}%`;
+
+            }
+
+        }
+
+
+        processSteps.forEach(
+            (
+                step,
+                index
+            ) => {
+
+                const trigger =
+                    step.querySelector(
+                        ".process-step-trigger"
+                    );
+
+
+                if (trigger) {
+
+                    trigger.addEventListener(
+                        "click",
+                        () => {
+
+                            activateProcessStep(
+                                index
+                            );
+
+                        }
+                    );
+
+                }
+
+
+                step.addEventListener(
+                    "mouseenter",
+                    () => {
+
+                        if (
+                            !isTouchDevice
+                        ) {
+
+                            activateProcessStep(
+                                index
+                            );
+
+                        }
+
+                    }
+                );
+
+
+                step.addEventListener(
+                    "focus",
+                    () => {
+
+                        activateProcessStep(
+                            index
+                        );
+
+                    }
+                );
+
+            }
         );
 
 
-        document.body.style.overflow =
-            "";
+        activateProcessStep(
+            0
+        );
 
 
-        setTimeout(
-            () => {
 
-                lightboxImage.src = "";
+        /* =====================================================
+           PROJECT DATA
+        ====================================================== */
+
+        const projectData = [
+
+            /* =================================================
+               CIVIL
+            ================================================= */
+
+            {
+
+                discipline:
+                    "civil",
+
+                category:
+                    "CIVIL ENGINEERING",
+
+                type:
+                    "COMMERCIAL DEVELOPMENT",
+
+                title:
+                    "Urban Business Complex",
+
+                location:
+                    "Commercial development showcase concept",
+
+                image:
+                    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2200&q=92",
+
+                description:
+                    "A modern commercial development showcase demonstrating integrated structural coordination, architectural planning, circulation, facade strategy and efficient commercial space organization.",
+
+                tags: [
+                    "Structural Design",
+                    "Architecture",
+                    "Commercial",
+                    "Planning"
+                ]
 
             },
-            300
-        );
-
-    }
 
 
-    if (lightboxClose) {
+            {
 
-        lightboxClose.addEventListener(
-            "click",
-            closeCivilLightbox
-        );
+                discipline:
+                    "civil",
 
-    }
+                category:
+                    "CIVIL ENGINEERING",
+
+                type:
+                    "CONSTRUCTION",
+
+                title:
+                    "Integrated Construction Development",
+
+                location:
+                    "Construction coordination showcase",
+
+                image:
+                    "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2200&q=92",
+
+                description:
+                    "A construction delivery concept covering estimation, site planning, technical coordination, supervision and practical project management from planning through implementation.",
+
+                tags: [
+                    "Construction",
+                    "Estimation",
+                    "Supervision",
+                    "Project Coordination"
+                ]
+
+            },
 
 
-    /*
-       Close when clicking
-       outside the image
-    */
+            {
 
-    civilLightbox.addEventListener(
-        "click",
-        e => {
+                discipline:
+                    "civil",
 
-            if (
-                e.target ===
-                civilLightbox
-            ) {
+                category:
+                    "CIVIL ENGINEERING",
 
-                closeCivilLightbox();
+                type:
+                    "RESIDENTIAL",
+
+                title:
+                    "Kathmandu Family Residence",
+
+                location:
+                    "Kathmandu, Nepal — Local residential showcase concept",
+
+                image:
+                    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2200&q=92",
+
+                description:
+                    "A Nepal-focused residential house concept designed around comfortable family living, efficient spatial planning, natural light, climate response and practical urban construction requirements.",
+
+                tags: [
+                    "Nepal",
+                    "Residential",
+                    "House Design",
+                    "Architecture"
+                ]
+
+            },
+
+
+            {
+
+                discipline:
+                    "civil",
+
+                category:
+                    "CIVIL ENGINEERING",
+
+                type:
+                    "INFRASTRUCTURE",
+
+                title:
+                    "Municipal Infrastructure Upgrade",
+
+                location:
+                    "Infrastructure planning showcase concept",
+
+                image:
+                    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2200&q=92",
+
+                description:
+                    "A municipal infrastructure concept focused on organized site development, accessibility, engineering coordination and long-term usability of public infrastructure.",
+
+                tags: [
+                    "Infrastructure",
+                    "Site Planning",
+                    "Civil Works",
+                    "Development"
+                ]
+
+            },
+
+
+            {
+
+                discipline:
+                    "civil",
+
+                category:
+                    "CIVIL ENGINEERING",
+
+                type:
+                    "ARCHITECTURE & INTERIOR",
+
+                title:
+                    "Contemporary Corporate Workspace",
+
+                location:
+                    "Commercial interior showcase concept",
+
+                image:
+                    "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2200&q=92",
+
+                description:
+                    "A contemporary corporate workspace concept combining architectural planning, functional interiors, collaboration areas and flexible working environments.",
+
+                tags: [
+                    "Architecture",
+                    "Interior",
+                    "Workspace",
+                    "Commercial"
+                ]
+
+            },
+
+
+            /* =================================================
+               IT
+            ================================================= */
+
+            {
+
+                discipline:
+                    "it",
+
+                category:
+                    "IT & DIGITAL",
+
+                type:
+                    "WEB APPLICATION",
+
+                title:
+                    "Enterprise Management Platform",
+
+                location:
+                    "Enterprise software showcase concept",
+
+                image:
+                    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2200&q=92",
+
+                description:
+                    "A centralized web platform concept for managing customers, business operations, analytics, reporting and team workflows from a secure digital workspace.",
+
+                tags: [
+                    "Web Application",
+                    "CRM",
+                    "Dashboard",
+                    "Analytics"
+                ]
+
+            },
+
+
+            {
+
+                discipline:
+                    "it",
+
+                category:
+                    "IT & DIGITAL",
+
+                type:
+                    "PROPERTY WEBSITE",
+
+                title:
+                    "Nepal Property Marketplace",
+
+                location:
+                    "Nepal — Local property platform showcase concept",
+
+                image:
+                    "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=2200&q=92",
+
+                description:
+                    "A Nepal-focused property marketplace concept where users can browse, search and compare houses, land, apartments and commercial properties with location-aware listings.",
+
+                tags: [
+                    "Nepal",
+                    "Property Website",
+                    "Listings",
+                    "Search"
+                ]
+
+            },
+
+
+            {
+
+                discipline:
+                    "it",
+
+                category:
+                    "IT & DIGITAL",
+
+                type:
+                    "CORPORATE WEBSITE",
+
+                title:
+                    "Modern Corporate Web Experience",
+
+                location:
+                    "Corporate website showcase concept",
+
+                image:
+                    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2200&q=92",
+
+                description:
+                    "A polished corporate website concept combining brand storytelling, responsive interfaces, lead-generation features, content management and high-performance frontend development.",
+
+                tags: [
+                    "Website",
+                    "Responsive",
+                    "CMS",
+                    "Lead Generation"
+                ]
+
+            },
+
+
+            {
+
+                discipline:
+                    "it",
+
+                category:
+                    "IT & DIGITAL",
+
+                type:
+                    "BUSINESS AUTOMATION",
+
+                title:
+                    "Business Workflow Automation",
+
+                location:
+                    "Operations platform showcase concept",
+
+                image:
+                    "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2200&q=92",
+
+                description:
+                    "A custom digital workflow concept connecting routine business tasks, reporting, records and approvals to reduce repetitive manual work and improve operational visibility.",
+
+                tags: [
+                    "Automation",
+                    "Workflow",
+                    "Internal Tools",
+                    "Software"
+                ]
+
+            },
+
+
+            {
+
+                discipline:
+                    "it",
+
+                category:
+                    "IT & DIGITAL",
+
+                type:
+                    "CYBER SECURITY",
+
+                title:
+                    "Secure Business Infrastructure",
+
+                location:
+                    "Security infrastructure showcase concept",
+
+                image:
+                    "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2200&q=92",
+
+                description:
+                    "A digital security architecture concept covering access control, infrastructure protection, data security, system hardening and practical safeguards for company environments.",
+
+                tags: [
+                    "Cyber Security",
+                    "Data Security",
+                    "Access Control",
+                    "Infrastructure"
+                ]
 
             }
 
-        }
-    );
+        ];
 
 
-    /*
-       ESC key
-    */
 
-    document.addEventListener(
-        "keydown",
-        e => {
+        /* =====================================================
+           PROJECT MODAL ELEMENTS
+        ====================================================== */
 
-            if (
-                e.key === "Escape" &&
-                civilLightbox.classList.contains(
-                    "active"
+        const projectModal =
+            document.getElementById(
+                "projectModal"
+            );
+
+
+        const projectModalClose =
+            document.getElementById(
+                "projectModalClose"
+            );
+
+
+        const modalImage =
+            document.getElementById(
+                "modalProjectImage"
+            );
+
+
+        const modalCategory =
+            document.getElementById(
+                "modalProjectCategory"
+            );
+
+
+        const modalType =
+            document.getElementById(
+                "modalProjectType"
+            );
+
+
+        const modalTitle =
+            document.getElementById(
+                "modalProjectTitle"
+            );
+
+
+        const modalLocation =
+            document.getElementById(
+                "modalProjectLocation"
+            );
+
+
+        const modalDescription =
+            document.getElementById(
+                "modalProjectDescription"
+            );
+
+
+        const modalTags =
+            document.getElementById(
+                "modalProjectTags"
+            );
+
+
+        const modalCurrent =
+            document.getElementById(
+                "modalCurrentProject"
+            );
+
+
+        const modalTotal =
+            document.getElementById(
+                "modalTotalProjects"
+            );
+
+
+        const modalPrev =
+            document.getElementById(
+                "modalPrev"
+            );
+
+
+        const modalNext =
+            document.getElementById(
+                "modalNext"
+            );
+
+
+        const modalMobilePrev =
+            document.getElementById(
+                "modalMobilePrev"
+            );
+
+
+        const modalMobileNext =
+            document.getElementById(
+                "modalMobileNext"
+            );
+
+
+        const modalDiscipline =
+            document.getElementById(
+                "modalProjectDiscipline"
+            );
+
+
+        const modalIcon =
+            document.getElementById(
+                "modalProjectIcon"
+            );
+
+
+        const showcaseCards =
+            document.querySelectorAll(
+                ".showcase-card"
+            );
+
+
+        let currentProjectIndex =
+            0;
+
+
+        let currentDiscipline =
+            "civil";
+
+
+        let lastFocusedProject =
+            null;
+
+
+
+        /* =====================================================
+           DISCIPLINE INDEXES
+        ====================================================== */
+
+        function getCurrentDisciplineIndexes() {
+
+            return projectData
+
+                .map(
+                    (
+                        project,
+                        index
+                    ) => ({
+
+                        project,
+                        index
+
+                    })
                 )
-            ) {
 
-                closeCivilLightbox();
+                .filter(
+                    item =>
+
+                        item
+                            .project
+                            .discipline ===
+                        currentDiscipline
+
+                )
+
+                .map(
+                    item =>
+                        item.index
+                );
+
+        }
+
+
+
+        /* =====================================================
+           RENDER MODAL
+        ====================================================== */
+
+        function renderProject(
+            index
+        ) {
+
+            const project =
+                projectData[index];
+
+
+            if (!project) {
+                return;
+            }
+
+
+            currentProjectIndex =
+                index;
+
+
+            currentDiscipline =
+                project.discipline;
+
+
+            if (modalImage) {
+
+                modalImage.style.opacity =
+                    "0";
+
+
+                modalImage.style.transform =
+                    "scale(1.025)";
+
+
+                const preload =
+                    new Image();
+
+
+                preload.onload =
+                    () => {
+
+                        modalImage.src =
+                            project.image;
+
+
+                        modalImage.alt =
+                            project.title;
+
+
+                        requestAnimationFrame(
+                            () => {
+
+                                modalImage.style.opacity =
+                                    "1";
+
+
+                                modalImage.style.transform =
+                                    "scale(1)";
+
+                            }
+                        );
+
+                    };
+
+
+                preload.src =
+                    project.image;
+
+            }
+
+
+            if (modalCategory) {
+
+                modalCategory.textContent =
+                    project.category;
+
+
+                modalCategory.style.background =
+
+                    project.discipline ===
+                    "civil"
+
+                        ? "#f6a91b"
+
+                        : "#9c86ff";
+
+            }
+
+
+            if (modalType) {
+
+                modalType.textContent =
+                    project.type;
+
+
+                modalType.style.color =
+
+                    project.discipline ===
+                    "civil"
+
+                        ? "#f4791d"
+
+                        : "#7357d9";
+
+            }
+
+
+            if (modalTitle) {
+
+                modalTitle.textContent =
+                    project.title;
+
+            }
+
+
+            if (modalLocation) {
+
+                modalLocation.textContent =
+                    project.location;
+
+            }
+
+
+            if (modalDescription) {
+
+                modalDescription.textContent =
+                    project.description;
+
+            }
+
+
+            if (modalTags) {
+
+                modalTags.innerHTML =
+                    "";
+
+
+                project.tags.forEach(
+                    tag => {
+
+                        const element =
+                            document.createElement(
+                                "span"
+                            );
+
+
+                        element.textContent =
+                            tag;
+
+
+                        modalTags.appendChild(
+                            element
+                        );
+
+                    }
+                );
+
+            }
+
+
+            if (modalDiscipline) {
+
+                modalDiscipline.textContent =
+
+                    project.discipline ===
+                    "civil"
+
+                        ? "Civil Engineering"
+
+                        : "IT & Digital";
+
+            }
+
+
+            if (modalIcon) {
+
+                modalIcon.className =
+
+                    project.discipline ===
+                    "civil"
+
+                        ? "fa-solid fa-building"
+
+                        : "fa-solid fa-laptop-code";
+
+            }
+
+
+            const disciplineIndexes =
+                getCurrentDisciplineIndexes();
+
+
+            const position =
+                disciplineIndexes.indexOf(
+                    index
+                );
+
+
+            if (modalCurrent) {
+
+                modalCurrent.textContent =
+                    String(
+                        position +
+                        1
+                    ).padStart(
+                        2,
+                        "0"
+                    );
+
+            }
+
+
+            if (modalTotal) {
+
+                modalTotal.textContent =
+                    String(
+                        disciplineIndexes.length
+                    ).padStart(
+                        2,
+                        "0"
+                    );
 
             }
 
         }
-    );
-
-}
-    /* =====================================================
-       CONTACT FORM — EMAILJS
-    ====================================================== */
-
-    const contactForm =
-        document.getElementById(
-            "contactForm"
-        );
 
 
-    const formNote =
-        document.getElementById(
-            "formNote"
-        );
+
+        /* =====================================================
+           OPEN PROJECT
+        ====================================================== */
+
+        function openProject(
+            index,
+            source = null
+        ) {
+
+            if (!projectModal) {
+                return;
+            }
 
 
-    const submitBtn =
-        document.getElementById(
-            "submitBtn"
-        );
+            lastFocusedProject =
+                source;
 
 
-    const submitText =
-        document.getElementById(
-            "submitText"
-        );
+            renderProject(
+                index
+            );
 
 
-    if (contactForm) {
-
-        contactForm.addEventListener(
-            "submit",
-            async function (e) {
-
-                e.preventDefault();
+            projectModal.classList.add(
+                "active"
+            );
 
 
-                console.log(
-                    "================================="
+            projectModal.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+
+            document.body.classList.add(
+                "modal-open"
+            );
+
+
+            if (projectModalClose) {
+
+                setTimeout(
+                    () => {
+
+                        projectModalClose.focus();
+
+                    },
+                    100
                 );
 
-                console.log(
-                    "SURREAL CONTACT FORM SUBMITTED"
+            }
+
+        }
+
+
+
+        /* =====================================================
+           CLOSE PROJECT
+        ====================================================== */
+
+        function closeProject() {
+
+            if (!projectModal) {
+                return;
+            }
+
+
+            projectModal.classList.remove(
+                "active"
+            );
+
+
+            projectModal.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+
+            document.body.classList.remove(
+                "modal-open"
+            );
+
+
+            if (lastFocusedProject) {
+
+                lastFocusedProject.focus();
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           NEXT / PREVIOUS BY DISCIPLINE
+        ====================================================== */
+
+        function nextProject() {
+
+            const indexes =
+                getCurrentDisciplineIndexes();
+
+
+            let position =
+                indexes.indexOf(
+                    currentProjectIndex
                 );
 
-                console.log(
-                    "================================="
+
+            position =
+                (
+                    position +
+                    1
+                ) %
+                indexes.length;
+
+
+            renderProject(
+                indexes[position]
+            );
+
+        }
+
+
+        function previousProject() {
+
+            const indexes =
+                getCurrentDisciplineIndexes();
+
+
+            let position =
+                indexes.indexOf(
+                    currentProjectIndex
                 );
 
 
-                /* -----------------------------------------
-                   CHECK EMAILJS
-                ------------------------------------------ */
+            position =
+                (
+                    position -
+                    1 +
+                    indexes.length
+                ) %
+                indexes.length;
 
-                if (
-                    !emailJSReady ||
-                    typeof emailjs === "undefined"
-                ) {
 
-                    console.error(
-                        "EmailJS is not ready."
+            renderProject(
+                indexes[position]
+            );
+
+        }
+
+
+
+        /* =====================================================
+           PROJECT CARD EVENTS
+        ====================================================== */
+
+        showcaseCards.forEach(
+            card => {
+
+                const index =
+                    Number(
+                        card.dataset
+                            .projectIndex
                     );
 
 
-                    if (formNote) {
+                card.addEventListener(
+                    "click",
+                    () => {
 
-                        formNote.textContent =
-                            "Email service is not ready. Please refresh the page and try again.";
+                        openProject(
+                            index,
+                            card
+                        );
 
-                        formNote.style.color =
-                            "#d33";
+                    }
+                );
+
+
+                card.addEventListener(
+                    "keydown",
+                    event => {
+
+                        if (
+                            event.key ===
+                            "Enter" ||
+                            event.key ===
+                            " "
+                        ) {
+
+                            event.preventDefault();
+
+
+                            openProject(
+                                index,
+                                card
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        if (projectModalClose) {
+
+            projectModalClose.addEventListener(
+                "click",
+                closeProject
+            );
+
+        }
+
+
+        if (modalPrev) {
+
+            modalPrev.addEventListener(
+                "click",
+                previousProject
+            );
+
+        }
+
+
+        if (modalNext) {
+
+            modalNext.addEventListener(
+                "click",
+                nextProject
+            );
+
+        }
+
+
+        if (modalMobilePrev) {
+
+            modalMobilePrev.addEventListener(
+                "click",
+                previousProject
+            );
+
+        }
+
+
+        if (modalMobileNext) {
+
+            modalMobileNext.addEventListener(
+                "click",
+                nextProject
+            );
+
+        }
+
+
+        document
+            .querySelectorAll(
+                "[data-project-close]"
+            )
+            .forEach(
+                element => {
+
+                    element.addEventListener(
+                        "click",
+                        closeProject
+                    );
+
+                }
+            );
+
+
+
+        /* =====================================================
+           KEYBOARD
+        ====================================================== */
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                const modalOpen =
+
+                    projectModal &&
+
+                    projectModal
+                        .classList
+                        .contains(
+                            "active"
+                        );
+
+
+                if (modalOpen) {
+
+                    if (
+                        event.key ===
+                        "Escape"
+                    ) {
+
+                        closeProject();
+
+                        return;
 
                     }
 
 
-                    return;
+                    if (
+                        event.key ===
+                        "ArrowRight"
+                    ) {
 
-                }
+                        nextProject();
 
-
-                /* -----------------------------------------
-                   VALIDATE FORM
-                ------------------------------------------ */
-
-                const nameInput =
-                    contactForm.querySelector(
-                        '[name="name"]'
-                    );
-
-
-                const emailInput =
-                    contactForm.querySelector(
-                        '[name="email"]'
-                    );
-
-
-                const companyInput =
-                    contactForm.querySelector(
-                        '[name="company"]'
-                    );
-
-
-                const phoneInput =
-                    contactForm.querySelector(
-                        '[name="phone"]'
-                    );
-
-
-                const messageInput =
-                    contactForm.querySelector(
-                        '[name="message"]'
-                    );
-
-
-                const name =
-                    nameInput
-                        ? nameInput.value.trim()
-                        : "";
-
-
-                const email =
-                    emailInput
-                        ? emailInput.value.trim()
-                        : "";
-
-
-                const company =
-                    companyInput
-                        ? companyInput.value.trim()
-                        : "";
-
-
-                const phone =
-                    phoneInput
-                        ? phoneInput.value.trim()
-                        : "";
-
-
-                const message =
-                    messageInput
-                        ? messageInput.value.trim()
-                        : "";
-
-
-                if (
-                    !name ||
-                    !email ||
-                    !message
-                ) {
-
-                    if (formNote) {
-
-                        formNote.textContent =
-                            "Please fill in your name, email and message.";
-
-                        formNote.style.color =
-                            "#d33";
+                        return;
 
                     }
 
 
-                    return;
+                    if (
+                        event.key ===
+                        "ArrowLeft"
+                    ) {
+
+                        previousProject();
+
+                        return;
+
+                    }
 
                 }
 
 
-                /* -----------------------------------------
-                   BUTTON STATE
-                ------------------------------------------ */
+                if (
+                    event.key ===
+                    "Escape"
+                ) {
 
-                if (submitBtn) {
+                    closeMobileNav();
 
-                    submitBtn.disabled =
-                        true;
-
-                }
-
-
-                if (submitText) {
-
-                    submitText.textContent =
-                        "SENDING...";
+                    closeSearch();
 
                 }
 
+            }
+        );
 
-                if (formNote) {
 
-                    formNote.textContent =
-                        "Sending your message...";
 
-                    formNote.style.color =
+        /* =====================================================
+           MOBILE SWIPE
+        ====================================================== */
+
+        const modalMedia =
+            document.querySelector(
+                ".project-modal-media"
+            );
+
+
+        let touchStartX =
+            0;
+
+
+        if (modalMedia) {
+
+            modalMedia.addEventListener(
+                "touchstart",
+                event => {
+
+                    touchStartX =
+                        event
+                            .changedTouches[0]
+                            .screenX;
+
+                },
+                {
+                    passive:
+                        true
+                }
+            );
+
+
+            modalMedia.addEventListener(
+                "touchend",
+                event => {
+
+                    const touchEndX =
+                        event
+                            .changedTouches[0]
+                            .screenX;
+
+
+                    const difference =
+                        touchStartX -
+                        touchEndX;
+
+
+                    if (
+                        Math.abs(
+                            difference
+                        ) <
+                        55
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    if (
+                        difference >
+                        0
+                    ) {
+
+                        nextProject();
+
+                    }
+
+                    else {
+
+                        previousProject();
+
+                    }
+
+                },
+                {
+                    passive:
+                        true
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           RIPPLE
+        ====================================================== */
+
+        document
+            .querySelectorAll(
+                ".btn"
+            )
+            .forEach(
+                button => {
+
+                    button.addEventListener(
+                        "pointerdown",
+                        event => {
+
+                            if (reducedMotion) {
+                                return;
+                            }
+
+
+                            const rect =
+                                button
+                                    .getBoundingClientRect();
+
+
+                            const size =
+                                Math.max(
+                                    rect.width,
+                                    rect.height
+                                ) *
+                                1.5;
+
+
+                            const ripple =
+                                document.createElement(
+                                    "span"
+                                );
+
+
+                            ripple.className =
+                                "surreal-ripple";
+
+
+                            ripple.style.width =
+                                `${size}px`;
+
+
+                            ripple.style.height =
+                                `${size}px`;
+
+
+                            ripple.style.left =
+                                `${
+                                    event.clientX -
+                                    rect.left -
+                                    size /
+                                    2
+                                }px`;
+
+
+                            ripple.style.top =
+                                `${
+                                    event.clientY -
+                                    rect.top -
+                                    size /
+                                    2
+                                }px`;
+
+
+                            button.appendChild(
+                                ripple
+                            );
+
+
+                            ripple.addEventListener(
+                                "animationend",
+                                () => {
+
+                                    ripple.remove();
+
+                                }
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+
+        /* =====================================================
+           CONTACT
+        ====================================================== */
+
+        const contactForm =
+            document.getElementById(
+                "contactForm"
+            );
+
+
+        const formNote =
+            document.getElementById(
+                "formNote"
+            );
+
+
+        const submitBtn =
+            document.getElementById(
+                "submitBtn"
+            );
+
+
+        const submitText =
+            document.getElementById(
+                "submitText"
+            );
+
+
+        function showFormMessage(
+            message,
+            color = ""
+        ) {
+
+            if (!formNote) {
+                return;
+            }
+
+
+            formNote.textContent =
+                message;
+
+
+            formNote.style.color =
+                color;
+
+        }
+
+
+        if (contactForm) {
+
+            contactForm.addEventListener(
+                "submit",
+                async event => {
+
+                    event.preventDefault();
+
+
+                    if (
+                        !emailJSReady ||
+                        typeof emailjs ===
+                        "undefined"
+                    ) {
+
+                        showFormMessage(
+
+                            "Email service is not ready. Please refresh the page and try again.",
+
+                            "#d33"
+
+                        );
+
+
+                        return;
+
+                    }
+
+
+                    const name =
+                        contactForm
+                            .querySelector(
+                                '[name="name"]'
+                            )
+                            ?.value
+                            .trim() ||
                         "";
 
-                }
+
+                    const email =
+                        contactForm
+                            .querySelector(
+                                '[name="email"]'
+                            )
+                            ?.value
+                            .trim() ||
+                        "";
 
 
-                /* -----------------------------------------
-                   CREATE EMAILJS PARAMETERS
-                ------------------------------------------ */
-
-                const templateParams = {
-
-                    name: name,
-
-                    email: email,
-
-                    company: company || "Not provided",
-
-                    phone: phone || "Not provided",
-
-                    title: "New Project Inquiry",
-
-                    message: message
-
-                };
+                    const company =
+                        contactForm
+                            .querySelector(
+                                '[name="company"]'
+                            )
+                            ?.value
+                            .trim() ||
+                        "";
 
 
-                console.log(
-                    "EmailJS Service:",
-                    EMAILJS_SERVICE_ID
-                );
+                    const phone =
+                        contactForm
+                            .querySelector(
+                                '[name="phone"]'
+                            )
+                            ?.value
+                            .trim() ||
+                        "";
 
 
-                console.log(
-                    "EmailJS Template:",
-                    EMAILJS_TEMPLATE_ID
-                );
+                    const message =
+                        contactForm
+                            .querySelector(
+                                '[name="message"]'
+                            )
+                            ?.value
+                            .trim() ||
+                        "";
 
 
-                console.log(
-                    "EmailJS Parameters:",
-                    templateParams
-                );
+                    if (
+                        !name ||
+                        !email ||
+                        !message
+                    ) {
+
+                        showFormMessage(
+
+                            "Please enter your name, email and project details.",
+
+                            "#d33"
+
+                        );
 
 
-                /* -----------------------------------------
-                   SEND EMAIL
-                   
-                   send() is used instead of sendForm()
-                   so we explicitly control every variable.
-                ------------------------------------------ */
+                        return;
 
-                try {
+                    }
 
-                    const response =
+
+                    const emailPattern =
+                        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+                    if (
+                        !emailPattern.test(
+                            email
+                        )
+                    ) {
+
+                        showFormMessage(
+
+                            "Please enter a valid email address.",
+
+                            "#d33"
+
+                        );
+
+
+                        return;
+
+                    }
+
+
+                    if (submitBtn) {
+
+                        submitBtn.disabled =
+                            true;
+
+                    }
+
+
+                    if (submitText) {
+
+                        submitText.textContent =
+                            "SENDING...";
+
+                    }
+
+
+                    showFormMessage(
+                        "Sending your message..."
+                    );
+
+
+                    const templateParams = {
+
+                        name:
+                            name,
+
+                        email:
+                            email,
+
+                        company:
+                            company ||
+                            "Not provided",
+
+                        phone:
+                            phone ||
+                            "Not provided",
+
+                        title:
+                            "New Project Inquiry",
+
+                        message:
+                            message
+
+                    };
+
+
+                    try {
+
                         await emailjs.send(
 
                             EMAILJS_SERVICE_ID,
@@ -2155,301 +3239,212 @@ if (
                         );
 
 
-                    console.log(
-                        "================================="
-                    );
+                        showFormMessage(
 
-                    console.log(
-                        "EMAILJS SUCCESS"
-                    );
+                            "Message sent successfully. We'll get back to you soon.",
 
-                    console.log(
-                        "Status:",
-                        response.status
-                    );
+                            "#3f9b72"
 
-                    console.log(
-                        "Text:",
-                        response.text
-                    );
-
-                    console.log(
-                        "================================="
-                    );
+                        );
 
 
-                    if (formNote) {
-
-                        formNote.textContent =
-                            "Message sent successfully! We'll get back to you soon.";
-
-                        formNote.style.color =
-                            "#4f9d69";
+                        contactForm.reset();
 
                     }
 
+                    catch (error) {
 
-                    contactForm.reset();
-
-                }
-
-
-                /* -----------------------------------------
-                   EMAILJS ERROR
-                ------------------------------------------ */
-
-                catch (error) {
-
-                    console.error(
-                        "================================="
-                    );
-
-                    console.error(
-                        "EMAILJS ERROR"
-                    );
-
-                    console.error(
-                        "Error object:",
-                        error
-                    );
-
-                    console.error(
-                        "Status:",
-                        error?.status
-                    );
-
-                    console.error(
-                        "Text:",
-                        error?.text
-                    );
-
-                    console.error(
-                        "================================="
-                    );
+                        console.error(
+                            "EmailJS error:",
+                            error
+                        );
 
 
-                    let errorMessage =
-                        "EmailJS rejected the request. Please check your EmailJS service and template settings.";
+                        showFormMessage(
 
+                            error?.text
+                                ? "EmailJS error: " +
+                                  error.text
+                                : "Unable to send your message. Please try again.",
 
-                    /*
-                     * EmailJS commonly returns:
-                     *
-                     * error.status
-                     * error.text
-                     *
-                     * We display the actual EmailJS
-                     * error when available.
-                     */
+                            "#d33"
 
-                    if (
-                        error &&
-                        error.text
-                    ) {
-
-                        errorMessage =
-                            "EmailJS error: " +
-                            error.text;
+                        );
 
                     }
 
+                    finally {
 
-                    if (formNote) {
+                        if (submitBtn) {
 
-                        formNote.textContent =
-                            errorMessage;
-
-                        formNote.style.color =
-                            "#d33";
-
-                    }
-
-                }
-
-
-                /* -----------------------------------------
-                   RESTORE BUTTON
-                ------------------------------------------ */
-
-                finally {
-
-                    if (submitBtn) {
-
-                        submitBtn.disabled =
-                            false;
-
-                    }
-
-
-                    if (submitText) {
-
-                        submitText.textContent =
-                            "SEND MESSAGE";
-
-                    }
-
-                }
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       NEWSLETTER
-    ====================================================== */
-
-    const newsletterForm =
-        document.getElementById(
-            "newsletterForm"
-        );
-
-
-    if (newsletterForm) {
-
-        newsletterForm.addEventListener(
-            "submit",
-            e => {
-
-                e.preventDefault();
-
-
-                const input =
-                    newsletterForm.querySelector(
-                        "input"
-                    );
-
-
-                const email =
-                    input
-                        ? input.value.trim()
-                        : "";
-
-
-                if (!email) {
-
-                    return;
-
-                }
-
-
-                alert(
-                    "Thank you for subscribing!"
-                );
-
-
-                newsletterForm.reset();
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       IMAGE ERROR FALLBACK
-    ====================================================== */
-
-    document
-        .querySelectorAll("img")
-        .forEach(
-            img => {
-
-                img.addEventListener(
-                    "error",
-                    function () {
-
-                        if (
-                            this.dataset
-                                .fallbackApplied
-                        ) {
-
-                            return;
+                            submitBtn.disabled =
+                                false;
 
                         }
 
 
-                        this.dataset
-                            .fallbackApplied =
-                            "true";
+                        if (submitText) {
 
+                            submitText.textContent =
+                                "SEND MESSAGE";
 
-                        this.src =
-                            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=85";
+                        }
 
                     }
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           NEWSLETTER
+        ====================================================== */
+
+        const newsletterForm =
+            document.getElementById(
+                "newsletterForm"
+            );
+
+
+        if (newsletterForm) {
+
+            newsletterForm.addEventListener(
+                "submit",
+                event => {
+
+                    event.preventDefault();
+
+
+                    const input =
+                        newsletterForm.querySelector(
+                            "input"
+                        );
+
+
+                    if (
+                        !input ||
+                        !input.value.trim()
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    alert(
+                        "Thank you for subscribing!"
+                    );
+
+
+                    newsletterForm.reset();
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           IMAGE FALLBACK
+        ====================================================== */
+
+        document
+            .querySelectorAll(
+                "img"
+            )
+            .forEach(
+                image => {
+
+                    image.addEventListener(
+                        "error",
+                        function () {
+
+                            if (
+                                this.dataset
+                                    .fallbackApplied
+                            ) {
+
+                                return;
+
+                            }
+
+
+                            this.dataset
+                                .fallbackApplied =
+                                "true";
+
+
+                            this.src =
+                                "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=85";
+
+                        }
+                    );
+
+                }
+            );
+
+
+
+        /* =====================================================
+           RESIZE
+        ====================================================== */
+
+        let resizeTimer =
+            null;
+
+
+        window.addEventListener(
+            "resize",
+            () => {
+
+                clearTimeout(
+                    resizeTimer
                 );
 
+
+                resizeTimer =
+                    setTimeout(
+                        () => {
+
+                            if (
+                                window.innerWidth >
+                                850
+                            ) {
+
+                                closeMobileNav();
+
+                            }
+
+                        },
+                        150
+                    );
+
+            },
+            {
+                passive:
+                    true
             }
         );
 
 
-    /* =====================================================
-       SERVICE FOCUS STYLE
-    ====================================================== */
 
-    const serviceFocusStyle =
-        document.createElement(
-            "style"
+        /* =====================================================
+           READY
+        ====================================================== */
+
+        console.log(
+            "%cSURREAL ENGINEERING",
+            "font-size:16px;font-weight:700;color:#f6a91b;"
         );
 
 
-    serviceFocusStyle.textContent = `
+        console.log(
+            "SURREAL interactive homepage ready."
+        );
 
-        .service-focus {
-
-            animation:
-                serviceFocusPulse
-                1.8s ease;
-
-        }
-
-
-        @keyframes serviceFocusPulse {
-
-            0% {
-
-                box-shadow:
-                    0 0 0 0
-                    rgba(244,121,29,.55);
-
-            }
-
-
-            40% {
-
-                box-shadow:
-                    0 0 0 14px
-                    rgba(244,121,29,.12);
-
-            }
-
-
-            100% {
-
-                box-shadow:
-                    0 0 0 30px
-                    rgba(244,121,29,0);
-
-            }
-
-        }
-
-    `;
-
-
-    document.head.appendChild(
-        serviceFocusStyle
-    );
-
-
-    /* =====================================================
-       FINAL INITIALIZATION
-    ====================================================== */
-
-    console.log(
-        "SURREAL website JavaScript loaded successfully."
-    );
-
-});
+    }
+);
